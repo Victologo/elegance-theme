@@ -1,4 +1,4 @@
-# elegance-theme
+# Elegance
 
  Elegance theme for Obsidian.
  
