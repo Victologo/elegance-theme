@@ -701,17 +701,30 @@ input.prompt-input {
 
         /* # A2.4 Empty Note Pane*/
 
-.empty-state{
+.theme-dark .empty-state {
     font-size: 20px;
-    animation-name: example22;
+    animation-name: title_dark;
     animation-duration: 3.5s ;
     animation-iteration-count: infinite;
 }
 
-@keyframes example22 {
+.theme-light .empty-state {
+    font-size: 20px;
+    animation-name: title_light;
+    animation-duration: 3.5s ;
+    animation-iteration-count: infinite;
+}
+
+@keyframes title_dark {
     0% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
     50% {color:rgb(255 255 255 / 70%); background-color:  var(--background-primary);}
     100% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
+}
+
+@keyframes title_light {
+    0% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
+    50% {color:rgb(50 50 50 / 60%); background-color:  var(--background-primary);}
+    100% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
 }
 
 .empty-state-action{
@@ -720,10 +733,55 @@ input.prompt-input {
     color: var(--text-accent);
 }
 
+.empty-state-title {
+    padding-bottom: 33px;
+}
+
 left-split .workspace-tab-header.is-active{
     background-color: var(--text-accent) !important;
 }
 
+/*
+Symbol in background
+from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
+*/
+
+
+body{
+    --signature:"֎"
+}
+
+.mod-root .empty-state-title::before {
+    content: var(--signature);
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--text-accent);
+    transition: 200ms;
+    margin: -33px 0px 0px -80px !important;
+    position: absolute;
+    animation-name: text_accent_flash;
+    animation-duration: 3.5s ;
+    animation-iteration-count: infinite;
+}
+
+.mod-root .empty-state-title::after {
+    content: var(--signature);
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--text-accent);
+    transition: 200ms;
+    margin: -33px 0px 0px 0px;
+    position: absolute;
+    animation-name: text_accent_flash;
+    animation-duration: 3.5s ;
+    animation-iteration-count: infinite;
+}
+
+@keyframes text_accent_flash {
+    0% {color: var(--text-accent);}
+    50% {color:rgba(248, 173, 93, 0.482);}
+    0% {color:var(--text-accent);}
+}
 
 /* @ WS A5: Outline Pane*/
     /* # A5.1 Size of the text */
@@ -1165,6 +1223,16 @@ left-split .workspace-tab-header.is-active{
     color: var(--text-normal) !important;
 }
 
+/*
+First tab bigger
+from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
+*/
+
+body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
+    width: 500px;
+    max-width: 455px;
+}
+
 /* @ WS B5: Rendered notes */
 
 /* width of content */
@@ -1191,6 +1259,11 @@ left-split .workspace-tab-header.is-active{
     background: linear-gradient(to left, #7c7c7c30, #808080);
     border-top: 1px solid var(--border-color) !important;
     border-bottom: 2px solid #737373 !important;
+    border-radius: 6px;
+}
+
+
+.theme-light .view-header {
     border-radius: 6px;
 }
 
@@ -2207,17 +2280,18 @@ ul > li.task-list-item .task-list-item-checkbox {
 
 /* Notation checkboxes */
 
+*/
 .markdown-preview-view .task-list-item-checkbox:hover {
     background-color: #6B8760;
 }
 
-
+*/
   /* yellow background colour for question/more info task ('- [?]') */
 .markdown-preview-view li[data-task="?"]>.task-list-item-checkbox:checked{
     background-color: rgb(169, 148, 0);
 }
 
-
+*/
   /* red background colour for important task ('- [!]') */
 .markdown-preview-view li[data-task="!"]>.task-list-item-checkbox:checked {
     background-color: #a90000;
@@ -2786,7 +2860,7 @@ Support my work:https://github.com/sponsors/kepano*/
 }
 
 .cards table.dataview > tbody > tr {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--background-secondary-alt);
     border: 2px solid gray;
     display: flex;
     flex-direction: column;
@@ -2801,7 +2875,11 @@ Support my work:https://github.com/sponsors/kepano*/
     border: 2.15px solid var(--text-accent);
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.21) !important;
     transition: box-shadow 0.15s linear;
-    background-color: rgba(0, 0, 0, 0.9) !important;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.theme-light .cards table.dataview > tbody > tr:hover {
+    background-color: lightgrey;
 }
 
 /* Styling elements inside cards */
@@ -2824,6 +2902,10 @@ Support my work:https://github.com/sponsors/kepano*/
     align-content: space-around;
     align-items: flex-start;
     justify-content: space-around;
+}
+
+.cards .table-view-table > tbody > tr:hover {
+    background-color: var(--text-antinormal) !important;
 }
 
 .cards table.dataview tbody > tr > td .el-p {
@@ -3033,15 +3115,12 @@ Support my work:https://github.com/sponsors/kepano*/
 }
 
 .cards table.dataview thead > tr > th {
-    display: block;
-    padding: 3px 10px 3px 6px !important;
-    border-radius: 5px;
     width: 100%;
     font-weight: 400;
     color: var(--text-muted);
-    cursor: var(--cursor);
+    cursor: var(--cursor-link);
     border: none;
-    font-size: var(--font-adaptive-small); 
+    background-color: var(--background-secondary); 
 }
 
 .cards table.dataview tbody > tr > td:first-child {
@@ -3115,6 +3194,25 @@ input[type=checkbox] {
 }
 
 .theme-dark {
+    --red-rgb: 255,85,85;
+    --orange-rgb: 255,184,108;
+    --yellow-rgb: 241,250,140;
+    --green-rgb: 80,250,123;
+    --cyan-rgb: 139,233,253;
+    --blue-rgb: 98,114,164;
+    --purple-rgb: 189,147,249;
+    --pink-rgb: 255,121,198;
+    --red: #ff5555;
+    --orange: #ffb86c;
+    --yellow: #f1fa8c;
+    --green: #50fa7b;
+    --cyan: #8be9fd;
+    --blue: #6495ed;
+    --purple: #bd93f9;
+    --pink: #ff79c6;
+}
+
+.theme-light {
     --red-rgb: 255,85,85;
     --orange-rgb: 255,184,108;
     --yellow-rgb: 241,250,140;
