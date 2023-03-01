@@ -172,8 +172,6 @@ Thanks to:
             # C3.4 Hover
     ~ WS D: Other Elements
         @ D1: Buttons
-            ! D1.1 Style
-            ! D1.2 Hover Disco
         @ D2: Scrollbars
         @ D3: Modals
         @ D4: Sliders
@@ -288,14 +286,14 @@ Thanks to:
         @ SPACE E4: Day Planner
         @ SPACE E5: Checklist
 * IV. ADDITIONAL SNIPPETS
-    ~ Snippet -  Zoom images
+    ~ Snippet - Zoom images
     ~ Snippet - Image caption / Figure Caption
     ~ Snippet - Center images + Left or right function
     ~ Snippet - Cards
     ~ Snippet - Checboxes (minimal)
-    ~ Snippet -  Images
-    ~ Snippet -  Popover
-    ~ Snippet -  MathJax
+    ~ Snippet - Images
+    ~ Snippet - Popover
+    ~ Snippet - MathJax
     ~ Snippet - Active Block - Active Line - Guide line in editor
 *V. PLUGIN STYLING
     ~ Plugin - Banners
@@ -784,6 +782,9 @@ body{
 }
 
 /* @ WS A5: Outline Pane*/
+
+/* Code modified from the Obsidian theme "Bubble Space" (https://github.com/Emrie-Candera/Bubble-Space-Theme) */
+
     /* # A5.1 Size of the text */
         
     .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-inner {
@@ -2822,7 +2823,7 @@ img[alt*="right"], .image-embed[src*="#right"], img[src*="#right"], span.right i
 Cards snippet for Obsidian
 author: @kepano
 version: 1.1.0
-Support my work:https://github.com/sponsors/kepano*/
+Support my work:https://github.com/sponsors/kepano */
 
 :root {
     --cards-min-width:174px;
