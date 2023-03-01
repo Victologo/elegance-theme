@@ -2768,6 +2768,7 @@ background-color: #262639;
 /* Snippet - Image caption / Figure Caption */
 /*=========================================*/
 
+
 .callout[data-callout="imagen"] {
     background-color: var(--background-primary-alt);
     --callout-icon: image;
@@ -2779,6 +2780,12 @@ background-color: #262639;
     align-items: center;
     flex-direction: column;
     padding: 0px;
+}
+
+.callout-content {
+    border-top: 1.3px solid lightgray;
+    border-top: dashed;
+    text-align: center !important;
 }
 
 /*-------------------------------------------------*/
