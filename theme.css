@@ -2192,6 +2192,10 @@ ul ol::before {
     left: -0.7em;
 }
 
+.markdown-rendered .list-collapse-indicator {
+    margin-left: -2.8em;
+}
+
 li {
     padding: 5px 0px 5.7px 0px;
 }
@@ -2782,10 +2786,9 @@ background-color: #262639;
     padding: 0px;
 }
 
-.callout-content {
-    border-top: 1.3px solid lightgray;
-    border-top: dashed;
-    text-align: center !important;
+.callout[data-callout="imagen"] .callout-content {
+    border-top: 1.3px solid rgb(184, 184, 184);
+
 }
 
 /*-------------------------------------------------*/
@@ -3974,7 +3977,8 @@ mjx-math {
     background-color: var(--table-thead-background-color) !important;
 }
 
-#calendar-container .week-num, #calendar-container .day {
+#calendar-container .week-num,
+#calendar-container .day {
     border-radius: 0px !important;
 }
 
@@ -4009,7 +4013,7 @@ margin: -8px 0;
 
 #calendar-container .today {
     border-radius: 5px !important;
-    color: white;
+    color: var(--text-normal);
     background-color: rgba(155, 204, 208, 0.35) !important;
 }
 
@@ -4061,26 +4065,37 @@ margin: -8px 0;
 }
 /*星期数 week*/
 
-#calendar-container .week-num {
-/*border-right: 2px solid var(--green) !important;*/
-    background-color: rgba(255, 184, 108, 0.15);
+.theme-light #calendar-container .week-num {
+    background-color: rgba(255, 184, 108, 0.4);
+    font-weight: 900;
+}
+
+.theme-dark #calendar-container .week-num {
+    background-color: rgba(255, 184, 108, 0.2);
     font-weight: 900;
 }
 
 /*星期数悬停 week hover*/
 
-#calendar-container .week-num:hover {
-    background-color: rgba(255, 184, 108, 0.3) !important;
+.theme-light #calendar-container .week-num:hover {
+    background-color: rgba(255, 184, 108, 0.75);
 }
 
-#calendar-container .day:active, #calendar-container .active, #calendar-container .active.today {
+.theme-dark #calendar-container .week-num:hover {
+    background-color: rgba(255, 184, 108, 0.55);
+}
+
+#calendar-container .day:active,
+#calendar-container .active,
+#calendar-container .active.today {
     border-radius: 5px !important;
     color: white !important;
-    background-color: rgba(255, 124, 108, 0.3) !important;
+    background-color: rgba(136, 95, 90, 0.3) !important;
 }
 
-#calendar-container .week-num, #calendar-container .day:hover {
-    background-color: rgba(255, 254, 255	, 0.1) !important;
+
+#calendar-container .day:hover {
+    background-color: rgba(255, 0, 255, 0.3) !important;
     border-radius: 5px !important;
 }
 
