@@ -219,13 +219,8 @@ Thanks to:
         @ SPACE B1: Panes
             # B1.1 File Explorer
                 ! Vault Title
-                ! Header Decp
-                    ? Image
-                    ? Icon
-                    ? Text
-                    ? Logo
                 ! File and Folder Name
-                ! Iterative Folder Colors
+                !...
             # B1.2 Note Pane
                 ! Active Note Titlebar
                 ! Metadata Container
@@ -389,8 +384,8 @@ Thanks to:
     --list-indent: 1.9em;
     --file-margins: 4px;
     
-    --fbold: rgb(255, 248, 184);
-    --fitalic: rgb(255, 248, 184);
+    --fbold: rgb(255, 251, 200);
+    --fitalic: rgb(255, 251, 200);
 }
 
 .theme-light {
@@ -421,7 +416,7 @@ Thanks to:
     --text-error-hover: rgb(232, 0, 0);
     --text-highlight-bg: rgba(117, 0, 0, 0.293);
     --text-highlight-bg-active: rgba(255, 255, 50, 0.4);
-    --text-selection: rgba(78, 91, 154, 0.492); /* Chromium precess this color with alpha channel */
+    --text-selection: rgba(44, 77, 188, 0.2); /* Chromium precess this color with alpha channel */
     --text-on-accent: rgb(255, 255, 255);
     --interactive-normal: rgb(240, 128, 0);
     --interactive-hover: rgb(255, 85, 85);
@@ -445,9 +440,11 @@ Thanks to:
     --list-indent: 1.9em;
     --file-margins: 4px;
 
-    --fbold: rgb(117, 0, 0);
-    --fitalic: rgb(117, 0, 0);
+    --fbold: rgb(55, 0, 0);
+    --fitalic: rgb(55, 0, 0);
 }
+
+
 
 /* ~~~~~~~~~~~~~ C: Others  ~~~~~~~~~~~~~ */
 
@@ -489,8 +486,7 @@ input.prompt-input {
     padding-left: 25px;
 }
 
-
-/* * =================== PART II. WORKSPACE =================== */
+/* =================== PART II. WORKSPACE =================== */
 /* ~~~~~~~~~~~~~~~~~~ WS A: PANES  ~~~~~~~~~~~~~~~~~~ */
 
 /* @ WS A1: File Explorer*/
@@ -634,7 +630,6 @@ input.prompt-input {
 .inline-title {
     font-size: 20px;
     text-align: center;
-    text-shadow:;
     padding: 0px 0px 5px 0px;
     margin: 20px 0px 40px 0px;
     display: flex;
@@ -696,6 +691,15 @@ input.prompt-input {
         color: rgb(159, 0, 0)
     }
 
+    /* Active icon workspace */
+
+    .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+        color: var(--text-accent) !important;
+    }
+
+    .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+        color: var(--text-accent);
+    }
 
         /* # A2.4 Empty Note Pane*/
 
@@ -751,7 +755,7 @@ body{
 
 .mod-root .empty-state-title::before {
     content: var(--signature);
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 400;
     color: var(--text-accent);
     transition: 200ms;
@@ -764,7 +768,7 @@ body{
 
 .mod-root .empty-state-title::after {
     content: var(--signature);
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 400;
     color: var(--text-accent);
     transition: 200ms;
@@ -1230,8 +1234,8 @@ from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
 */
 
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
-    width: 500px;
-    max-width: 455px;
+    width: 999px;
+    max-width: 9999px;
 }
 
 /* @ WS B5: Rendered notes */
@@ -1458,7 +1462,6 @@ button.mod-cta:hover {
 }
 
 .horizontal-tab-nav-item, .vertical-tab-nav-item {
-    background-color: var(--background-secondary-alt);
     cursor: default;
     font-size: 16px;
     padding: 4px 15px !important;
@@ -1608,23 +1611,46 @@ body:not(.native-scrollbars) * {
 
 /* @ WS D3: Modal */
 
-.community-modal-readme{
+.community-modal-readme {
     font-size: 16px;
     }
 
+.community-modal-button-container {
+    margin: 1.5em 0;
+    justify-content: center;
+}
 /* @ WS D6: Toggles */
 
 /* @ WS D7: Tooltips */
-.tooltip {
+
+.theme-dark .tooltip {
     border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: var(--text-normal);
 }
+
+.theme-light .tooltip {
+    border: 1px solid gray;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--text-normal);
+}
+
+/*
+.tooltip .tooltip-arrow {
+    border: 4px solid white;
+    transform: rotate(180deg)
+    
+}
+*/
+
+  
 
 /* @ WS D8: Dropdown */
 
 /* @ D10: Menu */
 
 .theme-light .menu {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.025);
     border: 1.5px solid white !important;
     backdrop-filter: blur(13px);
     border-radius: 6px;
@@ -1643,8 +1669,14 @@ body:not(.native-scrollbars) * {
     overflow: hidden;
 }
 
-.menu-item.selected:not(.is-disabled):not(.is-label) {
-    background-color: rgba(0, 0, 0, 0.25);
+.theme-dark .menu-item.selected:not(.is-disabled):not(.is-label) {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--text-accent);
+    transition: transform 0.29s ease-out 0s;
+}
+
+.theme-light .menu-item.selected:not(.is-disabled):not(.is-label) {
+    background-color: rgba(0, 0, 0, 0.075);
     border: 2px solid var(--text-accent);
     transition: transform 0.29s ease-out 0s;
 }
@@ -1744,8 +1776,7 @@ padding:0; margin:0;
 }
 
 
-
-/* * =================== PART III. MARKDOWN =================== */
+/* =================== PART III. MARKDOWN =================== */
 
 /* ~~~~~~~~~~~~~~~~~~ MARKDOWN A: Text Formatting   ~~~~~~~~~~~~~~~~~~ */
 
@@ -1788,10 +1819,9 @@ p {
     letter-spacing: 0.15px !important;
     word-spacing: 1px;
     text-align: center;
-    -webkit-text-stroke: 0.65px rgba(0, 0, 0, 0.461);
+    -webkit-text-stroke: 0.1px var(--text-antinormal);
     font-weight: 650;
     color: var(--fcolor-header) !important;
-
 }
 
 /* Collapse arrow of headers */
@@ -2200,6 +2230,76 @@ li {
     padding: 5px 0px 5.7px 0px;
 }
 
+/* --- RAINBOW LIST COLORS --- */
+
+/*
+From the Obsidian theme: Big & Bold
+https://github.com/Bluemoondragon07/obsidian-big-and-bold
+*/
+
+.theme-dark {
+    --color-cyan-list: rgb(1, 189, 206);
+    --color-blue-list: rgb(77, 154, 255);
+    --color-purple-list: rgb(161, 74, 255);
+    --color-pink-list: rgb(255, 192, 227);
+    --color-orange-list: orange;
+    --color-green-list: rgb(81, 203, 0);
+    --color-magenta-list: rgb(255, 109, 255);
+}
+
+.theme-light {
+    --color-cyan-list: rgb(54, 238, 255);
+    --color-blue-list: rgb(0, 110, 255);
+    --color-purple-list: rgb(164, 0, 214);
+    --color-pink-list: rgb(255, 192, 227);
+    --color-orange-list: orange;
+    --color-green-list: rgb(81, 203, 0);
+    --color-magenta-list: rgb(255, 106, 255);
+}
+
+li {
+    --list-marker-color: var(--color-orange-list);
+}
+li li, .cm-list-2 {
+    --list-marker-color: var(--color-magenta-list);
+}
+li li li, .cm-list-3 {
+    --list-marker-color: var(--color-purple-list);
+}
+li li li li  {
+    --list-marker-color: var(--color-blue-list);
+}
+li li li li li  {
+    --list-marker-color: var(--color-cyan-list);
+}
+li li li li li li  {
+    --list-marker-color: var(--color-green-list);
+}
+li li li li li li li  {
+    --list-marker-color: var(--color-pink-list);
+}
+
+li li li li li li li li {
+    --list-marker-color: var(--color-pink-list);
+}
+li li li li li li li li li  {
+    --list-marker-color: var(--color-pink-list);
+}
+
+li .list-bullet:after {
+    width: 0.35em;
+    height: 0.35em;
+}
+
+li:hover .list-bullet:after {
+   width: 0.43em;
+   height: 0.43em;
+}
+
+.list-bullet:after {
+    transition: 200ms;
+}
+
 /* @ MARKDOWN B1: Bulleted List*/
 
 ul ul {
@@ -2276,7 +2376,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 .markdown-preview-view .list-collapse-indicator {
-    padding: 0px 0px 0px 10px;
+    padding: 0px 15px 0px 10px;
 }
 
 ul > li.task-list-item .task-list-item-checkbox {
@@ -2310,7 +2410,7 @@ ul > li.task-list-item .task-list-item-checkbox {
 /* Left white line*/
 
 .HyperMD-quote {
-    border-left: 3px solid white;
+    border-left: 3px solid var(--text-muted2);
     border-radius: 6px;
 }
 
@@ -2621,6 +2721,7 @@ pre code {
 }
 
 /* ~~~~~~~~~~~~~~~~~~ Callouts ~~~~~~~~~~~~~~~~~~ */
+
 :root{
     --callout-color: rgba(103, 161, 149, 0.459);
 }
@@ -2632,6 +2733,9 @@ pre code {
     color: var(--text-normal) !important;
 }
 
+.callout-icon .svg-icon {
+    color: var(--text-normal);
+}
 
 .callout-title {
     padding: 10px;
@@ -2667,6 +2771,12 @@ pre code {
     background-color: rgba(var(--callout-color), 0.3);
 
     padding: 0px;
+}
+
+/* Fold arrow when collapsable callouts */
+
+.callout-fold:hover {
+    color: var(--text-accent);
 }
 
 
@@ -2740,8 +2850,8 @@ background-color: #262639;
 
 .markdown-preview-view img {
     cursor: zoom-in;
-    border-radius: 15px;
-    transition: 150ms;
+    border-radius: 7px;
+    transition: 150ms !important;
 }
 
 .markdown-preview-view img:active {
@@ -2761,7 +2871,7 @@ background-color: #262639;
     right:0;
     bottom:0;
     background:var(--background-primary);
-    transition: 150ms;
+    transition: 150ms !important;
 }
 
 /*-------------------------------*/
@@ -2787,7 +2897,7 @@ background-color: #262639;
 }
 
 .callout[data-callout="imagen"] .callout-content {
-    border-top: 1.3px solid rgb(184, 184, 184);
+    border-top: 1.3px solid rgb(138, 138, 138);
 
 }
 
@@ -3332,24 +3442,29 @@ body.minimal-strike-lists li[data-task="x"].task-list-item.is-checked {
 /* Preview offset */
 
 ul > li.task-list-item .task-list-item-checkbox {
-    margin-left: -1.35em; }
+    margin-left: -1.35em;
+}
 
 /* Editor */
 
 .mod-cm6 .HyperMD-task-line[data-task] .task-list-item-checkbox {
-    margin: -2px 1px 0 -0.6em; }
+    margin: -2px 1px 0 -0.6em;
+}
 
 .is-mobile .mod-cm6 .HyperMD-task-line[data-task] .task-list-item-checkbox {
-    margin-left: -0.4em; }
+    margin-left: -0.4em;
+}
 
 .is-mobile .markdown-preview-view input[type=checkbox].task-list-item-checkbox {
-    top: 0.2em; }
+    top: 0.2em;
+}
 
 .task-list-item-checkbox,
 .markdown-preview-view .task-list-item-checkbox {
     filter: none;
     width: var(--checkbox-size);
-    height: var(--checkbox-size); }
+    height: var(--checkbox-size);
+}
 
 .markdown-preview-view .task-list-item-checkbox {
     position: relative;
@@ -3360,10 +3475,12 @@ ul > li.task-list-item .task-list-item-checkbox {
 
 .markdown-preview-view ul > li.task-list-item {
     text-indent: 0;
-    line-height: var(--line-height); }
+    line-height: var(--line-height);
+}
 
 .markdown-preview-view .task-list-item {
-    padding-inline-start: 0; }
+    padding-inline-start: 0;
+}
 
 .side-dock-plugin-panel-inner {
     padding-right: 6px;
@@ -3825,10 +3942,14 @@ img:not(.emoji) {
 
 /* Image hover */
 
-img:hover {
+.theme-dark img:hover {
     transform: scale(1.02);
     transition: transform 0.45s ease-in-out 0s;
-    box-shadow: 0px 0px 10px black;
+}
+
+.theme-light img:hover {
+    transform: scale(1.02);
+    transition: transform 0.45s ease-in-out 0s;
 }
 
 img:not(:hover) {
@@ -4106,9 +4227,8 @@ margin: -8px 0;
 thead tr th {
     border-right: 2px solid var(--text-faint);
     padding: 9px 20px 9px 10px;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 1.1em;
-    text-shadow: 0 1px 1px rgb(16 16 16 / 80%);
     text-align: center;
 }
 
