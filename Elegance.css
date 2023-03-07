@@ -1343,7 +1343,6 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
 }
 
 .modal-content {
-    text-align: CENTER;
     flex: 1 1 auto;    border-radius: 15px;
     overflow: auto;
 }
