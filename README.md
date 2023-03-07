@@ -37,6 +37,11 @@
   - Active Block - Active Line - Guide line in editor
 - …
 
+### Active line
+
+![active line (2)](https://user-images.githubusercontent.com/118286581/223382556-3445c0f6-1183-4232-8211-21e828baf51b.gif)
+
+
 ### Images zoomed
 
 <img src="https://user-images.githubusercontent.com/118286581/222966043-4c8efbfc-4c51-495a-a634-c344426b967b.png" width="500">
