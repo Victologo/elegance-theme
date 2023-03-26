@@ -334,8 +334,6 @@ Thanks to:
 /* ~~~~~~~~~~~~~ B: GENERAL COLOR VALUES  ~~~~~~~~~~~~~ */
 
 .theme-dark {
-    --tree-b4: "ᛜ";
-
     --background-primary: rgb(53, 56, 67);
     --background-primary-alt: rgb(73, 76, 95);
     --background-secondary: rgb(39, 38, 47);
@@ -389,8 +387,6 @@ Thanks to:
 }
 
 .theme-light {
-    --tree-b4: "ᛜ";
-
     --background-primary: rgb(255, 255, 255);
     --background-primary-alt: rgb(230, 229, 224);
     --background-secondary: rgb(247 245 244);
@@ -772,7 +768,7 @@ body{
     font-weight: 400;
     color: var(--text-accent);
     transition: 200ms;
-    margin: -33px 0px 0px 0px;
+    margin: -33px 0px 0px 9.5px;
     position: absolute;
     animation-name: text_accent_flash;
     animation-duration: 3.5s ;
@@ -825,6 +821,10 @@ body{
         color: var(--text-normal);
     }
     
+    .outline {
+        padding: 8px 0px 0px 5px;
+    }
+
     .outline .tree-item >.tree-item-children >.tree-item > .tree-item-children  .tree-item {
         border-color: var(--text-accent);
     }
@@ -839,6 +839,7 @@ body{
     
     .outline .tree-item >.tree-item-children >.tree-item > .tree-item-children  >.tree-item > .tree-item-children  >.tree-item > .tree-item-children  >.tree-item > .tree-item-children .tree-item {
         border-color: var(--bg-blue2);
+        padding-left: 10px;
     }
         
     .outline .tree-item >.tree-item-children >.tree-item > .tree-item-children  >.tree-item > .tree-item-children  >.tree-item > .tree-item-children  >.tree-item > .tree-item-children .tree-item > .tree-item-children  >.tree-item {
@@ -852,25 +853,20 @@ body{
     }
 
     .tree-item-children {
-        padding-left: 1px !important;
-        margin-left: 10px;
+        margin-left: 6px;
         margin-bottom: 1px;
         border-left: none !important;
         border-left: transparent !important;
     }
 
     .workspace-leaf-content[data-type=outline] .tree-item-self {
-        padding: calc(var(--outline-vertical-lines-width) / 2);l);
+        padding: 0 0 0 8px;
         white-space: nowrap;
         min-width: 87%;
     }
-
-    .workspace-leaf-content[data-type=outline] .tree-item-children > .tree-item > .tree-item-self {
-        margin-left: 10px;
-    }
     
     .workspace-leaf-content[data-type=outline] .outline > .tree-item > .tree-item-children {
-        margin-left: -7px;
+        margin-left: -2.5px;
     }
     
     .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-inner {
@@ -881,7 +877,7 @@ body{
     .workspace-split.mod-left-split .view-content{
         height: 100%;
         overflow: auto;
-        padding-left: 8px;
+        padding-left: -20px;
     }
     
     .tree-item-self .tree-item-icon {
@@ -889,9 +885,9 @@ body{
         align-items: center;
         align-self: center;
         padding-inline-start: 0px;
-        padding-inline-end: 5.5px;
+        padding-inline-end: 3.5px;
         flex: 0 0 auto;
-        margin: 0px 0px 0px -17px;
+        margin: 0px 0px 0px -4px;
     }
     
     .outline .tree-item .tree-item-children .tree-item .tree-item-self {
@@ -906,7 +902,6 @@ body{
         text-shadow: white;
         background: var(--text-antinormal);
         border: 1.75px solid var(--text-accent);
-        transform: scale(1.015);
         transition: transform 0.25s ease-out 0s;
     }   
 
@@ -914,15 +909,14 @@ body{
         /* ! A5.3.1 Gradient Symbols*/
 
     .outline .tree-item .tree-item-self .tree-item-inner::before {
-        content: "H" ;
-        font-size: 1.05em;
-        font-weight: bolder;
-        padding-right: 3px;
-        border-color: var(--text-normal);
+        content: "ᛜ" ;
+        font-size: 1.2em;
+        font-weight: 500;
+        padding-right: 3.75px;
     }
 
     .outline .tree-item >.tree-item-children .tree-item-self .tree-item-inner::before {
-        content: var(--tree-b4);
+        content: "ᛜ";
         color: var(--text-accent);
         margin-left: 1px;
         font-size: 1.05em;
@@ -1705,6 +1699,10 @@ body:not(.native-scrollbars) * {
     font-size: 14.75px;
 }
 
+.menu-item {
+    padding: 2.5px 4px;
+}
+
 /* @ D11: Suggestion Container */
 
 /* @ D12: Embedded notes */
@@ -2345,8 +2343,6 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
     right: 0px;
     border: 1px solid  var(--text-normal);
     position: relative;
-    width: 1.25em;
-    height: 1.25em;
     margin-left: 5.5px;
     background-color: rgb(0 0 0 / 20%);
     text-decoration: line-through ;
@@ -2373,7 +2369,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 .markdown-preview-view .list-collapse-indicator {
-    padding: 0px 15px 0px 10px;
+    padding: 0px 13px 0px 7px;
 }
 
 ul > li.task-list-item .task-list-item-checkbox {
@@ -3376,7 +3372,7 @@ input[type=checkbox]:checked {
 /* Checklists, task lists, checkboxes */
 
 :root {
-    --checkbox-size:17px;
+    --checkbox-size2:17px;
     --checkbox-icon:20px;
     --checkbox-radius:50%;
     --checkbox-top:2px;
@@ -3384,7 +3380,7 @@ input[type=checkbox]:checked {
     --checkbox-margin:0px 6px 0px -1.35em; }
 
 .checkbox-square {
-    --checkbox-size:15px;
+    --checkbox-size2:15px;
     --checkbox-icon:17px;
     --checkbox-radius:4px;
     --checkbox-top:1px;
@@ -3399,8 +3395,8 @@ input[type=checkbox] {
     border: 1px solid var(--text-faint);
     padding: 0;
     margin: 0 6px 0 0;
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
+    width: var(--checkbox-size2);
+    height: var(--checkbox-size2);
 }
 
 input[type=checkbox]:hover,
@@ -3459,11 +3455,8 @@ ul > li.task-list-item .task-list-item-checkbox {
 .task-list-item-checkbox,
 .markdown-preview-view .task-list-item-checkbox {
     filter: none;
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
-}
-
-.markdown-preview-view .task-list-item-checkbox {
+    width: 1.2em;
+    height: 1.2em;
     position: relative;
     top: var(--checkbox-top);
     left: var(--checkbox-left);
@@ -3487,9 +3480,9 @@ ul > li.task-list-item .task-list-item-checkbox {
 /* Toggle switches */
 
 .checkbox-container {
-    background-color: var(--background-modifier-border-hover);
+    background-color: var(--background-secondary);
     box-shadow: inset 0 0px 1px 0px rgba(0, 0, 0, 0.2);
-    border: none;
+    border: 1px solid rgb(114, 114, 114);
     width: 40px;
     height: 22px;
     cursor: var(--cursor);
@@ -3506,16 +3499,19 @@ ul > li.task-list-item .task-list-item-checkbox {
 .checkbox-container:after {
     background: white;
     border: none;
-    margin: 2px 0 0 0;
+    margin: 1px 0 0 0;
     height: 18px;
     width: 18px;
     border-radius: 26px;
     transform: translate3d(2px, 0, 0);
     box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s linear; }
+    transition: all 0.1s linear;
+}
+
 .checkbox-container:hover:after {
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s linear; }
+    transition: all 0.1s linear
+ }
 
 /* Checklist icons */
 
@@ -3825,7 +3821,7 @@ ul.todoist-task-list > li.task-list-item .task-list-item-checkbox {
     margin: 0; }
 
 .is-live-preview .contains-task-list.todoist-task-list .task-metadata {
-    padding-left: calc(var(--checkbox-size) + 0.6em); }
+    padding-left: calc(var(--checkbox-size2) + 0.6em); }
 
 body .todoist-p1 > input[type="checkbox"]:hover {
     opacity: 0.8; }
