@@ -35,6 +35,7 @@
   - Cards (Minimal Theme, by Kepano)
   - Checboxes (Minimal Theme, by Kepano)
   - Active Block - Active Line - Guide line in editor
+- Transition between notes
 - …
 
 ### Active line
@@ -91,6 +92,13 @@ You have to write, for example: `![[image-name.png|right|200]]`. By default, the
 | `- [d]` | down        |
 
 <img src="https://user-images.githubusercontent.com/118286581/222965921-5fa014fd-5893-4438-94c2-41ec7d7ba6e7.png" width="340">
+
+### Transition between notes
+
+
+<img src="https://user-images.githubusercontent.com/118286581/228265994-0703587a-1baf-4734-b79b-b7559834a896.mp4" width="350">
+
+
 
 ## To Do
 - [ ] Compatibility with the plugin "Style Settings"
