@@ -1855,20 +1855,19 @@ p {
 }
 
 .theme-light {
-    --bg-green: rgba(1, 224, 172, 0.55);
-    --bg-blue: rgba(9, 168, 225, 0.55);
-    --bg-purple: rgba(150, 8, 220, 0.55);
-    --bg-magenta: rgba(220, 10, 90, 0.55);
-    --bg-orange: rgba(255, 132, 0, 0.55);
+    --bg-green: rgba(1, 224, 172, 0.5);
+    --bg-blue: rgba(9, 168, 225, 0.45);
+    --bg-purple: rgba(150, 8, 220, 0.4);
+    --bg-magenta: rgba(220, 10, 90, 0.45);
+    --bg-orange: rgba(255, 132, 0, 0.5);
 
-    --fcolor-header: rgb(44, 49, 54);
+    --fcolor-header: rgb(0, 0, 0);
 }
 
 .cm-header, h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.15px !important;
     word-spacing: 1px;
     text-align: center;
-    -webkit-text-stroke: 0.1px var(--text-antinormal);
     font-weight: 650;
     color: var(--fcolor-header) !important;
 }
