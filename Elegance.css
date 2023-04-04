@@ -2539,7 +2539,6 @@ body .table-view-table>thead>tr>th {
     background-image: none;
 }
 
-
 td{
     display: table-cell;
     vertical-align: inherit;
@@ -2558,6 +2557,7 @@ td{
 
 table {
     margin: 0 auto;
+    text-align: left;
 }
 
 
