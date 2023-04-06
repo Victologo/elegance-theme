@@ -3946,7 +3946,8 @@ span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-regrabar{
 }
 
 span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-ToDo{
-    background-color: #ad0000  !important;
+    background-color: rgb(158, 0, 87) !important;
+    ;
     color: white !important;
 }
 
