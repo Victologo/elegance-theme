@@ -40,7 +40,7 @@
 
 ### Active line
 
-![active line (2)](https://user-images.githubusercontent.com/118286581/223382556-3445c0f6-1183-4232-8211-21e828baf51b.gif)
+<img src="https://user-images.githubusercontent.com/118286581/223382556-3445c0f6-1183-4232-8211-21e828baf51b.gif" width="650">
 
 
 ### Images zoomed
@@ -91,14 +91,16 @@ You have to write, for example: `![[image-name.png|right|200]]`. By default, the
 | `- [u]` | up          |
 | `- [d]` | down        |
 
-<img src="https://user-images.githubusercontent.com/118286581/222965921-5fa014fd-5893-4438-94c2-41ec7d7ba6e7.png" width="340">
+<img src="https://user-images.githubusercontent.com/118286581/222965921-5fa014fd-5893-4438-94c2-41ec7d7ba6e7.png" width="330">
+
+### Table-resizer (right-bottom border)
+
+<img src="https://user-images.githubusercontent.com/118286581/230439854-04717c35-23d0-4199-937c-06a32cc0f728.gif" width="450">
+
 
 ### Transition between notes
 
-
-<img src="https://user-images.githubusercontent.com/118286581/228265994-0703587a-1baf-4734-b79b-b7559834a896.mp4" width="350">
-
-
+<img src="https://user-images.githubusercontent.com/118286581/230440478-cd300cb3-f2d5-4c14-8a10-9c5df7bca998.gif" width="600">
 
 ## To Do
 - [ ] Compatibility with the plugin "Style Settings"
