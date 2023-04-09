@@ -1602,7 +1602,7 @@ button.mod-cta:hover {
 }
 
 .sync-history-list-item.is-active {
-    background-color: var(--background-primary-alt);
+    background-color: rgba(255, 166, 0, 0.85);
 }
 
 
