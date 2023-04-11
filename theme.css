@@ -1381,7 +1381,8 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
 }
 
 .modal-content {
-    flex: 1 1 auto;    border-radius: 15px;
+    flex: 1 1 auto;
+    border-radius: 5px;
     overflow: auto;
 }
 
