@@ -1480,7 +1480,6 @@ button.mod-cta:hover {
     background: var(--background-primary);
     border-radius: var(--radius-l);
     overflow: hidden;
-    padding: 20px;
 }
 
 .modal.mod-settings .vertical-tab-content-container .vertical-tab-content {
@@ -1889,7 +1888,8 @@ p {
     padding-top: 0.3em;
 }
 
-.HyperMD-header-1, .markdown-preview-section h1, .cm-header-1 {    font-size: 20.5px !important;
+.HyperMD-header-1, .markdown-preview-section h1, .cm-header-1 {
+    font-size: 19.75px !important;
     font-weight: 700;
     margin: 30px 0px 3px 0px;
     padding-top: 6px;
@@ -1912,7 +1912,7 @@ p {
 .HyperMD-header-2, .markdown-preview-section h2, .cm-header-2 {    font-weight: 700;
     text-decoration: none;
     text-align: center;
-    font-size: 18.8px;
+    font-size: 19px;
     margin: 30px 0px 3px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
