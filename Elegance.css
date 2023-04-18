@@ -1041,7 +1041,7 @@ body{
             160deg
             #0000003d,
             rgb(0 0 0 / 45%));
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px) !important;
         min-width: fit-content;
         max-width: fit-content;
     }
@@ -1064,7 +1064,7 @@ body{
         background: linear-gradient(160deg,
         #0000003d,
         rgb(0 0 0 / 45%));
-        backdrop-filter: blur(5.5px);
+        backdrop-filter: blur(5.5px) !important;
     }
 
     /* # A8.2 Graph Colors*/
@@ -1698,7 +1698,7 @@ body:not(.native-scrollbars) * {
 .theme-light .menu {
     background-color: rgba(0, 0, 0, 0.025);
     border: 1.5px solid white !important;
-    backdrop-filter: blur(13px);
+    backdrop-filter: blur(13px) !important;
     border-radius: 6px;
     box-shadow: 0 0px 10px 0.2px rgba(0, 0, 0, 0.3);
     max-height: calc(100% - 25px);
@@ -1708,7 +1708,7 @@ body:not(.native-scrollbars) * {
 .theme-dark .menu {
     background-color: rgba(0, 0, 0, 0.5);
     border: 1.5px solid white !important;
-    backdrop-filter: blur(13px);
+    backdrop-filter: blur(13px) !important;
     border-radius: 6px;
     box-shadow: 0 0px 10px 0.2px rgba(0, 0, 0, 0.3);
     max-height: calc(100% - 25px);
