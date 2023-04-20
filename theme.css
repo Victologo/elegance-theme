@@ -295,6 +295,7 @@ Thanks to:
     ~ Plugin - Banners
     ~ Plugin - Calendar
     ~ Plugin - Kanban
+    ~ Plugin - Excalidraw
 *VI. Other stuff
 
 ===================================================
@@ -787,7 +788,7 @@ body{
     /* # A5.1 Size of the text */
         
     .workspace-leaf-content[data-type=outline] .tree-item-self .tree-item-inner {
-        font-size: 15.75px;
+        font-size: 15px;
     }
 
     /* # A5.2 Relationship Lines*/
@@ -821,7 +822,7 @@ body{
     }
     
     .outline {
-        padding: 8px 0px 0px 5px;
+        padding: 5px 0px 0px 0px;
     }
 
     .outline .tree-item >.tree-item-children >.tree-item > .tree-item-children  .tree-item {
@@ -4312,6 +4313,18 @@ button.kanban-plugin__new-item-button{
 /* End - Plugin - Kanban */
 /*----------------------*/
 
+
+/*==================*/
+/* Plugin - Excalidraw */
+/*================*/
+
+.excalidraw .buttonList label.active, .excalidraw .buttonList button.active, .excalidraw .buttonList .zIndexButton.active {
+    background-color: transparent !important;
+}
+
+/*------------------------*/
+/* End - Plugin - Excalidraw  */
+/*----------------------*/
 
 
 
