@@ -1812,7 +1812,6 @@ padding:0; margin:0;
     border-radius: 10px !important;
 }
 
-
 /* @ D13: Suggestion - obsidian autocomplete for notes */
 
 .suggestion-item.is-selected:hover {
@@ -1821,9 +1820,25 @@ padding:0; margin:0;
     color: black ;
 }
 
-.templater-prompt-input:focus, .dropdown:focus, input:not(input[type="range"]):focus, .search-result-file-match:not(.search-info-more-matches):hover {   
+input.prompt-input {    background-color: var(--text-antinormal);
+}
+
+.prompt-input-container {
+    border-bottom: 1.25px solid gray;
+    background-color: var(--text-antinormal);
+}
+
+
+/*
+.templater-prompt-input:focus, .dropdown:focus, input:not(input[type="range"]):focus, .search-result-file-match:not(.search-info-more-matches):hover {
+    border: 2px solid var(--text-accent) !important;
+    border-radius: 8px;
     box-shadow: 0px 0px 5px #ffb86c7a;
-    border: 1.5px solid var(--text-accent) !important;
+}
+*/
+
+.prompt-results {
+    padding: 1px 5px;
 }
 
 /* =================== PART III. MARKDOWN =================== */
@@ -4318,6 +4333,18 @@ button.kanban-plugin__new-item-button{
 /* Plugin - Excalidraw */
 /*================*/
 
+.excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon, .excalidraw .ToolIcon.fillable .ToolIcon_type_checkbox:checked+.ToolIcon__icon {
+    background-color: transparent !important;
+}
+
+.excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon {
+    --icon-fill-color: none;
+}
+
+.excalidraw .ToolIcon .ToolIcon_type_radio:checked+.ToolIcon__icon {
+    background: transparent !important;
+}
+
 .excalidraw .buttonList label.active, .excalidraw .buttonList button.active, .excalidraw .buttonList .zIndexButton.active {
     background-color: transparent !important;
 }
@@ -4481,5 +4508,4 @@ body:not(.pt-disable-animations) .nav-folder-title:not([data-path="/"]) {
 }
 
 */
-
 
