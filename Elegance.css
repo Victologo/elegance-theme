@@ -3968,11 +3968,107 @@ span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-ToDo{
     color: white !important;
 }
 
-span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-InProgress{
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-InProgress {
     background-color: rgb(166 104 0);
     color: white !important;
 }
 
+
+a.tag[href*='#guion'] {
+    background-color: rgb(161, 20, 255) !important;
+    color: white !important;
+}
+
+a.tag[href*='#guion']:hover {
+    background-color:  white !important;
+    color: rgb(161, 20, 255) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-guion {
+    background-color: rgb(161, 20, 255) !important;
+    color: white !important;
+}
+
+a.tag[href*='#grabar'] {
+    background-color: rgb(141, 0, 206) !important;
+    color: white !important;
+}
+
+a.tag[href*='#grabar']:hover {
+    background-color:  white !important;
+    color: rgb(141, 0, 206) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-grabar {
+    background-color: rgb(141, 0, 206) !important;
+    color: white !important;
+}
+
+a.tag[href*='#editar'] {
+    background-color: rgb(114, 0, 163) !important;
+    color: white !important;
+}
+
+a.tag[href*='#editar']:hover {
+    background-color:  white !important;
+    color: rgb(114, 0, 163) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-editar {
+    background-color: rgb(114, 0, 163) !important;
+    color: white !important;
+}
+
+a.tag[href*='#miniatura'] {
+    background-color: rgb(98, 0, 109) !important;
+    color: white !important;
+}
+
+a.tag[href*='#miniatura']:hover {
+    background-color:  white !important;
+    color: rgb(98, 0, 109) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-miniatura {
+    background-color: rgb(98, 0, 109) !important;
+    color: white !important;
+}
+
+a.tag[href*='#publicar'] {
+    background-color: rgb(68, 0, 66) !important;
+    color: white !important;
+}
+
+a.tag[href*='#publicar']:hover {
+    background-color:  white !important;
+    color: rgb(68, 0, 66) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-publicar {
+    background-color: rgb(68, 0, 66) !important;
+    color: white !important;
+}
+
+a.tag[href*='#compartirRRSS'] {
+    background-color: rgb(56, 0, 31) !important;
+    color: white !important;
+}
+
+a.tag[href*='#compartirRRSS']:hover {
+    background-color:  white !important;
+    color: rgb(56, 0, 31) !important;
+    font-weight: bold;
+}
+
+span.cm-hashtag.cm-hashtag-end.cm-meta.cm-tag-compartirRRSS {
+    background-color: rgb(56, 0, 31) !important;
+    color: white !important;
+}
 
 /*----------------------------------------*/
 /* End - Snippet - Customize tag colours */
@@ -4347,6 +4443,10 @@ button.kanban-plugin__new-item-button{
 
 .excalidraw .buttonList label.active, .excalidraw .buttonList button.active, .excalidraw .buttonList .zIndexButton.active {
     background-color: transparent !important;
+}
+
+.excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon, .excalidraw .ToolIcon.fillable .ToolIcon_type_checkbox:checked+.ToolIcon__icon {
+    background-color: var(--text-accent) !important;
 }
 
 /*------------------------*/
