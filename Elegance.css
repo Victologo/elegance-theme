@@ -2226,6 +2226,10 @@ section.footnotes li[data-footnote-id] {
 
 /* rule line when there are checkboxes*/
 
+.markdown-source-view.mod-cm6 .cm-indent::before {
+    border-right: 1.5px solid var(--interactive-normal);
+}
+
 ul .task-list-item ul::before {
 left: 0em 
 }
