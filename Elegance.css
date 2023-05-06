@@ -681,6 +681,11 @@ input.prompt-input {
         left: 5px;
     }
 
+    .search-results-info .dropdown {
+        color: var(--text-faint) !important;
+    }
+
+
     /* Cross clear button */
 
     .search-input-clear-button:hover {
@@ -4260,9 +4265,8 @@ mjx-math {
 
 #calendar-container td {
 width: 12.5%;
-
-padding: 0px 0px 0px 0px !important;
-line-height: 22px;
+padding: 0px !important;
+line-height: 17px;
 border-radius: 0px !important;
 }
 
@@ -4328,13 +4332,13 @@ margin: -8px 0;
 /*月份调整 month*/
 
 #calendar-container .month {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1;
 }
 /*年份调整 year*/
 
 #calendar-container .year {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1;
 }
 /*星期数 week*/
