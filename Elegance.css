@@ -613,9 +613,9 @@ input.prompt-input {
     }
 
     .nav-folder.mod-root .nav-folder > .nav-folder-children {     
-        border-left: 1.8px solid rgba(255, 208, 0, 0.403);
+        border-left: 1.8px solid rgba(255, 208, 0, 0.403) !important;
         padding-left: 14px;
-        margin-left: 5.75px;
+        margin-left: 2px;
     }
 
 /* @ WS A2: Note Pane*/
