@@ -894,7 +894,15 @@ body{
         flex: 0 0 auto;
         margin: 0px 0px 0px -2.2px;
     }
+
+    .search-result {
+        margin: 0px 0px 0px -12px;
+    }
     
+    .search-results-children .tree-item-inner {
+        margin: 0px 0px 0px 15px;
+    }
+
     .pdf-sidebar-container .pdf-thumbnail-view, .pdf-sidebar-container .pdf-outline-view .tree-item-icon {
        margin: 0 0 0 -20px; 
     }
