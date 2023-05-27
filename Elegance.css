@@ -892,7 +892,11 @@ body{
         padding-inline-start: 0px;
         padding-inline-end: 3.5px;
         flex: 0 0 auto;
-        margin: 0px 0px 0px -4px;
+        margin: 0px 0px 0px -2.2px;
+    }
+    
+    .pdf-sidebar-container .pdf-thumbnail-view, .pdf-sidebar-container .pdf-outline-view .tree-item-icon {
+       margin: 0 0 0 -20px; 
     }
     
     .outline .tree-item .tree-item-children .tree-item .tree-item-self {
@@ -2425,7 +2429,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 .markdown-rendered.show-indentation-guide li.task-list-item > ul::before, .markdown-rendered.show-indentation-guide li.task-list-item > ol::before {
-    left: -0.7em !important;
+    left: -0.8em !important;
     top: 6px;
     bottom: 6px;
 }
