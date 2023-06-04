@@ -526,11 +526,22 @@ input.prompt-input {
     
     .nav-folder-children .nav-folder-title-content::before {
         content: '📂 ';
+        padding: 0px 0px 0px 8px;
     }
+
 
 /* # A1.2 Folder and File Names*/
         /* ! A1.2.1 File Names*/
         
+
+    .nav-folder-title:hover {
+        border: 1.5px solid var(--text-accent) !important;
+        border-radius: 5px !important;
+        transform: scale(1.02);
+        min-width: 100% !important;
+        font-weight: 650 !important;
+    }
+
     .nav-file-title {
         display: flex;
         border: 1px solid transparent;
@@ -556,7 +567,7 @@ input.prompt-input {
         min-width: 99% !important;
         max-width: 1000% !important;
     }
-    
+ 
     .nav-folder-title {
         display: flex;
         border: 1px solid transparent;
@@ -571,21 +582,8 @@ input.prompt-input {
         font-weight: 650;
     }
 
-    .nav-folder-title:hover {
-        border: 1.5px solid var(--text-accent) !important;
-        border-radius: 7px !important;
-        max-width: fit-content;
-        min-width: auto;
-        transform: scale(1.02);
-        transition: 35ms ease-out;
-        min-width: 99% !important;
-        max-width: 1000% !important;
-        font-weight: 650 !important;
-    }
-    
-    .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
-        padding: 10px 0px 5px;
-        border-left: 0px solid#ffffff00;
+ .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
+        padding: 10px 0px 5px 10px;
         border-radius: 20px;
         margin: 2px
     }
@@ -614,10 +612,10 @@ input.prompt-input {
 
     .nav-folder.mod-root .nav-folder > .nav-folder-children {     
         border-left: 1.8px solid rgba(255, 208, 0, 0.403) !important;
-        padding-left: 14px;
-        margin-left: 2px;
+        padding-left: 30px;
+        margin-left: -0.5px;
     }
-
+   
 /* @ WS A2: Note Pane*/
 
     
@@ -827,7 +825,7 @@ body{
     }
     
     .outline {
-        padding: 5px 0px 0px 0px;
+        padding: 5px 0px 0px 5px;
     }
 
     .outline .tree-item >.tree-item-children >.tree-item > .tree-item-children  .tree-item {
@@ -892,7 +890,7 @@ body{
         padding-inline-start: 0px;
         padding-inline-end: 3.5px;
         flex: 0 0 auto;
-        margin: 0px 0px 0px -2.2px;
+        margin: -5px;
     }
 
     .search-result {
@@ -929,7 +927,7 @@ body{
         content: "ᛜ" ;
         font-size: 1.2em;
         font-weight: 500;
-        padding-right: 3.75px;
+        padding: 0px 5px 0px 10px;
     }
 
     .outline .tree-item >.tree-item-children .tree-item-self .tree-item-inner::before {
@@ -1828,6 +1826,7 @@ padding:0; margin:0;
     border-color: var(--interactive-accent) !important;
     border-radius: 10px !important;
 }
+
 
 /* @ D13: Suggestion - obsidian autocomplete for notes */
 
