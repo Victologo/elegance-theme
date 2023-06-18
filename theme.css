@@ -516,7 +516,7 @@ input.prompt-input {
     }
 
     .nav-file-title:not([data-path="/"]), .nav-folder-title:not([data-path="/"]) {
-        max-width: -webkit-fill-available;
+        /*max-width: -webkit-fill-available;*/
         padding: inherit;
         line-height: 19px;
         border: var(--border-size) solid transparent;
