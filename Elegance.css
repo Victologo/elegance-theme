@@ -1227,13 +1227,6 @@ body{
     color: var(--tab-text-nofocus);
 }
 
-.workspace .mod-root .workspace-tab-header-inner-title {
-    text-overflow: ellipsis;
-    width: 100%;
-    text-align: center;
-    font-size: 1.02em;
-    font-weight: 500;
-}
 
 /* Remove a bug */
 
@@ -1252,6 +1245,11 @@ body{
 .workspace-tab-header.is-active {
     background-color: var(--background-secondary-alt) !important;
 }
+
+.workspace .mod-root .workspace-tab-header-inner-title {
+    text-align: center;
+}
+
 /* White title of the note, focus, active or not, always */
 
 .workspace-leaf.mod-active .view-header-title, .workspace-leaf.mod-active .view-header-icon {
@@ -1266,6 +1264,8 @@ from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
 body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
     width: 999px;
     max-width: 9999px;
+    font-size: 1.02em;
+    font-weight: 500;
 }
 
 /* @ WS B5: Rendered notes */
