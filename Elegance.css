@@ -523,7 +523,11 @@ input.prompt-input {
     }
     
     /* Folder and file icons */
-    
+
+    .nav-folder-title-content {
+        overflow: inherit;
+    }
+
     .nav-folder-children .nav-folder-title-content::before {
         content: '📂 ';
         padding: 0px 0px 0px 8px;
@@ -1221,6 +1225,14 @@ body{
 }
 .workspace-tab-header {
     color: var(--tab-text-nofocus);
+}
+
+.workspace .mod-root .workspace-tab-header-inner-title {
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+    font-size: 1.02em;
+    font-weight: 500;
 }
 
 /* Remove a bug */
