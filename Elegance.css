@@ -80,11 +80,6 @@ Thanks to:
         @ A1 File Explorer
             # A1.1 Vault Name 
             # A1.2 File and Folder Name
-                ! A1.2.1 File Name
-                    ? Wrap File Name
-                ! A1.2.2 Wrap Folder Name
-            # A1.5 Icon Styling
-            # A1.6 Bare Styling 
         @ A2 Note Pane
             # A2.1 Note Titlebar
                 ! A2.1.1 Idle Note
@@ -95,38 +90,10 @@ Thanks to:
                 ! A2.2.2 Codeblock
             # A2.3 Document Search
             # A2.4 Empty Note Pane
-            # A2.5 Active Line Highlight
-        @ A3 Side Panes
-            # A3.1 Side Panes Body
-            # A3.2 Workspace Tab Header Icons
-                ! A3.2.1 Declare
-                ! A3.2.2 Size/Style
-            # A3.3 Pane Header Icons
-            # A3.4 Pane Header Deco
-                ! A3.4.1 Image
-                ! A3.4.2 Icon
-                ! A3.4.3 Text
-                ! A3.4.4 Logo
-        @ A4 Tag Pane
-            # A4.1 Relationship Lines
-            # A4.2 Counter Flair
-            # A4.3 Hover Glow
-            # A4.4 Icon Styling
-            # A4.5 Bare Styling
-            # A4.6 Bubbled Styling 1
-                ! A4.6.1 Bubbled Container
-                ! A4.6.2 Gradient Colors
-            # A4.7 Bubbled Styling 2
-            # A4.8 Box Styling
         @ A5 Outline Pane
             # A5.1 Relationship Lines
             # A5.2 Hover Glow
             # A5.3 Icon Styling
-            # A5.4 Bare Styling
-            # A5.5 Bubbled Styling 1
-                ! A5.5.1 Bubbled Container
-                ! A5.5.2 Gradient Colors
-            # A5.6 Bubbled Styling 2
             # A5.7 Box Styling
         @ A6 Search, Backlinks and Outgoing Links Pane
             # A6.1 Search Results
@@ -144,7 +111,6 @@ Thanks to:
                 * Line
                 * Text
                 * Fill Highlight
-                * Line Highlight
     ~ WS B: Window
         @ B1: Side Dock Ribbon (+ Mobile toolbar)
             # B1.1 Collapsed
@@ -228,9 +194,6 @@ Thanks to:
                 ! Metadata Container
                 ! Document Search
                 ! Empty Note
-            # B1.3 Side Panes
-                ! Transform
-                ! Flair
             # B1.4 Graph Pane
                 ! Arrow
                 ! Tag
@@ -240,9 +203,7 @@ Thanks to:
                 ! Circle
                 ! Line
                 ! Text
-                ! Highlight
-                ! Line Highlight
-        @ SPACE B2: Window and Settings
+                ! Highlight        @ SPACE B2: Window and Settings
             # Side Dock Ribbon
             # Settings Modal
             # Theme Store Items
@@ -536,9 +497,7 @@ input.prompt-input {
 
 
 /* # A1.2 Folder and File Names*/
-        /* ! A1.2.1 File Names*/
         
-
     .nav-folder-title:hover {
         border: 1.5px solid var(--text-accent) !important;
         border-radius: 5px !important;
@@ -599,7 +558,6 @@ input.prompt-input {
             transparent 60px,
             transparent 61px,
             transparent 100%);
-    
     }
 
     .nav-folder {
@@ -620,9 +578,8 @@ input.prompt-input {
         padding-left: 30px;
         margin-left: -0.5px;
     }
-   
-/* @ WS A2: Note Pane*/
 
+/* @ WS A2: Note Pane*/
     
 /* Title of the note in preview mode, above note */
 
@@ -649,7 +606,6 @@ input.prompt-input {
     50% { /*color: var(--text-accent);*/ opacity: 0.55;}
     100% { /*color: var(--text-accent); */ opacity: 1;}
 }
-
 
     /* # A2.1 Document Search*/
 
@@ -687,7 +643,6 @@ input.prompt-input {
     .search-results-info .dropdown {
         color: var(--text-faint) !important;
     }
-
 
     /* Cross clear button */
 
@@ -1177,6 +1132,20 @@ body{
         opacity: 1;
     }
 
+    .theme-dark {
+        --arrow1: rgba(99, 99, 99, 0.687);
+    }
+
+    .theme-light {
+        --arrow1: rgba(211, 211, 211, 0.852);
+    }
+
+    .workspace button:not(.graph-controls button, .excalidraw button) {
+        color: var(--color-white);
+        background: var(--arrow1);
+        box-shadow: none;
+        margin: 2px;
+    }
 
     /* # B1.2 Ribbon Icons */
     .side-dock-ribbon svg {
