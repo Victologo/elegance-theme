@@ -619,8 +619,14 @@ input.prompt-input {
 
     .document-search-container button {
         padding-top: 0px !important;
-        color: black;
+        color: #3c3c3c;
         font-family: var(--font-reg);
+        background-color: var(--interactive-normal) !important;
+    }
+
+    .document-search-container button:hover {
+        color: black !important;
+        background-color: var(--interactive-hover) !important;
     }
 
     .document-search-button:hover {
@@ -1141,7 +1147,6 @@ body{
     }
 
     .workspace button:not(.graph-controls button, .excalidraw button) {
-        color: var(--color-white);
         background: var(--arrow1);
         box-shadow: none;
         margin: 2px;
@@ -1344,6 +1349,11 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
 }
 
 /* ~~~~~~~~~~~~~~~~~~ WS C: Settings Menu ~~~~~~~~~~~~~~~~~~ */
+
+.smalltalk .page header, .smalltalk input, .smalltalk button {
+    border: 1.5px solid var(--interactive-accent) !important;
+    border-radius: 3px;
+}
 
 .modal button:not(.mod-cta):not(.mod-warning):hover {
     background-color: black;
@@ -2209,6 +2219,11 @@ section.footnotes li[data-footnote-id] {
         font-weight: bold;
     }
     
+    /* # A9.4 Tag Container*/
+
+    .tag-container {
+        padding: 0px;
+    }
 
 /* @ MARKDOWN A10: Brackets */
 
