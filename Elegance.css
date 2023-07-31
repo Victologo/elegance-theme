@@ -57,7 +57,6 @@ Thanks to:
  --------------------------------------------------------------------------- */
 
 
-
 /* *==========  Table of Content (TOC) ========== 
     *I. GENERAL
     *II. WORKSPACE
@@ -82,14 +81,8 @@ Thanks to:
             # A1.2 File and Folder Name
         @ A2 Note Pane
             # A2.1 Note Titlebar
-                ! A2.1.1 Idle Note
-                ! A2.1.2 Active Note
-                ! A2.1.3 Mobile
-            # A2.2 Metadata Container
-                ! A2.2.1 Regular Container
-                ! A2.2.2 Codeblock
-            # A2.3 Document Search
-            # A2.4 Empty Note Pane
+            # A2.2 Document Search
+            # A2.3 Empty Note Pane
         @ A5 Outline Pane
             # A5.1 Relationship Lines
             # A5.2 Hover Glow
@@ -273,7 +266,7 @@ Thanks to:
 
 /* Import the font "Source Sans 3" from a google URL */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
 
 /* @ FONTS A2: Font Assignments*/
 
@@ -388,7 +381,6 @@ Thanks to:
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0.287);
     --external-link: rgb(96, 123, 4);
     --pre-code: rgba(0, 0, 0, 0.044);
-
 
     --quote-bg: rgba(164, 164, 160, 0.15);
 
@@ -580,8 +572,10 @@ input.prompt-input {
     }
 
 /* @ WS A2: Note Pane*/
-    
-/* Title of the note in preview mode, above note */
+
+    /* # A2.1 Note Titlebar */
+
+    /* Title of the note in preview mode, above note */
 
 .inline-title {
     font-size: 20px;
@@ -607,7 +601,7 @@ input.prompt-input {
     100% { /*color: var(--text-accent); */ opacity: 1;}
 }
 
-    /* # A2.1 Document Search*/
+    /* # A2.2 Document Search */
 
     input.document-search-input.mod-no-match {
         background-color: var(--background-modifier-error);
@@ -666,89 +660,89 @@ input.prompt-input {
         color: var(--text-accent);
     }
 
-        /* # A2.4 Empty Note Pane*/
+        /* # A2.3 Empty Note Pane*/
 
-.theme-dark .empty-state {
-    font-size: 20px;
-    animation-name: title_dark;
-    animation-duration: 3.5s ;
-    animation-iteration-count: infinite;
-}
-
-.theme-light .empty-state {
-    font-size: 20px;
-    animation-name: title_light;
-    animation-duration: 3.5s ;
-    animation-iteration-count: infinite;
-}
-
-@keyframes title_dark {
-    0% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
-    50% {color:rgb(255 255 255 / 70%); background-color:  var(--background-primary);}
-    100% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
-}
-
-@keyframes title_light {
-    0% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
-    50% {color:rgb(50 50 50 / 60%); background-color:  var(--background-primary);}
-    100% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
-}
-
-.empty-state-action{
-    font-size: 17px;
-    line-height: 46px;
-    color: var(--text-accent);
-}
-
-.empty-state-title {
-    padding-bottom: 33px;
-}
-
-left-split .workspace-tab-header.is-active{
-    background-color: var(--text-accent) !important;
-}
-
-/*
-Symbol in background
-from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
-*/
-
-
-body{
-    --signature:"֎"
-}
-
-.mod-root .empty-state-title::before {
-    content: var(--signature);
-    font-size: 4.5rem;
-    font-weight: 400;
-    color: var(--text-accent);
-    transition: 200ms;
-    margin: -33px 0px 0px -80px !important;
-    position: absolute;
-    animation-name: text_accent_flash;
-    animation-duration: 3.5s ;
-    animation-iteration-count: infinite;
-}
-
-.mod-root .empty-state-title::after {
-    content: var(--signature);
-    font-size: 4.5rem;
-    font-weight: 400;
-    color: var(--text-accent);
-    transition: 200ms;
-    margin: -33px 0px 0px 9.5px;
-    position: absolute;
-    animation-name: text_accent_flash;
-    animation-duration: 3.5s ;
-    animation-iteration-count: infinite;
-}
-
-@keyframes text_accent_flash {
-    0% {color: var(--text-accent);}
-    50% {color:rgba(248, 173, 93, 0.482);}
-    0% {color:var(--text-accent);}
-}
+    .theme-dark .empty-state {
+        font-size: 20px;
+        animation-name: title_dark;
+        animation-duration: 3.5s ;
+        animation-iteration-count: infinite;
+    }
+    
+    .theme-light .empty-state {
+        font-size: 20px;
+        animation-name: title_light;
+        animation-duration: 3.5s ;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes title_dark {
+        0% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
+        50% {color:rgb(255 255 255 / 70%); background-color:  var(--background-primary);}
+        100% {color:rgb(255 255 255 / 100%); background-color: var(--background-secondary);}
+    }
+    
+    @keyframes title_light {
+        0% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
+        50% {color:rgb(50 50 50 / 60%); background-color:  var(--background-primary);}
+        100% {color:rgb(50 50 50 / 100%); background-color: var(--background-secondary);}
+    }
+    
+    .empty-state-action{
+        font-size: 17px;
+        line-height: 46px;
+        color: var(--text-accent);
+    }
+    
+    .empty-state-title {
+        padding-bottom: 33px;
+    }
+    
+    left-split .workspace-tab-header.is-active{
+        background-color: var(--text-accent) !important;
+    }
+    
+    /*
+    Symbol in background
+    from Shimmering Focus (https://github.com/chrisgrieser/shimmering-focus)
+    */
+    
+    
+    body{
+        --signature:"֎"
+    }
+    
+    .mod-root .empty-state-title::before {
+        content: var(--signature);
+        font-size: 4.5rem;
+        font-weight: 400;
+        color: var(--text-accent);
+        transition: 200ms;
+        margin: -33px 0px 0px -80px !important;
+        position: absolute;
+        animation-name: text_accent_flash;
+        animation-duration: 3.5s ;
+        animation-iteration-count: infinite;
+    }
+    
+    .mod-root .empty-state-title::after {
+        content: var(--signature);
+        font-size: 4.5rem;
+        font-weight: 400;
+        color: var(--text-accent);
+        transition: 200ms;
+        margin: -33px 0px 0px 9.5px;
+        position: absolute;
+        animation-name: text_accent_flash;
+        animation-duration: 3.5s ;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes text_accent_flash {
+        0% {color: var(--text-accent);}
+        50% {color:rgba(248, 173, 93, 0.482);}
+        0% {color:var(--text-accent);}
+    }
 
 /* @ WS A5: Outline Pane*/
 
@@ -1733,6 +1727,11 @@ body:not(.native-scrollbars) * {
     background-color: rgba(0, 0, 0, 0.075);
     border: 2px solid var(--text-accent);
     transition: transform 0.29s ease-out 0s;
+}
+
+select {
+    color: var(--text-antinormal);
+    font-weight: bold;
 }
 
 .menu-item-icon.selected{
@@ -3062,7 +3061,7 @@ Support my work:https://github.com/sponsors/kepano */
 }
 
 .cards table.dataview > tbody > tr:hover {
-    border: 2.15px solid var(--text-accent);
+    border: 2.15px solid var(--text-accent) !important;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.21) !important;
     transition: box-shadow 0.15s linear;
     background-color: rgba(0, 0, 0, 0.9);
