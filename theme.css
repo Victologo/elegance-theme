@@ -334,7 +334,7 @@ Thanks to:
     --font-ui-large: 20px;
 
     --list-indent: 1.9em;
-    --file-margins: 4px;
+    --file-margins: 8px;
     
     --fbold: rgb(255, 251, 200);
     --fitalic: rgb(255, 251, 200);
@@ -425,8 +425,8 @@ Thanks to:
 .markdown-source-view.mod-cm6{
     position: relative;
     height: 100%;
-    padding-left: 1.7%;
-    padding-right: 1.7%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 /* quick switcher*/
@@ -1106,6 +1106,26 @@ input.prompt-input {
         padding-left: 0px;
         padding-right: 0px;
     }
+
+    .markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
+        padding-right: 0em;
+        right: 0em;
+    }
+
+    /* Metadata properties */
+
+    .metadata-properties-heading .collapse-indicator {
+        position: absolute;
+        left: -25px;
+    }
+
+    .markdown-preview-view.show-properties .metadata-container {
+        text-align: center;
+    }
+
+    .metadata-properties-heading:before {
+    }
+
 
         /* # B1.1 Note title arrows */
 
@@ -2075,11 +2095,13 @@ a,
 .theme-dark .cm-s-obsidian span.cm-url {
     color: rgb(255, 219, 180);
     font-style: italic;
+    cursor: pointer;
 }
 
 .theme-light .cm-s-obsidian span.cm-url {
     color: rgb(234, 148, 0);
     font-style: italic;
+    cursor: pointer;
 }
 
 /* @ MARKDOWN A5: Inline Code (for editor) */
