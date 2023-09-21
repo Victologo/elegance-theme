@@ -2559,11 +2559,16 @@ ul > li.task-list-item .task-list-item-checkbox {
     --table-border-radius: 5px;
 }
 
-tbody tr:hover td {
-    background-color: var(--background-tertiary) !important;
-
+.theme-light tbody tr:hover td {
+    background-color:  rgba(0, 0, 0, 0.1) !important;
 }
 
+.theme-dark tbody tr:hover td {
+    background-color:  rgba(151, 222, 255, 0.09) !important;
+}
+
+.theme-light .cards table.dataview > tbody > tr:hover {
+}
 
 .markdown-rendered tbody tr > td:nth-child(2n+1) {
     background-color: var(--background-secondary-alt);
@@ -3086,9 +3091,6 @@ Support my work:https://github.com/sponsors/kepano */
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-.theme-light .cards table.dataview > tbody > tr:hover {
-    background-color: lightgrey;
-}
 
 /* Styling elements inside cards */
 
