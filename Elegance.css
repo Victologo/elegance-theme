@@ -1487,6 +1487,8 @@ button.mod-cta:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    color: black !important;
+    font-weight: 900;
 }
 
 .modal {
