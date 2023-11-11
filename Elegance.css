@@ -521,7 +521,12 @@ input.prompt-input {
         font-size: 15px;
         font-weight: 650;
     }
+    
+    .tree-item-self .tree-item-icon {
+        margin-left: -8px;
+    }
 
+    
  .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
         padding: 10px 0px 5px 10px;
         border-radius: 20px;
