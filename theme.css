@@ -233,6 +233,7 @@ Thanks to:
     ~ Snippet - Popover
     ~ Snippet - MathJax
     ~ Snippet - Active Block - Active Line - Guide line in editor
+    ~ Snippet - Metadata Menu
 *V. PLUGIN STYLING
     ~ Plugin - Banners
     ~ Plugin - Calendar
@@ -470,6 +471,11 @@ input.prompt-input {
         content: '📂 ';
         padding: 0px 0px 0px 8px;
     }
+
+    .side-dock-settings, .side-dock-actions {
+        gap: 0px;
+    }
+
 
 
 /* # A1.2 Folder and File Names*/
@@ -1188,7 +1194,11 @@ input.prompt-input {
 
 .status-bar-item {
     display: inline-block;
-    padding: 0 7px 0px 7px;
+    padding: 0 3px 0px 3px;
+}
+
+.status-bar-item-segment {
+    margin-right: 8px;
 }
 
 /* @ WS B4: Tabs */
@@ -4224,6 +4234,23 @@ mjx-math {
 /* End - Snippet - Active Block - Active Line - Guide line in editor */
 /* ---------------------------------------------------------------- */
 
+
+
+/* ======================================= */
+/* Snippet - Active Block - Metadata Menu */
+/* ===================================== */
+
+.nav-folder .metadata-menu.fileclass-icon {
+    color: var(--text-antinormal);
+    }
+
+.metadata-menu.modal-container.note-fields-modal button {
+    padding: 0.2em;
+}
+
+/* ------------------------------ */
+/* End - Snippet - Metadata Menu */
+/* ---------------------------- */
 
 
 /* =========== PART V. PLUGIN STYLING =========== */
