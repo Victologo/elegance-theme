@@ -489,18 +489,11 @@ input.prompt-input {
     }
 
     .nav-file-title {
-        display: flex;
-        border: 1px solid transparent;
-        border-radius: 3px;
-        cursor: pointer;
-        font-size: 14px;
-        line-height: 20px;
-        padding: 1px 0px 0 9px;
         white-space: nowrap;
         width: max-content;
         min-width: 100%;
         font-size: 15px;
-        margin-left: 10px;
+        left: 3.5px;
     }
 
     .nav-file-title:hover {
@@ -512,8 +505,10 @@ input.prompt-input {
         transition: 35ms ease-out;
         min-width: 99% !important;
         max-width: 1000% !important;
+        font-weight: bold !important;
+        color: var(--text-accent) !important;
     }
- 
+
     .nav-folder-title {
         display: flex;
         border: 1px solid transparent;
@@ -527,12 +522,14 @@ input.prompt-input {
         font-size: 15px;
         font-weight: 650;
     }
+    .nav-folder-title:hover {
+        color: var(--text-accent) !important;
+    }
     
     .tree-item-self .tree-item-icon.nav-folder-collapse-indicator {
         margin-left: -8px;
     }
 
-    
 .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
     padding: 10px 0px 5px 10px;
     border-radius: 20px;
@@ -548,23 +545,26 @@ input.prompt-input {
     }
 
     .nav-folder {
-        margin: 0 -3px;
+        margin: 0 -4.5px;
         margin-right: 0px;
         border-left: none;
     }
 
     .nav-file-title.is-active {
-        margin: 0 -3px;
-        background-color: var(--text-accent);
-        color: black;
+        color: var(--text-normal);
         font-weight: bold;
     }
 
     .nav-folder.mod-root .nav-folder > .nav-folder-children {     
         border-left: 1.8px solid rgba(255, 208, 0, 0.403) !important;
-        padding-left: 30px;
+        padding-left: 20px;
         margin-left: -0.5px;
     }
+
+    body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
+        box-shadow: 0 0 0 2px var(--text-accent);
+    }
+
 
 /* @ WS A2: Note Pane*/
 
@@ -4239,11 +4239,11 @@ mjx-math {
 /* ======================================= */
 /* Snippet - Active Block - Metadata Menu */
 /* ===================================== */
-
+/*
 .nav-folder .metadata-menu.fileclass-icon {
     color: var(--text-antinormal);
     }
-
+*/
 .metadata-menu.modal-container.note-fields-modal button {
     padding: 0.2em;
 }
