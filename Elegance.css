@@ -472,10 +472,11 @@ input.prompt-input {
         padding: 0px 0px 0px 8px;
     }
 
+    /*
     .side-dock-settings, .side-dock-actions {
         gap: 0px;
     }
-
+    */
 
 
 /* # A1.2 Folder and File Names*/
@@ -1192,13 +1193,8 @@ input.prompt-input {
     font-weight: 600;
 }
 
-.status-bar-item {
-    display: inline-block;
-    padding: 0 3px 0px 3px;
-}
-
-.status-bar-item-segment {
-    margin-right: 8px;
+.status-bar-item:not(:last-child), .titlebar-button:not(:last-child) {
+    margin-right: -2.5px;
 }
 
 /* @ WS B4: Tabs */
@@ -2386,7 +2382,6 @@ li li li li li li li  {
 li li li li li li li li {
     --list-marker-color: var(--color-pink-list3);
 }
-
 
 li .list-bullet:after {
     width: 0.35em;
