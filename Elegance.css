@@ -263,7 +263,7 @@ Thanks to:
     --font-size-code:                15px;
     --font-size-side-dock:           15px;
     --font-size-side-dock-title:     16px;
-    --font-size-status-bar:          14px;
+    --font-size-status-bar:          13.75px;
     --font-size-h1:                  23px;
     --font-size-h2:                  22px;
     --font-size-h3:                  21px;
@@ -1182,19 +1182,18 @@ input.prompt-input {
 
 .status-bar {
     font-size: var(--font-size-status-bar);
-    font-size: 13.6px;
     background-color: var(--background-secondary-alt);
     color: var(--text-faint);
-    padding: 3px 2px 0px 2px;
+    padding: 0% 0px;
     border: 1px solid rgba(255, 255, 255, 0.715);
-    border-radius: 100px;
-    right: 1px;
-    bottom: 0.5px;
+    border-radius: 7.5px;
+    right: 0.1px;
+    bottom: 0.3px;
     font-weight: 600;
 }
 
-.status-bar-item:not(:last-child), .titlebar-button:not(:last-child) {
-    margin-right: -2.5px;
+.mod-windows .titlebar-button{
+    padding: 0 16px;
 }
 
 /* @ WS B4: Tabs */
@@ -1723,8 +1722,8 @@ body:not(.native-scrollbars) * {
 
 /* @ D10: Menu */
 
-.theme-light .menu {
-    background-color: rgba(0, 0, 0, 0.025);
+.menu {
+    max-width: 225px;
     border: 1.5px solid white !important;
     backdrop-filter: blur(13px) !important;
     border-radius: 6px;
@@ -1733,14 +1732,12 @@ body:not(.native-scrollbars) * {
     overflow: hidden;
 }
 
+.theme-light .menu {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
 .theme-dark .menu {
     background-color: rgba(0, 0, 0, 0.5);
-    border: 1.5px solid white !important;
-    backdrop-filter: blur(13px) !important;
-    border-radius: 6px;
-    box-shadow: 0 0px 10px 0.2px rgba(0, 0, 0, 0.3);
-    max-height: calc(100% - 25px);
-    overflow: hidden;
 }
 
 .theme-dark .menu-item.selected:not(.is-disabled):not(.is-label) {
@@ -1777,7 +1774,8 @@ select {
 }
 
 .menu-item {
-    padding: 2.5px 4px;
+    padding: 1.25px 0px;
+    white-space: break-spaces;
 }
 
 /* @ D11: Suggestion Container */
@@ -1938,7 +1936,7 @@ p {
 }
 
 .HyperMD-header-1, .markdown-preview-section h1, .cm-header-1 {
-    font-size: 19.75px !important;
+    font-size: 18.5px !important;
     font-weight: 700;
     margin: 30px 0px 3px 0px;
     padding-top: 6px;
@@ -1961,7 +1959,7 @@ p {
 .HyperMD-header-2, .markdown-preview-section h2, .cm-header-2 {    font-weight: 700;
     text-decoration: none;
     text-align: center;
-    font-size: 19px;
+    font-size: 18.25px;
     margin: 30px 0px 3px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -1982,7 +1980,7 @@ p {
 .HyperMD-header-3, .markdown-preview-section h3, .cm-header-3 {    font-weight: 700;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 17.85px;
     margin: 28px 0px 5px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -4198,7 +4196,7 @@ mjx-math {
 .theme-dark .cm-active.cm-line {
     border-radius: 3px;
     animation-name: active_line_dark;
-    animation-duration: 2.3s ;
+    animation-duration: 2.5s ;
     animation-iteration-count: infinite;
 }
 
