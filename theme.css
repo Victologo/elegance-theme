@@ -1184,12 +1184,20 @@ input.prompt-input {
     font-size: var(--font-size-status-bar);
     background-color: var(--background-secondary-alt);
     color: var(--text-faint);
-    padding: 0% 0px;
+    padding: 0px 1px;
     border: 1px solid rgba(255, 255, 255, 0.715);
     border-radius: 7.5px;
     right: 0.1px;
     bottom: 0.3px;
     font-weight: 600;
+}
+
+.status-bar-item-segment {
+    margin-right: 4.75px;
+}
+
+.status-bar-item:not(:last-child), .titlebar-button:not(:last-child) {
+    margin-right: -4.5px;
 }
 
 .mod-windows .titlebar-button{
