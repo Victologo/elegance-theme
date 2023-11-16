@@ -1227,7 +1227,6 @@ input.prompt-input {
     color: var(--tab-text-nofocus);
 }
 
-
 /* Remove a bug */
 
 .workspace-tab-header::before {
@@ -1266,6 +1265,22 @@ body:not(.normal-tab-bar) .mod-root .workspace-tab-header:only-child {
     max-width: 9999px;
     font-size: 1.02em;
     font-weight: 500;
+}
+
+/* Different color when Obsidian is active */
+
+body.is-focused .sidebar-toggle-button, body.is-focused .workspace-tabs.mod-top {
+    background-color: var(--background-secondary-alt);
+}
+
+/* Different color of title bar contair (minimize, fullscreen and close Obsidian) */
+
+.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
+    background-color: var(--background-secondary-alt);
+}
+
+.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+    background-color: var(--background-primary);
 }
 
 /* @ WS B5: Rendered notes */
