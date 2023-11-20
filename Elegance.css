@@ -1715,6 +1715,17 @@ body:not(.native-scrollbars) * {
     margin: 1.5em 0;
     justify-content: center;
 }
+
+.community-modal-info {
+    padding: 7px 7px 10px 7px;
+}
+
+.community-modal-info-name {
+    color: var(--text-faint);
+    font-weight: 700;
+}
+
+
 /* @ WS D6: Toggles */
 
 /* @ WS D7: Tooltips */
@@ -4442,9 +4453,8 @@ margin: -8px 0;
 #calendar-container .active.today {
     border-radius: 5px !important;
     color: white !important;
-    background-color: rgba(136, 95, 90, 0.3) !important;
+    background-color: rgb(255 255 255 / 30%) !important;
 }
-
 
 #calendar-container .day:hover {
     background-color: rgba(255, 0, 255, 0.3) !important;
