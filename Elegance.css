@@ -1097,6 +1097,12 @@ input.prompt-input {
     .side-dock-ribbon-action {
         color: var(--text-muted);
     }
+
+    .side-dock-ribbon-action:not(:last-child) {
+        margin-bottom: calc(var(--cmdr-spacing) - 9px)
+    }
+
+
     /* Arrows for collapse */
 
     body:not(.no-svg-replace) svg.right-triangle {
@@ -1187,7 +1193,7 @@ input.prompt-input {
     padding: 0px 1px;
     border: 1px solid rgba(255, 255, 255, 0.715);
     border-radius: 7.5px;
-    right: 0.1px;
+    right: 1px;
     bottom: 0.3px;
     font-weight: 600;
 }
@@ -1918,9 +1924,9 @@ p {
     /*margin-block-end: 1em;*/
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    /*letter-spacing: 0pt;*/   /* para separar entgre letras */
+    /*letter-spacing: 0pt;*/   /* para separar entre letras */
     word-spacing: 0.8pt;     /* para separacion entre palabras */  
-    line-height: 17pt;     /* para la separacion entre lineas */ 
+    line-height: 16.5pt;     /* para la separacion entre lineas */ 
 }
 
 /* @ MARKDOWN A1: Headers */
@@ -2503,7 +2509,7 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 .markdown-preview-view .list-collapse-indicator {
-    padding: 0px 13px 0px 7px;
+    padding: 0px 7px 0px 7px;
 }
 
 ul > li.task-list-item .task-list-item-checkbox {
