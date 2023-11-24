@@ -1856,7 +1856,7 @@ padding:0; margin:0;
 /* Dimensions and color of the embedded note*/
 
 .markdown-preview-view .markdown-embed-content > .markdown-preview-view {
-    max-height: 525px;
+    max-height: 445px;
 }
 
 .markdown-preview-view .markdown-embed-content {
@@ -2496,18 +2496,6 @@ ol > li::marker, ul > li::marker, .cm-s-obsidian .cm-formatting-list {
     background-color: rgba(255, 255, 255, 0.13);
 }
 
-.markdown-rendered.show-indentation-guide li.task-list-item > ul::before, .markdown-rendered.show-indentation-guide li.task-list-item > ol::before {
-    left: -0.8em !important;
-    top: 6px;
-    bottom: 6px;
-}
-
-.markdown-rendered.show-indentation-guide li.task-list-item > ul::before, .markdown-rendered.show-indentation-guide li.task-list-item > ul::before {
-    left: -0.7em;
-    top: 6px;
-    bottom: 6px;
-}
-
 .markdown-preview-view .list-collapse-indicator {
     padding: 0px 7px 0px 7px;
 }
@@ -2533,6 +2521,27 @@ ul > li.task-list-item .task-list-item-checkbox {
   /* red background colour for important task ('- [!]') */
 .markdown-preview-view li[data-task="!"]>.task-list-item-checkbox:checked {
     background-color: #a90000;
+}
+
+/* More compacted lists (indentation lines closer) */
+.markdown-rendered.show-indentation-guide li > ul, .markdown-rendered.show-indentation-guide li > ol {
+    left: -10px;
+}
+
+.markdown-rendered.show-indentation-guide li > ul::before {
+    left: -0.44em;
+}
+
+.markdown-rendered.show-indentation-guide li > ol::before {
+    left: -0.2em;
+}
+
+ul ol::before {
+    left: -0.435em !important;
+}
+
+.markdown-rendered.show-indentation-guide li.task-list-item > ul::before, .markdown-rendered.show-indentation-guide li.task-list-item > ol::before {
+    left: -0.2em !important;
 }
 
 
@@ -4706,4 +4715,3 @@ body:not(.pt-disable-animations) .nav-folder-title:not([data-path="/"]) {
 }
 
 */
-
