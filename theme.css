@@ -253,8 +253,10 @@ Thanks to:
 /* @ FONTS A1: Google Fonts*/
 
 /* Import the font "Source Sans 3" from a google URL */
+/* No more available because of the new developer policy on 2024 (https://docs.obsidian.md/Themes/App+themes/Embed+fonts+and+images+in+your+theme) */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');*/
 
 /* @ FONTS A2: Font Assignments*/
 
@@ -380,7 +382,6 @@ Thanks to:
     --fbold: rgb(55, 0, 0);
     --fitalic: rgb(55, 0, 0);
 }
-
 
 
 /* ~~~~~~~~~~~~~ C: Others  ~~~~~~~~~~~~~ */
@@ -1113,13 +1114,9 @@ input.prompt-input {
     }
     
     .view-content .collapse-indicator svg.svg-icon {
-        margin-left: 7.5px;
+            margin-left: 7.5px;
     }
 
-    .markdown-source-view.mod-cm6 .cm-fold-indicator .collapse-indicator {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
 
     .markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
         padding-right: 0em;
@@ -2998,7 +2995,7 @@ background-color: #262639;
 .markdown-preview-view img {
     cursor: zoom-in;
     border-radius: 7px;
-    transition: 150ms !important;
+    transition: 90ms !important;
 }
 
 .markdown-preview-view img:active {
@@ -3013,12 +3010,12 @@ background-color: #262639;
     object-fit: contain;
     margin:0 auto;
     text-align:center;
-    padding: 31px;
+    padding: 30px;
     left:0;
     right:0;
     bottom:0;
     background:var(--background-primary);
-    transition: 150ms !important;
+    transition: 30ms !important;
 }
 
 /*-------------------------------*/
