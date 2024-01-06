@@ -234,6 +234,7 @@ Thanks to:
     ~ Snippet - MathJax
     ~ Snippet - Active Block - Active Line - Guide line in editor
     ~ Snippet - Metadata Menu
+    ~ Snippet - compact_table_dataview (before: called "Library"
 *V. PLUGIN STYLING
     ~ Plugin - Banners
     ~ Plugin - Calendar
@@ -3101,6 +3102,10 @@ Support my work:https://github.com/sponsors/kepano */
     --cards-min-width: var(--cards-mobile-width);
 }
 
+.cards.markdown-rendered tr {
+    height: auto;
+}
+
     @media (max-width: 400pt) {
 }
 
@@ -4289,6 +4294,24 @@ mjx-math {
 
 /* ------------------------------ */
 /* End - Snippet - Metadata Menu */
+/* ---------------------------- */
+
+
+/* ======================================= */
+/* Snippet - Active Block - compact_table_dataview */
+/* ===================================== */
+
+.compact_table_dataview .table-view-table tr {
+    border-bottom: 1px solid !important;
+}
+
+.compact_table_dataview img:not(.emoji) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* ------------------------------ */
+/* End - Snippet - compact_table_dataview */
 /* ---------------------------- */
 
 
