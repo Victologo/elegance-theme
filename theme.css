@@ -2359,10 +2359,6 @@ ul ol::before {
     padding-bottom: 999em  !important;
 }
 
-.markdown-rendered.show-indentation-guide li > ul::before {
-    left: -1.1em;
-}
-
 .markdown-rendered.show-indentation-guide li > ol::before {
     left: -0.7em;
 }
@@ -2527,7 +2523,7 @@ ul > li.task-list-item .task-list-item-checkbox {
 }
 
 .markdown-rendered.show-indentation-guide li > ul::before {
-    left: -0.44em;
+    left: -0.3em;
 }
 
 .markdown-rendered.show-indentation-guide li > ol::before {
@@ -3011,7 +3007,7 @@ background-color: #262639;
     object-fit: contain;
     margin:0 auto;
     text-align:center;
-    padding: 30px;
+    padding: 24px;
     left:0;
     right:0;
     bottom:0;
