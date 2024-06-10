@@ -469,10 +469,24 @@ input.prompt-input {
         overflow: inherit;
     }
 
-    .nav-folder-children .nav-folder-title-content::before {
-        content: '📂 ';
+    .nav-folder-title-content::before {
+        content: '📂';
         padding: 0px 0px 0px 8px;
+        animation: cambiarOpacidad 5s infinite;
     }
+
+    @keyframes cambiarOpacidad {
+        0% {
+        opacity: 1;
+        }
+        50% {
+        opacity: 0.6;
+        }
+        100% {
+        opacity: 1;
+        }
+    }
+
 
     /*
     .side-dock-settings, .side-dock-actions {
@@ -1316,7 +1330,6 @@ body.is-focused .sidebar-toggle-button, body.is-focused .workspace-tabs.mod-top 
     border-radius: 6px;
 }
 
-
 .theme-light .view-header {
     border-radius: 6px;
 }
@@ -1930,11 +1943,11 @@ p {
 /* @ MARKDOWN A1: Headers */
 
 .theme-dark {
-    --bg-green: rgba(32, 225, 180, 0.47);
-    --bg-blue: rgba(29, 174, 226, 0.48);
-    --bg-purple: rgba(165, 26, 234, 0.47);
-    --bg-magenta: rgba(231, 60, 126, 0.613);
-    --bg-orange: rgba(255, 132, 0, 0.488);
+    --bg-green: rgba(32, 225, 180, 0.4);
+    --bg-blue: rgba(29, 174, 226, 0.4);
+    --bg-purple: rgba(165, 26, 234, 0.4);
+    --bg-magenta: rgba(231, 60, 126, 0.45);
+    --bg-orange: rgba(255, 132, 0, 0.43);
 
     --fcolor-header: white;
 }
@@ -2009,7 +2022,7 @@ p {
         271deg,
         transparent,
         var(--bg-orange),
-        rgba(255, 140, 0, 0.742),
+        rgba(255, 140, 0, 0.51),
         var(--bg-orange), 
         transparent
         );
@@ -3060,8 +3073,8 @@ img {
 img[alt*="left"], .image-embed[src*="#left"], img[src*="#left"] span.left img {
     float: left !important;
     margin-right: 3.5% !important;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 img[alt*="right"], .image-embed[src*="#right"], img[src*="#right"], span.right img {
@@ -3155,7 +3168,7 @@ Support my work:https://github.com/sponsors/kepano */
 .markdown-source-view.mod-cm6.cards .dataview.table-view-table > tbody > tr > td,
 .cards table.dataview tbody > tr > td {
     border-bottom: none;
-    padding: 0 !important;
+    padding: 0px !important;
     line-height: 1.1;
     width: calc(100% - var(--cards-padding));
     margin: 0 auto;
@@ -3293,10 +3306,10 @@ Support my work:https://github.com/sponsors/kepano */
 .cards table.dataview tbody > tr > td img {
     width: 100%;
     object-fit: var(--cards-image-fit);
-    max-height: var(--cards-image-height);
     background-color: var(--background-secondary);
     vertical-align: bottom;
 }
+
 
 /* Block button */
 
@@ -3410,11 +3423,6 @@ Support my work:https://github.com/sponsors/kepano */
     margin: 0rem 0;
 }
 
-.cards table.dataview tbody > tr > td img {
-    margin: -2px 0px 5px 0px !important;
-
-}
-
   /** Flecha para ordenar la tabla de Dataview **/
 
 .cards table.dataview thead:before {
@@ -3435,6 +3443,7 @@ Support my work:https://github.com/sponsors/kepano */
     height: 31px;
     padding-bottom: 4px;
 }
+
 
 /*------------------------*/
 /* End - Snippet - Cards */
