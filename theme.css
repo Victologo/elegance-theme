@@ -1,3 +1,4 @@
+
 /* ---------------------------------------------------------------------------
 
 Elegance theme by: 
@@ -1932,10 +1933,8 @@ input.prompt-input {    background-color: var(--text-antinormal);
 p {
     display: block;
     margin-block-start: 1.15em;
-    /*margin-block-end: 1em;*/
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    /*letter-spacing: 0pt;*/   /* para separar entre letras */
     word-spacing: 0.8pt;     /* para separacion entre palabras */  
     line-height: 16.5pt;     /* para la separacion entre lineas */ 
 }
