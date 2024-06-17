@@ -1,4 +1,3 @@
-
 /* ---------------------------------------------------------------------------
 
 Elegance theme by: 
@@ -494,7 +493,7 @@ input.prompt-input {
         gap: 0px;
     }
     */
-
+    
 
 /* # A1.2 Folder and File Names*/
         
@@ -1498,16 +1497,30 @@ button.mod-cta:hover {
 .setting-item-control select {
     width: inherit;
     max-width: 400px;
-    color: black;
+    color: var(--text-normal) !important;
     font-weight: bold;
 }
 
-.setting-item-control select:hover {
-	background-color: black;
-    color: white !important;
-    outline: 2px solid var(--text-accent);
-    outline-offset: -1.5px;
+.dropdown:focus{
+    box-shadow: 0px 0px 5px #ffb86c7a;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-accent) !important;
 }
+
+.dropdown:hover{
+    background-color: var(--text-antinormal) !important;
+}
+
+
+.dropdown{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
 
 .modal.mod-community-plugin, .modal.mod-publish, .modal.mod-settings, .modal.mod-sync-history, .modal.mod-sync-log {
     width: 90vw;
@@ -1524,22 +1537,6 @@ button.mod-cta:hover {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-}
-
-.dropdown:focus{
-    box-shadow: 0px 0px 5px #ffb86c7a;
-    border: 1.5px solid var(--text-accent) !important;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: black !important;
-    font-weight: 900;
 }
 
 .modal {
@@ -1768,10 +1765,6 @@ body:not(.native-scrollbars) * {
 }
 */
 
-  
-
-/* @ WS D8: Dropdown */
-
 /* @ D10: Menu */
 
 .menu {
@@ -1933,8 +1926,10 @@ input.prompt-input {    background-color: var(--text-antinormal);
 p {
     display: block;
     margin-block-start: 1.15em;
+    /*margin-block-end: 1em;*/
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    /*letter-spacing: 0pt;*/   /* para separar entre letras */
     word-spacing: 0.8pt;     /* para separacion entre palabras */  
     line-height: 16.5pt;     /* para la separacion entre lineas */ 
 }
