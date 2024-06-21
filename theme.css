@@ -292,6 +292,7 @@ Thanks to:
     --background-modifier-error-rgb: 61, 0, 0;
     --background-modifier-error-hover: rgba(171, 0, 0, 0.306);
     --background-modifier-cover: rgba(0, 0, 0, 0.68);
+    --background-accent: rgb(189, 95, 0);
     --text-accent: rgb(248, 173, 93);
     --text-accent-hover: rgb(139, 233, 253);
     --text-normal: white;
@@ -345,7 +346,8 @@ Thanks to:
     --background-modifier-error-rgb: rgb(255, 0, 0);
     --background-modifier-error-hover: rgba(255, 0, 0, 0.616);
     --background-modifier-cover: rgba(0, 0, 0, 0.307);
-    --text-accent:rgb(204, 102, 0);
+    --background-accent: rgb(255, 128, 0);
+    --text-accent:rgb(235, 118, 0);
     --text-accent-hover: rgb(0, 184, 225);
     --text-normal: rgb(6, 6, 6);
     --text-antinormal: white;
@@ -655,6 +657,7 @@ input.prompt-input {
     .search-results-info .dropdown {
         color: var(--text-faint) !important;
     }
+    
 
     /* Cross clear button */
 
@@ -1413,10 +1416,8 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
 }
 
 .modal button:not(.mod-cta):not(.mod-warning):hover {
-    background-color: black;
-    color: white !important;
-    outline: 2px solid var(--text-accent);
-    outline-offset: -1.5px;
+    background-color: var(--text-antinormal);
+    color: var(--text-normal) ;
 }
 
 /* Color of the text and bin icon when deleting a note */
@@ -1443,6 +1444,11 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
     font-size: 14px;
     padding: 6px 20px;
     font-weight: bold;
+}
+
+.setting-item-control:hover button:hover {
+    background-color: var(--text-antinormal);
+    color: var(--text-normal);
 }
 
 .modal-content {
@@ -1488,10 +1494,8 @@ button.mod-cta {
 }
 
 button.mod-cta:hover {
-    background-color: black;
-    color: white !important;
-    outline: 2px solid var(--text-accent);
-    outline-offset: -1.5px;
+    background-color: var(--text-antinormal);
+    color: var(--text-normal) !important;
 }
 
 .setting-item-control select {
@@ -1506,21 +1510,20 @@ button.mod-cta:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: var(--text-accent) !important;
 }
 
 .dropdown:hover{
     background-color: var(--text-antinormal) !important;
+    color: var(--text-normal) !important;
 }
-
 
 .dropdown{
     text-align: center;
     align-items: center;
     justify-content: center;
     font-weight: 900;
+    background-color: var(--background-accent);
 }
-
 
 .modal.mod-community-plugin, .modal.mod-publish, .modal.mod-settings, .modal.mod-sync-history, .modal.mod-sync-log {
     width: 90vw;
@@ -3653,7 +3656,7 @@ ul > li.task-list-item .task-list-item-checkbox {
 }
 
 .checkbox-container:after {
-    background: white;
+    background: var(--text-normal);
     border: none;
     margin: 1px 0 0 0;
     height: 18px;
