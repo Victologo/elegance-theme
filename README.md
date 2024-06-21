@@ -105,7 +105,7 @@ You have to write, for example: `![[image-name.png|right|200]]`. By default, the
 ## To Do (help needed)
 - [ ] Compatibility with the plugin "Style Settings" (contact me by gmail for help, I don't have idea: kolrekole2@gmail.com)
 - [ ] Mobile support
-- [ ] To be able to click + mouse wheel in Elegance theme to be able to modify the font sizse of the carcaters without modifying the rest of the environment (not `ctrl` + `+`)
+- [ ] To be able to click + mouse wheel in Elegance theme to be able to modify the font size of the carcaters without modifying the rest of the environment (not `ctrl` + `+`)
 
 ## Credits
 __About me__  
