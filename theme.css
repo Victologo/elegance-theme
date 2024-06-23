@@ -2618,15 +2618,8 @@ ul ol::before {
     --table-border-radius: 5px;
 }
 
-.theme-light tbody tr:hover td {
-    background-color:  rgba(0, 0, 0, 0.1) !important;
-}
-
-.theme-dark tbody tr:hover td {
-    background-color:  rgba(151, 222, 255, 0.09) !important;
-}
-
-.theme-light .cards table.dataview > tbody > tr:hover {
+.cards table.dataview > tbody > tr:hover {
+    background-color: var(--background-secondary-alt) ;
 }
 
 .markdown-rendered tbody tr > td:nth-child(2n+1) {
@@ -3093,18 +3086,17 @@ img[alt*="right"], .image-embed[src*="#right"], img[src*="#right"], span.right i
 /* MIT License | Copyright (c) Stephan Ango (@kepano) 
 Cards snippet for Obsidian
 author: @kepano
-version: 1.1.0
-Support my work:https://github.com/sponsors/kepano */
+Support kepano's work:https://github.com/sponsors/kepano */
 
 :root {
-    --cards-min-width:174px;
+    --cards-min-width: 174px;
     --cards-max-width: 1fr;
     --cards-mobile-width: 150px;
     --cards-image-height: 400px;
     --cards-padding: 1.2em;
     --cards-image-fit: contain;
     --cards-background: transparent;
-    --cards-border-width:1px;
+    --cards-border-width: 1px;
     --cards-min-width: var(--cards-mobile-width);
 }
 
@@ -3128,30 +3120,38 @@ Support my work:https://github.com/sponsors/kepano */
 
 .cards table.dataview tbody {
     clear: both;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
-    grid-column-gap: 0.75rem;
-    grid-row-gap: 0.75rem;
+    grid-column-gap: 0.65rem;
+    grid-row-gap: 0.65rem;
 }
 
 .cards table.dataview > tbody > tr {
-    background-color: var(--background-secondary-alt);
-    border: 2px solid gray;
+    background-color: var(--background-secondary-alt) ;
+    border: 2px solid var(--text-normal);
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0 0 calc(var(--cards-padding)/3) 0;
     border-radius: 6px;
     overflow: hidden;
-    transition: box-shadow 0.15s linear;
+    transition: box-shadow 0.1s linear;
 }
 
 .cards table.dataview > tbody > tr:hover {
-    border: 2.15px solid var(--text-accent) !important;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.21) !important;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.21) !important;
     transition: box-shadow 0.15s linear;
-    background-color: rgba(0, 0, 0, 0.9);
+    animation-duration: 3s ;
+    animation-iteration-count: infinite;
+    animation-name: cards_border;
+    color: 
+}
+
+@keyframes cards_border {
+0% { border: 2.15px solid var(--text-accent);}
+50% { border: 3.15px solid rgb(255, 228, 200);}
+100% {border: 2.15px solid var(--text-accent);}
 }
 
 
@@ -3166,7 +3166,7 @@ Support my work:https://github.com/sponsors/kepano */
 .cards table.dataview tbody > tr > td {
     border-bottom: none;
     padding: 0px !important;
-    line-height: 1.1;
+    line-height: 1.05;
     width: calc(100% - var(--cards-padding));
     margin: 0 auto;
     overflow: visible !important;
@@ -3175,10 +3175,6 @@ Support my work:https://github.com/sponsors/kepano */
     align-content: space-around;
     align-items: flex-start;
     justify-content: space-around;
-}
-
-.cards .table-view-table > tbody > tr:hover {
-    background-color: var(--text-antinormal) !important;
 }
 
 .cards table.dataview tbody > tr > td .el-p {
@@ -3250,7 +3246,7 @@ Support my work:https://github.com/sponsors/kepano */
 
 /* Paragraphs */
 .cards table.dataview tbody > tr > td > *:not(.el-embed-image) {
-    padding: calc(var(--cards-padding)/3.2) 0;
+    padding: calc(var(--cards-padding)/4) 0;
     text-align: center;
 }
 
@@ -3283,164 +3279,116 @@ Support my work:https://github.com/sponsors/kepano */
 
 .cards table.dataview tbody > tr > td > ul {
     width: 100%;
-    padding: 0.25em 0 !important;
+    padding: 0.1em 0 !important;
     margin: 0 auto !important;
 }
 
 .cards table.dataview tbody > tr > td:not(:last-child) > ul {
     border-bottom: 1px solid var(--background-modifier-border);
+    border-top: 1px solid var(--background-modifier-border);
 }
 
 /* Images */
 
-.cards table.dataview tbody > tr > td .el-embed-image {
-    background-color: var(--background-secondary);
-    display: block;
-    margin: 0 calc(var(--cards-padding)/-2) 0 calc(var(--cards-padding)/-2);
-    width: calc(100% + var(--cards-padding));
-}
-
 .cards table.dataview tbody > tr > td img {
     width: 100%;
     object-fit: var(--cards-image-fit);
-    background-color: var(--background-secondary);
-    vertical-align: bottom;
-}
-
-
-/* Block button */
-
-.markdown-source-view.mod-cm6.cards .edit-block-button {
-    top: 0px;
 }
 
   /* Sorting */
 
-.cards.table-100 table.dataview thead > tr,
-.table-100 .cards table.dataview thead > tr {
-    right: 0.75rem;
-}
 
-.table-100 .cards table.dataview thead:before,
-.cards.table-100 table.dataview thead:before {
-    margin-right: 0.75rem;
-}
 
-.cards table.dataview thead {
-    user-select: none;
-    width: 180px;
-    display: block;
-    float: right;
-    position: relative;
-    text-align: right;
-    height: 24px;
-    padding-bottom: 4px;
-}
+  /* Sorting */
 
-.cards table.dataview thead:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: var(--icon-size);
-    background-repeat: no-repeat;
-    cursor: var(--cursor);
-    text-align: right;
-    padding: 4px 10px;
-    margin-bottom: 2px;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: var(--font-adaptive-small);
-}
-
-.cards table.dataview thead:before {
-    opacity: 0.25;
-    background-position: center center;
-    background-size: var(--icon-size);
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="white" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
-}
-
-.theme-light .cards table.dataview thead:before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
-}
-
-.cards table.dataview thead:hover:before {
-    opacity: 0.5;
-}
-
-.cards table.dataview thead > tr {
-    top: 0;
-    position: absolute;
-    display: none;
-    z-index: 9;
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-secondary);
-    box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
-    padding: 6px;
-    border-radius: 6px;
-    flex-direction: column;
-    margin: 26px 0 0 0;
-    width: 100%; 
-}
-
-.cards table.dataview thead:hover > tr {
-    display: flex; 
-}
-
-.cards table.dataview thead > tr > th {
-    width: 100%;
-    font-weight: 400;
-    color: var(--text-muted);
-    cursor: var(--cursor-link);
-    border: none;
-    background-color: var(--background-secondary); 
-}
-
-.cards table.dataview tbody > tr > td:first-child {
-    font-weight: var(--bold-weight);
-    justify-content: center;
-}
-
-.cards.markdown-preview-view tbody tr:hover {
-    background-color: black;
-}
-
-/*
-.cards.markdown-preview-view tbody tr:nth-of-type(even):hover {
-    background-color: black;
-}
-
-.cards.markdown-preview-view tbody tr:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-*/
-
-.cards.markdown-preview-view table {
-    margin: 0rem 0;
-}
-
-  /** Flecha para ordenar la tabla de Dataview **/
-
-.cards table.dataview thead:before {
-    opacity: 0.75;
-    background-position: center center;
-    background-size: var(--icon-size);
-    background-image: url(data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="white" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>);
-    block-size: 30px;
-}
-
-.cards table.dataview thead {
-    user-select: none;
-    width: 180px;
-    display: block;
-    float: right;
-    position: relative;
-    text-align: right;
-    height: 31px;
-    padding-bottom: 4px;
-}
-
+  .cards.table-100 table.dataview thead > tr,
+  .table-100 .cards table.dataview thead > tr {
+      right: 0.75rem;
+  }
+  
+  .table-100 .cards table.dataview thead:before,
+  .cards.table-100 table.dataview thead:before {
+      margin-right: 0.75rem;
+  }
+  
+  .cards table.dataview thead {
+      user-select: none;
+      width: 180px;
+      display: block;
+      float: right;
+      position: relative;
+      text-align: right;
+      height: 24px;
+      padding-bottom: 4px;
+  }
+  
+  .cards table.dataview thead:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: var(--icon-size);
+      background-repeat: no-repeat;
+      cursor: var(--cursor);
+      text-align: right;
+      padding: 4px 10px;
+      margin-bottom: 2px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: var(--font-adaptive-small);
+  }
+  
+  .cards table.dataview thead:before {
+      opacity: 0.65;
+      background-position: center center;
+      background-size: var(--icon-size);
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="white" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
+  }
+  
+  .theme-light .cards table.dataview thead:before {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
+  }
+  
+  .cards table.dataview thead:hover:before {
+      opacity: 0.9;
+  }
+  
+  .cards table.dataview thead > tr {
+      top: 0;
+      position: absolute;
+      display: none;
+      z-index: 9;
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-secondary);
+      box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+      padding: 6px;
+      border-radius: 6px;
+      flex-direction: column;
+      margin: 26px 0 0 0;
+      width: 100%; 
+  }
+  
+  .cards table.dataview thead:hover > tr {
+      display: flex; 
+  }
+  
+  .cards table.dataview thead > tr > th {
+      width: 100%;
+      font-weight: 400;
+      color: var(--text-muted);
+      cursor: var(--cursor-link);
+      border: none;
+      background-color: var(--background-secondary); 
+  }
+  
+  .cards table.dataview tbody > tr > td:first-child {
+      font-weight: var(--bold-weight);
+      justify-content: center;
+  }
+  
+  .cards.markdown-preview-view tbody tr:hover {
+      background-color: black;
+  }
 
 /*------------------------*/
 /* End - Snippet - Cards */
