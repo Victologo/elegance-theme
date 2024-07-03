@@ -292,7 +292,7 @@ Thanks to:
     --background-modifier-error-rgb: 61, 0, 0;
     --background-modifier-error-hover: rgba(171, 0, 0, 0.306);
     --background-modifier-cover: rgba(0, 0, 0, 0.68);
-    --background-accent: rgb(189, 95, 0);
+    --background-accent: rgb(234, 117, 0);
     --text-accent: rgb(248, 173, 93);
     --text-accent-hover: rgb(139, 233, 253);
     --text-normal: white;
@@ -301,7 +301,7 @@ Thanks to:
     --text-muted2: rgb(255, 255, 255);
     --text-faint: rgb(255, 62, 151);
     --text-highlight-bg: rgba(255, 225, 0, 0.258);
-    --text-error: rgba(253, 0, 72, 0.381);
+    --text-error: rgba(214, 0, 46, 0.925);
     --text-error-hover: rgba(255, 0, 0, 0.466);
     --text-highlight-bg: rgba(255, 255, 0, 0.699);
     --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
@@ -549,7 +549,7 @@ input.prompt-input {
         margin-left: -8px;
     }
 
-.workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
+    .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
     padding: 10px 0px 5px 10px;
     border-radius: 20px;
     margin: 2px
