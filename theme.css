@@ -4526,6 +4526,10 @@ button.kanban-plugin__new-item-button{
     fill: black;
 }
 
+.excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon {
+    --icon-fill-color: black;
+}
+
 /*------------------------*/
 /* End - Plugin - Excalidraw  */
 /*----------------------*/
