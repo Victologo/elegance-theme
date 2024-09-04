@@ -3297,10 +3297,6 @@ Support kepano's work:https://github.com/sponsors/kepano */
 
   /* Sorting */
 
-
-
-  /* Sorting */
-
   .cards.table-100 table.dataview thead > tr,
   .table-100 .cards table.dataview thead > tr {
       right: 0.75rem;
@@ -4526,6 +4522,10 @@ button.kanban-plugin__new-item-button{
     background-color: var(--text-accent) !important;
 }
 
+.excalidraw .ToolIcon.fillable .ToolIcon_type_checkbox:checked+.ToolIcon__icon svg, .excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon svg {
+    fill: black;
+}
+
 /*------------------------*/
 /* End - Plugin - Excalidraw  */
 /*----------------------*/
@@ -4664,6 +4664,7 @@ button.kanban-plugin__new-item-button{
 .workspace-split.mod-right-split {margin-right: 0px;
 }
 */
+
 
 /* barra vertical que corta el work space arreglada */
 
