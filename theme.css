@@ -1138,7 +1138,7 @@ input.prompt-input {
 
     .markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
         padding-right: 0em;
-        right: 0em;
+        right:-0.3em;
     }
 
     /* Metadata properties */
