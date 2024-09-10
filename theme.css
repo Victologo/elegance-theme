@@ -2248,6 +2248,19 @@ section.footnotes li[data-footnote-id] {
     font-size: var(--font-ui-medium);
 }
 
+.cm-s-obsidian .cm-line.HyperMD-footnote {
+    font-size: var(--footnote-size);
+    color: bisque;
+}
+
+.cm-s-obsidian span.cm-footref.cm-hmd-barelink, .cm-s-obsidian span.cm-blockid {
+    color: beige;
+}
+
+.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote {
+    color: beige;
+}
+
 /* @ MARKDOWN A8: Comments*/
 
 /* @ MARKDOWN A9: Tags*/
