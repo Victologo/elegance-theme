@@ -1830,6 +1830,18 @@ select {
 
 /* @ D12: Embedded notes */
 
+.file-embed-title {
+    color: var(--text-faint);
+}
+
+.file-embed {
+    background-color: var(--background-secondary); 
+}
+
+.file-embed:hover {
+    background-color: var(--background-primary-alt) !important;
+}
+
 /* Naked Embeds - Hide name of file */
 
 .markdown-embed-title {
@@ -4211,11 +4223,11 @@ mjx-math {
 }
 
 @keyframes active_line_dark {
-    0% {background-color: rgb(255 218 254 / 10.5%);}
-    15% {background-color: rgb(255 218 254 / 10.5%);}
-    50% {background-color:  rgb(255 218 254 / 5.5%);}
-    85% {background-color: rgb(255 218 254 / 10.5%);}
-    100% {background-color: rgb(255 218 254 / 10.5%);}
+    0% {background-color: rgb(255 218 254 / 9%);}
+    15% {background-color: rgb(255 218 254 / 9%);}
+    50% {background-color:  rgb(255 218 254 / 4%);}
+    85% {background-color: rgb(255 218 254 / 9%);}
+    100% {background-color: rgb(255 218 254 / 9%);}
 }
 
 .theme-light .cm-active.cm-line {
