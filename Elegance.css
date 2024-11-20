@@ -417,8 +417,6 @@ Thanks to:
 .markdown-source-view.mod-cm6{
     position: relative;
     height: 100%;
-    padding-left: 1%;
-    padding-right: 1%;
 }
 
 /* quick switcher*/
@@ -2395,7 +2393,7 @@ ul ol::before {
 }
 
 .markdown-rendered.show-indentation-guide li > ol::before {
-    left: -0.7em;
+    left: -0.3em !important;
 }
 
 .markdown-rendered .list-collapse-indicator {
@@ -2558,7 +2556,7 @@ ul > li.task-list-item .task-list-item-checkbox {
 }
 
 .markdown-rendered.show-indentation-guide li > ul::before {
-    left: -0.3em;
+    left: -0.3em !important;
 }
 
 .markdown-rendered.show-indentation-guide li > ol::before {
@@ -2871,7 +2869,7 @@ pre code {
     margin-block-end: 3.33em;
     border: none;
     height: 2.4px;
-    background-image: linear-gradient(to right, var(--background-primary), var(--text-accent), var(--background-primary));
+    background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
 }
 
 .markdown-preview-view hr::after {
