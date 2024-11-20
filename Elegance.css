@@ -1980,7 +1980,7 @@ p {
 /* Collapse arrow of headers */
 
 .markdown-preview-view .heading-collapse-indicator {
-    margin-left: -15px;
+    margin-left: -35px;
     padding: 0 6px;
 }
 
