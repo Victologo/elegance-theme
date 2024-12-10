@@ -2792,11 +2792,6 @@ body.auto-serial-number-dvtable .markdown-preview-view:not(.cards) .dataview.tab
     content:counter(section) ". ";
 }
 
-body:not(.no-wrapped-dvtable) :is(.markdown-preview-view,.markdown-rendered) .table-view-table>tbody>tr>td,
-body:not(.no-wrapped-dvtable) .markdown-source-view.mod-cm6 .table-view-table>tbody>tr>td {
-    max-width: 18em;
-}
-
 :is(.markdown-preview-view,.markdown-rendered) table tbody>tr,
 .markdown-source-view table tbody>tr {
     background-color: var(--table-background-color);
