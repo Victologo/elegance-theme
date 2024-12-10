@@ -542,9 +542,10 @@ input.prompt-input {
     .nav-folder-title:hover {
         color: var(--text-accent) !important;
     }
-    
-    .tree-item-self .tree-item-icon.nav-folder-collapse-indicator {
-        margin-left: -8px;
+    /* File Explorer: Only affects the position of the arrows in the file explorer, not other pannels */
+
+    .workspace-leaf-content[data-type="file-explorer"] .tree-item-self .tree-item-icon {
+        margin-inline-start: -9px ;
     }
 
     .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root > div.nav-folder-children {
@@ -906,6 +907,10 @@ input.prompt-input {
         padding: 0px 5px 0px 10px;
     }
 
+    .tree-item-self {
+        padding: 0px 9px;
+    }
+
     .outline .tree-item >.tree-item-children .tree-item-self .tree-item-inner::before {
         content: "ᛜ";
         color: var(--text-accent);
@@ -1245,6 +1250,7 @@ input.prompt-input {
 .workspace-tab-header {
     color: var(--tab-text-nofocus);
 }
+
 
 /* Remove a bug */
 
@@ -3919,6 +3925,15 @@ body:not(.minimal-icons-off) svg.checkbox-glyph {
     filter: hue-rotate(0);
 }
 
+div.tree-item-self.bookmark.is-clickable {
+    margin-inline-start: 22px !important;
+}
+
+/* No funciona por jerarquía...*/ 
+.workspace-leaf-content[data-type="bookmarks"] .tree-item {
+margin-inline-start: 12px !important;
+}
+
 .checklist-plugin-main .group .checkbox {
     border: 1px solid var(--background-modifier-border-hover);
     min-height: 18px;
@@ -4524,6 +4539,10 @@ button.kanban-plugin__new-item-button{
 /*==================*/
 /* Plugin - Excalidraw */
 /*================*/
+
+.excalidraw .popover {
+    background-color: white !important;
+}
 
 .excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon, .excalidraw .ToolIcon.fillable .ToolIcon_type_checkbox:checked+.ToolIcon__icon {
     background-color: transparent !important;
