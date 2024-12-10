@@ -3550,7 +3550,12 @@ input[type=checkbox]:checked {
 body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]),
 body .markdown-preview-view ul > li.task-list-item.is-checked {
     color: var(--text-normal);
-    opacity: ;
+    opacity: 0.8;
+}
+
+.markdown-preview-view .task-list-item.is-checked {
+    opacity: 0.8;
+    text-decoration: line-through;
 }
 
 body.minimal-strike-lists .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="x"]),
