@@ -410,8 +410,8 @@ Thanks to:
     font-family: var(--font-family-editor);
     font-size: var(--font-size-normal);
     padding-top: 0px;
-    padding-left: 1.7% !important;
-    padding-right: 1.7% !important;
+    padding-left: 1.27% !important;
+    padding-right: 1.27% !important;
 }
 
 .markdown-source-view.mod-cm6{
@@ -1834,6 +1834,11 @@ select {
 
 /* @ D12: Embedded notes */
 
+.markdown-embed {
+margin: 0px;
+padding: 0px;
+}
+
 .file-embed-title {
     color: var(--text-faint);
 }
@@ -1883,7 +1888,7 @@ padding:0; margin:0;
     max-height: 445px;
 }
 
-.markdown-preview-view .markdown-embed-content {
+.markdown-preview-view {
     background-color: var(--background-secondary) !important;
     border-radius: 10px;
 }
