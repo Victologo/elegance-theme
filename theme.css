@@ -386,7 +386,6 @@ Thanks to:
     --fitalic: rgb(55, 0, 0);
 }
 
-
 /* ~~~~~~~~~~~~~ C: Others  ~~~~~~~~~~~~~ */
 
 /* Change theme color of the button selected */
@@ -541,6 +540,7 @@ input.prompt-input {
     }
     .nav-folder-title:hover {
         color: var(--text-accent) !important;
+        background-color: var(--text-antinormal) !important;
     }
     /* File Explorer: Only affects the position of the arrows in the file explorer, not other pannels */
 
@@ -1884,15 +1884,6 @@ padding:0; margin:0;
 
 /* Dimensions and color of the embedded note*/
 
-.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
-    max-height: 445px;
-}
-
-.markdown-preview-view {
-    background-color: var(--background-secondary) !important;
-    border-radius: 10px;
-}
-
 .markdown-embed {
     border: 0px solid #f8f8f200;
     border-left-width: 2.75px ;
@@ -1901,6 +1892,7 @@ padding:0; margin:0;
     border-top-width: 2.75px ;
     transition: 150ms ease-in-out ;
     border-radius: 10px ;
+    background-color: var(--background-secondary) !important;
 }
 
 .markdown-embed:hover {
