@@ -573,6 +573,8 @@ input.prompt-input {
         font-weight: bold;
     }
 
+
+
     .nav-folder.mod-root .nav-folder > .nav-folder-children {     
         border-left: 1.8px solid rgba(255, 208, 0, 0.403) !important;
         padding-left: 20px;
@@ -612,6 +614,10 @@ input.prompt-input {
     100% { /*color: var(--text-accent);*/ opacity: 1;}
     50% { /*color: var(--text-accent);*/ opacity: 0.55;}
     100% { /*color: var(--text-accent); */ opacity: 1;}
+}
+
+.inline-title:not([data-level]) {
+    font-size: 23px;
 }
 
     /* # A2.2 Document Search */
