@@ -1430,6 +1430,14 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
     color: var(--text-normal) ;
 }
 
+button:not(.clickable-icon) {
+    color: rgb(141, 29, 29);
+}
+
+.theme-dark button.button-default {
+    color: white;
+}
+
 /* Color of the text and bin icon when deleting a note */
 
 .menu-item.is-warning:hover {
