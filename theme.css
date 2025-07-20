@@ -240,6 +240,8 @@ Thanks to:
     ~ Plugin - Calendar
     ~ Plugin - Kanban
     ~ Plugin - Excalidraw
+    ~ Plugin - File Tree Alternative
+
 *VI. Other stuff
 
 ===================================================
@@ -1150,6 +1152,7 @@ input.prompt-input {
         right:-0.3em;
     }
 
+
     /* Metadata properties */
 
     .metadata-properties-heading .collapse-indicator {
@@ -1195,9 +1198,7 @@ input.prompt-input {
         --arrow1: rgba(211, 211, 211, 0.852);
     }
 
-    .workspace button:not(.graph-controls button, .excalidraw button) {
-        background: var(--arrow1);
-        box-shadow: none;
+    .workspace button:not(.graph-controls button, .excalidraw button) {        box-shadow: none;
         margin: 2px;
     }
 
@@ -1428,6 +1429,14 @@ body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
 .modal button:not(.mod-cta):not(.mod-warning):hover {
     background-color: var(--text-antinormal);
     color: var(--text-normal) ;
+}
+
+.reminder-calendar.svelte-kmxndl .calendar-date.svelte-kmxndl, button:not(.clickable-icon) {
+    color: white;
+}
+
+.reminder-list-item.svelte-15dajvg, button:not(.clickable-icon) {
+    color: white;
 }
 
 button:not(.clickable-icon) {
@@ -2164,7 +2173,6 @@ a,
 .external-link {
     color: var(--external-link);
     font-weight: 500;
-    background-image: linear-gradient(transparent, transparent), url(https://i.imgur.com/As68C4R.png);
     background-size: 21px;
     cursor: pointer;
     background-position: left;
@@ -2971,7 +2979,6 @@ pre code {
 
 .theme-dark .progress-bar-message::before {
     content: ""; display: block;
-    background: center / contain no-repeat url("https://www.tumblr.com/guitar-slut/154962043348?raw=true");
     width: 300px; height: 200px;
     margin-left: 0; margin-right: 0;
     margin-top: -50px; margin-bottom: 0px;
@@ -2992,7 +2999,6 @@ background-color: #262639;
 
 .theme-light .progress-bar-message::before {
     content: ""; display: block;
-    background: center / contain no-repeat url("https://github.com/Emrie-Candera/Bubble-Space-Theme/blob/main/theme%20image/Astronaut.gif?raw=true");
     width: 300px; height: 200px;
     margin-left: 0; margin-right: 0;
     margin-top: -50px; margin-bottom: 0px;
@@ -3777,9 +3783,9 @@ li[data-task="!"] > p > input:checked {
 
 /* ["] Quote */
 
-input[data-task="“"]:checked,
-li[data-task="“"] > input:checked,
-li[data-task="“"] > p > input:checked,
+input[data-task="""]:checked,
+li[data-task="""] > input:checked,
+li[data-task="""] > p > input:checked,
 input[data-task="\""]:checked,
 li[data-task="\""] > input:checked,
 li[data-task="\""] > p > input:checked {
@@ -3788,9 +3794,9 @@ li[data-task="\""] > p > input:checked {
     border-color: var(--cyan);
     background-size: 75%;
     background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E'); }
-.theme-dark input[data-task="“"]:checked,
-.theme-dark li[data-task="“"] > input:checked,
-.theme-dark li[data-task="“"] > p > input:checked,
+.theme-dark input[data-task="""]:checked,
+.theme-dark li[data-task="""] > input:checked,
+.theme-dark li[data-task="""] > p > input:checked,
 .theme-dark input[data-task="\""]:checked,
 .theme-dark li[data-task="\""] > input:checked,
 .theme-dark li[data-task="\""] > p > input:checked {
@@ -4180,14 +4186,10 @@ img:not(.emoji) {
 
 /* Image hover */
 
-.theme-dark img:hover {
-    transform: scale(1.02);
+img:hover {
+    transform: scale(1.005);
     transition: transform 0.45s ease-in-out 0s;
-}
-
-.theme-light img:hover {
-    transform: scale(1.02);
-    transition: transform 0.45s ease-in-out 0s;
+    border: rgb(123, 123, 123) solid 1.3px;
 }
 
 img:not(:hover) {
@@ -4410,7 +4412,7 @@ margin: -8px 0;
     background-color: rgba(155, 204, 208, 0.35) !important;
 }
 
-/*“Today”*/
+/*"Today"*/
 
 #calendar-container .reset-button {
     font-size: 14px !important;
@@ -4586,6 +4588,19 @@ button.kanban-plugin__new-item-button{
 /*------------------------*/
 /* End - Plugin - Excalidraw  */
 /*----------------------*/
+
+/*-------------------------------*/
+/* Plugin - File Tree Alternative */
+/*-----------------------------*/
+
+.oz-folder-name {
+    font-size: 15.5px;
+}
+
+
+/*-------------------------------*/
+/* End - Plugin - File Tree Alternative */
+/*-----------------------------*/
 
 
 
