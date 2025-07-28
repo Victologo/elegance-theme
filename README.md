@@ -67,7 +67,9 @@ You have to write, for example: `![[image-name.png|right|200]]`. By default, the
 
 ### Checboxes (Minimal Theme, by Kepano)
 
+For a lighter load of the theme, I have it removed, so please download the CSS snippet here: https://github.com/kepano/obsidian-minimal/releases/tag/5.1.8
 | Syntax  | Description |
+
 | ------- | ----------- |
 | `- [ ]` | to-do       |
 | `- [x]` | done        |
