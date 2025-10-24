@@ -10,246 +10,208 @@ Elegance theme by:
 
 Aesthetic UI replacement for Obsidian.
 
-Readme: (poner url de mi tema enlace a github)
+ENHANCED VERSION - Compatible con Style Settings plugin
+- Mejoras en notas empotradas (altura ajustable)
+- Optimizaciones de rendimiento
+- Más de 30 opciones configurables
 
 GitHub Repository:
 https://github.com/Victologo/elegance-theme
 
 -----------------------------------------------------------------------------
 
-MIT License
-
-Copyright (c) 2023 Víctor Alonso Arribas
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+MIT License - Copyright (c) 2023 Víctor Alonso Arribas
 
 -----------------------------------------------------------------------------
 
-Thanks to:
-    - Obsidian inspired themes
-        - Dracula for Obsidian (https://github.com/jarodise/Dracula-for-Obsidian.md): base theme used
-        - Bubble Space (https://github.com/Emrie-Candera/Bubble-Space-Theme): structure, code and snippets
-        - Blue Topaz (https://github.com/whyt-byte/Blue-Topaz_Obsidian-css): code and snippets
-        - Minimal theme (https://github.com/kepano/obsidian-minimal): code
-        - Danny Hatcher theme (https://dannyhatcher.gumroad.com/l/Wxkmy): code
-        - Bryan Jenks theme (https://bryanjenkstech.ck.page/d4ec0713d5): code
-        - Other themes
-    - People:
-        - Jose (Snifer@L4b's)
-    - Obsidian community (in general)I. GENERAL
+/* @settings
 
- --------------------------------------------------------------------------- */
+name: 🎨 Elegance Theme
+id: elegance-theme
+settings:
+    -
+        id: elegance-typography-heading
+        title: 📝 Tipografía
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: font-size-normal
+        title: Tamaño de fuente base
+        description: Tamaño del texto principal (el zoom con Ctrl+Scroll funciona de forma nativa)
+        type: variable-number-slider
+        default: 16
+        min: 12
+        max: 24
+        step: 0.5
+        format: px
+    -
+        id: font-size-code
+        title: Tamaño de código
+        type: variable-number-slider
+        default: 15
+        min: 10
+        max: 20
+        step: 0.5
+        format: px
+    -
+        id: line-height-normal
+        title: Altura de línea
+        description: Espaciado entre líneas (1.5 = 150%)
+        type: variable-number-slider
+        default: 1.5
+        min: 1.2
+        max: 2.5
+        step: 0.1
+    -
+        id: elegance-headers-heading
+        title: 📌 Encabezados
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: font-size-h1
+        title: H1
+        type: variable-number-slider
+        default: 23
+        min: 18
+        max: 36
+        step: 0.5
+        format: px
+    -
+        id: font-size-h2
+        title: H2
+        type: variable-number-slider
+        default: 22
+        min: 17
+        max: 32
+        step: 0.5
+        format: px
+    -
+        id: font-size-h3
+        title: H3
+        type: variable-number-slider
+        default: 21
+        min: 16
+        max: 28
+        step: 0.5
+        format: px
+    -
+        id: font-size-h4
+        title: H4
+        type: variable-number-slider
+        default: 20
+        min: 15
+        max: 26
+        step: 0.5
+        format: px
+    -
+        id: font-size-h5
+        title: H5
+        type: variable-number-slider
+        default: 19
+        min: 14
+        max: 24
+        step: 0.5
+        format: px
+    -
+        id: font-size-h6
+        title: H6
+        type: variable-number-slider
+        default: 18
+        min: 13
+        max: 22
+        step: 0.5
+        format: px
+    -
+        id: elegance-embeds-heading
+        title: 📎 Notas Empotradas
+        type: heading
+        level: 1
+        collapsed: false
+        description: Controla la apariencia y comportamiento de las notas empotradas
+    -
+        id: embed-max-height
+        title: Altura máxima
+        description: Altura máxima en píxeles (0 = sin límite)
+        type: variable-number-slider
+        default: 500
+        min: 0
+        max: 1500
+        step: 50
+        format: px
+    -
+        id: embed-border-radius
+        title: Radio de bordes
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 20
+        step: 1
+        format: px
+    -
+        id: embed-padding
+        title: Padding interno
+        type: variable-number-slider
+        default: 16
+        min: 0
+        max: 40
+        step: 2
+        format: px
+    -
+        id: embed-show-shadow
+        title: Mostrar sombra al hacer hover
+        type: class-toggle
+        default: true
+    -
+        id: embed-smooth-scroll
+        title: Scroll suave
+        type: class-toggle
+        default: true
+    -
+        id: elegance-ui-heading
+        title: ⚙️ Interfaz
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: font-size-side-dock
+        title: Tamaño fuente paneles
+        type: variable-number-slider
+        default: 15
+        min: 12
+        max: 20
+        step: 0.5
+        format: px
+    -
+        id: font-size-side-dock-title
+        title: Tamaño títulos paneles
+        type: variable-number-slider
+        default: 16
+        min: 13
+        max: 22
+        step: 0.5
+        format: px
+    -
+        id: font-size-status-bar
+        title: Tamaño barra de estado
+        type: variable-number-slider
+        default: 13.75
+        min: 10
+        max: 18
+        step: 0.25
+        format: px
+    -
+        id: scrollbar-width
+        title: Ancho de scrollbar
+        type: variable-number-slider
+        default: 8
+        min: 4
+        max: 16
+        step: 1
+        format: px
 
-
-/* *==========  Table of Content (TOC) ========== 
-    *I. GENERAL
-    *II. WORKSPACE
-    *III. MARKDOWN
-    *IV. ADDITIONAL SNIPPETS
-    *V. PLUGIN STYLING
-    *Part VI. Other stuff
-*==================================================
-
-
-===================================================
-===================================================
-
-*I. GENERAL VALUES
-    ~ FONTS
-    ~ GENERAL COLOR VALUES
-    ~ ICONS
-*II. WORKSPACE
-    ~ WS A: Panes
-        @ A1 File Explorer
-            # A1.1 Vault Name 
-            # A1.2 File and Folder Name
-        @ A2 Note Pane
-            # A2.1 Note Titlebar
-            # A2.2 Document Search
-            # A2.3 Empty Note Pane
-        @ A5 Outline Pane
-            # A5.1 Relationship Lines
-            # A5.2 Hover Glow
-            # A5.3 Icon Styling
-            # A5.7 Box Styling
-        @ A6 Search, Backlinks and Outgoing Links Pane
-            # A6.1 Search Results
-            # A6.2 Backlinks in Document
-        @ A7 Starred Pane
-        @ A8 Graph Pane 
-                # A8.1 Graph Controls
-                # A8.2 Graph Colors
-                * Arrow
-                * Tag
-                * Attachment
-                * Fill
-                * Unresolved
-                * Circle
-                * Line
-                * Text
-        @ A9 Bookmarks
-    ~ WS B: Window
-        @ B1: Side Dock Ribbon (+ Mobile toolbar)
-            # B1.1 Collapsed
-            # B1.2 Expanded
-            # B1.3 Ribbon Icons
-        @ B2: Title Bar
-        @ B3: Status Bar
-        @ B4: Tabs
-        @ B5: Rendered notes
-        @ B6: Headers
-        @ B7: Transition between notes
-    ~ WS C: Settings
-        @ C1: Settings Modal
-            # C1.1 Header Group
-            # C1.2 Items
-        @ C2: Theme Store
-            # C2.1 Modal
-            # C2.2 Theme Items
-                ! C2.2.1 Text and Border
-                ! C2.2.2 Buttons
-                ! C2.2.3 Hover
-                ! C2.2.4 Selected
-        @ C3: Plugin Store
-            # C3.1 Modal
-            # C3.2 Text
-            # C3.3 Flair
-            # C3.4 Hover
-    ~ WS D: Other Elements
-        @ D1: Buttons
-        @ D2: Scrollbars
-        @ D3: Modals
-        @ D4: Sliders
-        @ D5: Notices
-        @ D6: Toggles
-        @ D7: Tooltips
-        @ D8: Dropdown
-        @ D9: Prompt
-        @ D10: Menu
-        @ D11: Suggestion
-        @ D12: Embedded notes
-        @ D13: Suggestion
-    ~ WS E: Common Values
-* III. MARKDOWN
-    ~ MARKDOWN A: Text Formatting
-        @ A1 Headers
-        @ A2 Bold
-        @ A3 Italics
-        @ A4 Links
-        @ A5 Inline Code
-        @ A6 Highlight
-        @ A7 Footnotes
-        @ A8 Comments
-        @ A9 Tags
-        @ A10 Regular Text
-    ~ MARKDOWN B: Lists
-        @ B1 Bulleted
-        @ B2 Numbered List
-        @ B3 Checklist
-            # B3.1 Reading Mode
-            # B3.2 Source Mode
-    ~ MARKDOWN C: Text Blocks
-        @ C1 Block Quotes
-            # C1.1 Reading
-            # C1.2 Source
-        @ C2 Table
-            # C2.1 Source
-            # C2.2 Reading
-        @ C3 Code Blocks
-    ~ MARKDOWN D: Others
-        @ D1 HR
-        @ D2 HTML Progress Pars
-        @ D3 Cite
-    ~ SPACE B: Workspace
-        @ SPACE B1: Panes
-            # B1.1 File Explorer
-                ! Vault Title
-                ! File and Folder Name
-                !...
-            # B1.2 Note Pane
-                ! Active Note Titlebar
-                ! Metadata Container
-                ! Document Search
-                ! Empty Note
-        @ SPACE B2: Window and Settings
-            # Side Dock Ribbon
-            # Settings Modal
-            # Theme Store Items
-        @ SPACE B3: Settings
-            ! Modal
-            ! Mini Gradient Text
-            ! Store Items
-        @ SPACE B4: Other Elements
-            # Buttons
-            # Scrollbar
-            # Slider
-            # Notice
-            # Toggle
-    ~ SPACE C: Markdown
-        @ SPACE C1: Text Formatting
-            # Basic Markdown
-            # Header Colors
-            # Tags
-        @ SPACE C2: Lists
-            # Bullets/Numbers
-            # Checklist
-        @ SPACE C3: Text Blocks
-            # Blockquote
-            # Table
-        @ SPACE C4: Others
-            # HR
-            # Progress Bars
-            # Cite
-        @ SPACE C5: Themed Loading Page
-    ~ SPACE E: Plugins
-        @ SPACE E1: Admonitions
-        @ SPACE E2: Icon Folder
-        @ SPACE E3: Calendar
-        @ SPACE E4: Day Planner
-        @ SPACE E5: Checklist
-* IV. ADDITIONAL SNIPPETS
-    ~ Snippet - Zoom images
-    ~ Snippet - Image caption / Figure Caption
-    ~ Snippet - Center images + Left or right function
-    ~ Snippet - Cards
-    ~ Snippet - Checboxes (minimal)
-    ~ Snippet - Images
-    ~ Snippet - Popover
-    ~ Snippet - MathJax
-    ~ Snippet - Active Block - Active Line - Guide line in editor
-    ~ Snippet - Metadata Menu
-    ~ Snippet - compact_table_dataview (before: called "Library"
-    ~ Snippet - MCL Multi Column
-    ~ Snippet - Marks (resaltados)
-*V. PLUGIN STYLING
-    ~ Plugin - Banners
-    ~ Plugin - Calendar
-    ~ Plugin - Kanban
-    ~ Plugin - Excalidraw
-    ~ Plugin - File Tree Alternative
-
-*VI. Other stuff
-
-===================================================
-===================================================
-
-
+*/
 
 /* ============== PART I. GENERAL VALUES ============== */
 
@@ -265,7 +227,8 @@ Thanks to:
 
 /* @ FONTS A2: Font Assignments*/
 
-:root{
+:root {
+    /* Tipografía - Configurable con Style Settings */
     --font-size-normal:              16px;
     --font-size-code:                15px;
     --font-size-side-dock:           15px;
@@ -277,6 +240,15 @@ Thanks to:
     --font-size-h4:                  20px;
     --font-size-h5:                  19px;
     --font-size-h6:                  18px;
+    --line-height-normal:            1.5;
+    
+    /* Notas empotradas - Configurable con Style Settings */
+    --embed-max-height:              500px;
+    --embed-border-radius:           10px;
+    --embed-padding:                 16px;
+    
+    /* UI - Configurable con Style Settings */
+    --scrollbar-width:               8px;
 }
 
 
@@ -405,6 +377,7 @@ Thanks to:
 .cm-s-obsidian, .mod-single-child .cm-s-obsidian {
     font-family: var(--font-family-editor);
     font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
 }
 
 /* normal text outside of headings and code of preview */
@@ -412,6 +385,7 @@ Thanks to:
 .markdown-preview-view, .mod-single-child .markdown-preview-view {
     font-family: var(--font-family-editor);
     font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
     padding-top: 0px;
     padding-left: 1.27% !important;
     padding-right: 1.27% !important;
@@ -1857,11 +1831,20 @@ select {
 
 /* @ D11: Suggestion Container */
 
-/* @ D12: Embedded notes */
+/* @ D12: Embedded notes - ENHANCED with Style Settings support */
 
+/* Base container styling */
 .markdown-embed {
-margin: 0px;
-padding: 0px;
+    margin: 1em 0;
+    padding: 0px;
+    border: 0px solid transparent;
+    border-left-width: 2.75px;
+    border-right-width: 2.75px;
+    border-bottom-width: 2.75px;
+    border-top-width: 2.75px;
+    border-radius: var(--embed-border-radius);
+    background-color: var(--background-secondary) !important;
+    transition: all 150ms ease-in-out;
 }
 
 .file-embed-title {
@@ -1877,7 +1860,6 @@ padding: 0px;
 }
 
 /* Naked Embeds - Hide name of file */
-
 .markdown-embed-title {
     display: none;
 }
@@ -1891,15 +1873,15 @@ padding: 0px;
 }
 
 /* Better embedded note padding */
-
 .markdown-preview-view .markdown-embed { 
-padding:0; margin:0;
+    padding: 0;
+    margin: 1em 0;
 }
 
 /* Link symbol on the top right corner */
-
 .markdown-embed-link {
-    color: var(--text-faint);}
+    color: var(--text-faint);
+}
 
 .markdown-embed-link:hover {
     color: white;
@@ -1907,26 +1889,94 @@ padding:0; margin:0;
     text-shadow: 0px 0px 10px white;
 }
 
-/* Dimensions and color of the embedded note*/
-
-.markdown-embed {
-    border: 0px solid #f8f8f200;
-    border-left-width: 2.75px ;
-    border-right-width: 2.75px ;
-    border-bottom-width: 2.75px ;
-    border-top-width: 2.75px ;
-    transition: 150ms ease-in-out ;
-    border-radius: 10px ;
-    background-color: var(--background-secondary) !important;
-}
-
+/* Hover effects */
 .markdown-embed:hover {
-    box-shadow: 0 10px 15px rgba(0,0,0,.25),0 5px 5px rgba(0,0,0,.22) !important;
-    transform: translate3d(0px,-3.5px,0px) !important;
-    transition: 150ms ease-in-out !important;
+    transform: translate3d(0px,-3.5px,0px);
+    transition: all 150ms ease-in-out;
     border-color: var(--interactive-accent) !important;
-    border-radius: 10px !important;
 }
+
+/* Shadow effect - controlled by Style Settings toggle */
+body.embed-show-shadow .markdown-embed:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,.25), 0 5px 5px rgba(0,0,0,.22) !important;
+}
+
+/* ============== ALTURA AJUSTABLE DE NOTAS EMPOTRADAS ============== */
+
+/* Internal embed with configurable height */
+.internal-embed {
+    max-height: var(--embed-max-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: var(--embed-border-radius);
+}
+
+/* If max-height is set to 0, remove height limit */
+body[style*="--embed-max-height: 0px"] .internal-embed {
+    max-height: none;
+    overflow-y: visible;
+}
+
+/* Smooth scroll - controlled by Style Settings toggle */
+body.embed-smooth-scroll .internal-embed {
+    scroll-behavior: smooth;
+}
+
+/* Content padding */
+.internal-embed .markdown-embed-content {
+    padding: var(--embed-padding);
+    max-height: inherit;
+}
+
+/* Custom scrollbar for embedded notes */
+.internal-embed::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+
+.internal-embed::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.internal-embed::-webkit-scrollbar-thumb {
+    background: var(--background-modifier-border);
+    border-radius: calc(var(--scrollbar-width) / 2);
+    transition: background 150ms ease;
+}
+
+.internal-embed::-webkit-scrollbar-thumb:hover {
+    background: var(--text-faint);
+}
+
+/* Firefox scrollbar */
+.internal-embed {
+    scrollbar-width: thin;
+    scrollbar-color: var(--background-modifier-border) transparent;
+}
+
+/* Image embeds - don't restrict height */
+.internal-embed.image-embed {
+    max-height: none;
+    overflow: visible;
+}
+
+/* Better appearance for links inside embeds */
+.internal-embed a.internal-link {
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+.internal-embed a.internal-link:hover {
+    color: var(--text-accent-hover);
+    text-decoration: underline;
+}
+
+/* Embedded note title if shown */
+.internal-embed .markdown-embed-title {
+    font-weight: 600;
+    padding: 0.5em var(--embed-padding);
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
 
 
 /* @ D13: Suggestion - obsidian autocomplete for notes */
@@ -3693,30 +3743,6 @@ img:not(:hover) {
 /*-----------------------*/
 
 /*====================*/
-/* Snippet - Popover */
-/*==================*/
-
-.popover {
-    border: 1px solid var(--border-color);
-    background-color: var(--background-secondary);
-}
-
-
-/* Bigger link popup preview */
-
-.popover.hover-popover {
-    transform: scale(0.95); /* makes the content smaller */
-    max-width: 550px;     /* was 400 */
-    min-width: 500px;     /* was 400 */
-    border: 2px solid var(--text-accent);
-    border-radius: 23px;
-}
-
-/*--------------------------*/
-/* End - Snippet - Popover */
-/*------------------------*/
-
-/*====================*/
 /* Snippet - MathJax */
 /*==================*/
 
@@ -4811,7 +4837,6 @@ mark.pink,
 
 /* ============ ENLACES DENTRO DE RESALTADOS ============ */
 .theme-dark .markdown-rendered mark .internal-link {
-    color: rgb(200, 131, 2) !important;
     font-weight: bold !important;
 }
 
@@ -5123,3 +5148,728 @@ button.kanban-plugin__new-item-button{
 /*-----------------------------*/
 
 
+
+
+/* ============================================================
+   OPTIMIZACIONES FINALES
+   ============================================================ */
+
+/* Mejora el renderizado de fuentes */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegurar que el zoom nativo funcione correctamente */
+.markdown-preview-view,
+.markdown-source-view,
+.cm-editor {
+    /* No bloquear eventos de zoom */
+    touch-action: manipulation;
+}
+
+/* No interferir con el zoom nativo de Obsidian */
+.workspace-leaf-content {
+    zoom: initial;
+}
+
+/* Scrollbar global mejorado */
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+    border-radius: calc(var(--scrollbar-width) / 2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-active-thumb-bg);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+}
+
+/* Mejor accesibilidad */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--text-accent);
+    outline-offset: 2px;
+}
+
+/* Respeta las preferencias de movimiento reducido 
+
+/* ============================================================
+   SNIPPETS ADICIONALES INTEGRADOS
+   ============================================================ */
+
+/*==================*/
+/* Snippet - Cards */
+/*================*/
+
+/* MIT License | Copyright (c) Stephan Ango (@kepano) 
+Cards snippet for Obsidian - Modified and integrated
+author: @kepano
+Support: https://github.com/sponsors/kepano */
+
+/* Make the grid and basic cards */
+
+.cards table.dataview tbody {
+    clear: both;
+    padding: 0.3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--cards-min-width, 100px), var(--cards-max-width, 1fr)));
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.4rem;
+    align-items: start;
+}
+
+.cards table.dataview > tbody > tr {
+    background-color: var(--background-secondary-alt);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0.3rem;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.15s linear;
+    min-height: 325px;
+}
+
+.cards table.dataview > tbody > tr:hover {
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.21) !important;
+    transition: box-shadow 0.15s linear;
+    border: 2px solid var(--text-normal);
+}
+
+/* Styling elements inside cards */
+
+.cards table.dataview tbody > tr > td {
+    border-bottom: none;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Título - primera celda */
+.cards table.dataview tbody > tr > td:first-child {
+    font-weight: var(--bold-weight);
+    height: 40px;
+    order: 1;
+}
+
+.cards table.dataview tbody > tr > td:first-child a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    line-height: 1.1;
+    width: 100%;
+    font-size: 0.9em;
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+/* Autor - segunda celda */
+.cards table.dataview tbody > tr > td:nth-child(2) {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    order: 2;
+    margin-bottom: 5px;
+}
+
+.cards table.dataview tbody > tr > td:nth-child(2) .el-p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    line-height: 1;
+    width: 100%;
+    margin: 0;
+}
+
+/* Imagen - tercera celda */
+.cards table.dataview tbody > tr > td:nth-child(3) {
+    height: var(--cards-image-height, 200px);
+    order: 3;
+    flex-grow: 1;
+    margin: 5px 0;
+}
+
+.cards table.dataview tbody > tr > td:nth-child(3) img {
+    width: 100%;
+    height: 100%;
+    object-fit: var(--cards-image-fit, cover);
+    border-radius: 4px;
+}
+
+/* Progreso - cuarta celda */
+.cards table.dataview tbody > tr > td:nth-child(4) {
+    height: 30px;
+    order: 4;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.cards table.dataview tbody > tr > td:nth-child(4) img {
+    width: 100%;
+    height: auto;
+    max-height: 20px;
+    border-radius: 10px;
+}
+
+.cards table.dataview tbody > tr > td:nth-child(4) .el-p {
+    width: 100%;
+    margin: 0;
+}
+
+/* Tipo de libro - quinta celda */
+.cards table.dataview tbody > tr > td:nth-child(5) {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    font-style: italic;
+    order: 5;
+    margin-top: auto;
+}
+
+/* Si hay más de 5 celdas, manejarlas */
+.cards table.dataview tbody > tr > td:nth-child(n+6) {
+    font-size: 0.8em;
+    order: 6;
+}
+
+/* Helpers para diferentes configuraciones de columnas */
+
+.cards-cols-1 table.dataview tbody { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.cards-cols-2 table.dataview tbody { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards-cols-3 table.dataview tbody { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards-cols-4 table.dataview tbody { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cards-cols-5 table.dataview tbody { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.cards-cols-6 table.dataview tbody { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cards-cols-7 table.dataview tbody { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.cards-cols-8 table.dataview tbody { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.cards-cols-9 table.dataview tbody { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.cards-cols-10 table.dataview tbody { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+
+/* Responsive improvements */
+@media (min-width: 400pt) {
+    .cards table.dataview tbody {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .cards table.dataview tbody {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards table.dataview tbody {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Helpers para aspect ratios */
+
+.cards-cover.cards table.dataview tbody > tr > td img {
+    object-fit: cover; 
+}
+
+.cards-16-9.cards table.dataview tbody > tr > td img {
+    aspect-ratio: 16/9; 
+}
+
+.cards-1-1.cards table.dataview tbody > tr > td img {
+    aspect-ratio: 1/1; 
+}
+
+.cards-2-1.cards table.dataview tbody > tr > td img {
+    aspect-ratio: 2/1; 
+}
+
+.cards-2-3.cards table.dataview tbody > tr > td img {
+    aspect-ratio: 2/3; 
+}
+
+.cards-align-bottom.cards table.dataview tbody > tr > td:last-child {
+    align-items: flex-end;
+    flex-grow: 1; 
+}
+
+/* Links */
+
+.cards table.dataview tbody > tr > td a {
+    text-decoration: none;
+}
+
+.links-int-on .cards table.dataview tbody > tr > td a {
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.cards table.dataview tbody > tr > td > button {
+    width: 100%;
+    margin: 0.2rem 0;
+}
+
+/* Lists */
+
+.cards table.dataview tbody > tr > td > ul {
+    width: 100%;
+    padding: 0.1em 0 !important;
+    margin: 0 auto !important;
+    font-size: 0.8em;
+}
+
+/* Paragraphs */
+.cards table.dataview tbody > tr > td .el-p {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+/* Sorting */
+
+.cards.table-100 table.dataview thead > tr,
+.table-100 .cards table.dataview thead > tr {
+    right: 0.75rem;
+}
+
+.table-100 .cards table.dataview thead:before,
+.cards.table-100 table.dataview thead:before {
+    margin-right: 0.75rem;
+}
+
+.cards table.dataview thead {
+    user-select: none;
+    width: 180px;
+    display: block;
+    float: right;
+    position: relative;
+    text-align: right;
+    height: 24px;
+    padding-bottom: 4px;
+}
+
+.cards table.dataview thead:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: var(--icon-size);
+    background-repeat: no-repeat;
+    cursor: var(--cursor);
+    text-align: right;
+    padding: 4px 10px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.cards table.dataview thead:hover:before {
+    opacity: 0.9;
+}
+
+.cards table.dataview thead > tr {
+    top: 0;
+    position: absolute;
+    display: none;
+    z-index: 9;
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
+    box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+    padding: 6px;
+    border-radius: 6px;
+    flex-direction: column;
+    margin: 26px 0 0 0;
+    width: 100%; 
+}
+
+.cards table.dataview thead:hover > tr {
+    display: flex; 
+}
+
+.cards table.dataview thead > tr > th {
+    width: 100%;
+    font-weight: 400;
+    color: var(--text-muted);
+    cursor: var(--cursor-link);
+    border: none;
+    background-color: var(--background-secondary); 
+}
+
+.cards.markdown-preview-view tbody tr:hover {
+    background-color: transparent;
+}
+
+/* ===============================*/
+/* TARJETAS PARA VIDEOJUEGOS    */
+/* ===============================*/
+
+.cards-games table.dataview > tbody > tr {
+    background-color: var(--background-secondary-alt);
+    border: 1px solid var(--background-modifier-border);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0.3rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.15s linear;
+    min-height: 190px;
+}
+
+.cards-games table.dataview > tbody > tr:hover {
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.21) !important;
+    transition: box-shadow 0.15s linear;
+}
+
+.cards-games table.dataview tbody > tr > td {
+    border-bottom: none;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cards-games table.dataview tbody > tr > td:first-child {
+    font-weight: var(--bold-weight);
+    height: 38px;
+    order: 1;
+}
+
+.cards-games table.dataview tbody > tr > td:nth-child(2) {
+    height: 120px;
+    order: 2;
+    flex-grow: 1;
+    margin: 3px 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.cards-games table.dataview tbody > tr > td:nth-child(2) .image-embed img {
+    width: 100%;
+    height: 120px;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+}
+
+.cards-games table.dataview tbody > tr > td:nth-child(3) {
+    height: 20px;
+    font-size: 0.9em;
+    color: var(--text-normal);
+    font-weight: 500;
+    order: 3;
+    margin: 2px 0;
+}
+
+.cards-games table.dataview tbody > tr > td:nth-child(4) {
+    height: 25px;
+    font-size: 1.0em;
+    color: var(--text-accent);
+    font-weight: bold;
+    order: 4;
+    margin-top: auto;
+}
+
+.cards-games table.dataview tbody > tr > td:nth-child(3):last-child {
+    margin-top: auto;
+}
+
+.cards-games table.dataview tbody {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-column-gap: 0.3rem;
+    grid-row-gap: 0.3rem;
+}
+
+@media (min-width: 768px) {
+    .cards-games table.dataview tbody {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-games table.dataview tbody {
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    }
+}
+
+/* ===============================*/
+/* TARJETAS HORIZONTALES PELÍCULAS/SERIES */
+/* ===============================*/
+
+.cards-movies table.dataview tbody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.4rem;
+    padding: 0.3rem 0;
+}
+
+.cards-movies table.dataview > tbody > tr {
+    background-color: var(--background-secondary-alt);
+    border: 1px solid var(--background-modifier-border);
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "poster title"
+        "poster genre"
+        "poster year"
+        "poster rating";
+    margin: 0;
+    padding: 0.4rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.15s linear;
+    min-height: 110px;
+    gap: 0.6rem;
+}
+
+.cards-movies table.dataview > tbody > tr:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    transition: box-shadow 0.15s linear;
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(2) {
+    grid-area: poster;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(2) .image-embed img {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cards-movies table.dataview tbody > tr > td:first-child {
+    grid-area: title;
+    font-weight: var(--bold-weight);
+    font-size: 1.1em;
+    color: var(--text-accent);
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cards-movies table.dataview tbody > tr > td:first-child a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-accent);
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(3) {
+    grid-area: genre;
+    font-size: 0.9em;
+    color: var(--text-muted);
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(3) .el-p {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(4) {
+    grid-area: year;
+    font-size: 0.9em;
+    color: var(--text-normal);
+    font-weight: 500;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cards-movies table.dataview tbody > tr > td:nth-child(5) {
+    grid-area: rating;
+    font-size: 0.95em;
+    color: #f5c518;
+    font-weight: bold;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .cards-movies table.dataview tbody {
+        grid-template-columns: 1fr;
+    }
+    
+    .cards-movies table.dataview > tbody > tr {
+        grid-template-columns: 60px 1fr;
+        min-height: 90px;
+    }
+    
+    .cards-movies table.dataview tbody > tr > td:nth-child(2) .image-embed img {
+        width: 60px;
+        height: 85px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .cards-movies table.dataview tbody {
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/*------------------------*/
+/* End - Snippet - Cards */
+/*----------------------*/
+
+
+/*====================================*/
+/* Snippet - Plugin Quiet Outline    */
+/*==================================*/
+
+button:not(.clickable-icon).n-button {
+    background-color: var(--text-antinormal);
+    box-shadow: var(--input-shadow);
+}
+
+button:not(.clickable-icon).n-button:hover {
+    background-color: var(--text-accent);
+}
+
+.quiet-outline .n-tree .n-tree-node:not(.n-tree-node--disabled).n-tree-node--selectable .n-tree-node-content::before {
+    content: "›";
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-right: 3.75px;
+    color: var(--text-accent);
+}
+
+.quiet-outline {
+    padding: 1px !important;
+    margin: -10px !important;
+}
+
+.n-base-icon svg {
+    height: 1.2em;
+    width: 1.2em;
+}
+
+.n-tree-node.located p {
+    color: var(--text-accent);
+}
+
+.n-tree .n-tree-node:hover {
+    border: 1.5px solid var(--text-accent);
+}
+
+.quiet-outline .level-2 .n-tree-node-indent {
+    border-right: 2px solid gray;    
+}
+
+.quiet-outline .n-tree-node-indent {
+    flex: 0 0 12px !important;
+}
+
+.n-tree .n-tree-node-content {
+    padding: 0px;
+}
+
+.quiet-outline .n-tree-node-content:hover {
+    margin: 0 -1.36px;
+}
+
+/*-------------------------------------------*/
+/* End - Snippet - Plugin Quiet Outline    */
+/*-----------------------------------------*/
+
+
+/*=======================================*/
+/* Snippet - Líneas MathJax Mejoradas   */
+/*=====================================*/
+
+mjx-stretchy-h.mjx-c2192 mjx-ext mjx-c::before {
+    padding: 0.5em 78px 0.082em !important;
+    content: "\2212" !important;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+    transform: scalex(17) !important;
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+    display: inline-block !important;
+    width: initial !important;
+}
+
+/*--------------------------------------*/
+/* End - Snippet - Líneas MathJax     */
+/*------------------------------------*/
+
+
+/*================================*/
+/* Snippet - Kanban Mejorado     */
+/*==============================*/
+
+/* Personalización del texto dentro de las tareas del Kanban */
+
+.kanban-plugin__item p {
+    font-size: 0.9em;
+    padding-left: 0%;
+    padding-right: 0%;
+    line-height: 14pt !important;
+}
+
+/*---------------------------------*/
+/* End - Snippet - Kanban        */
+/*-------------------------------*/
+
+
+/* ============================================================
+   FIN DE SNIPPETS INTEGRADOS
+   ============================================================ */
