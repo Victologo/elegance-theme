@@ -977,7 +977,7 @@ body {
 .search-results-children .tree-item-inner,
 .workspace-leaf-content[data-type="backlink"] .tree-item-inner,
 .workspace-leaf-content[data-type="outgoing-link"] .tree-item-inner {
-    color: ;
+    color: var(--text-normal);
     font-size: 1em;
     border-bottom: transparent 0px solid;
 }
@@ -1194,7 +1194,7 @@ body:not(.no-svg-replace) svg.right-triangle {
     text-align: center;
 }
 
-.metadata-properties-heading:before {}
+/* .metadata-properties-heading:before {} */
 
 
 /* # B1.1 Note title arrows */
@@ -1864,7 +1864,7 @@ body:not(.native-scrollbars) * {
 /* @ D10: Menu */
 
 .menu {
-    max-width: 225px;
+    max-width: none;
     border: 1.5px solid white !important;
     backdrop-filter: blur(13px) !important;
     border-radius: 6px;
@@ -2926,7 +2926,7 @@ table {
 
 .markdown-rendered td,
 .markdown-rendered th {
-    border: 10px;
+    /* border: 10px; — invalid property removed */
 }
 
 .row-lines .table-view-table>tbody>tr>td,
@@ -2939,7 +2939,7 @@ table {
     color: var(--table-text-color);
 }
 
-is(.markdown-preview-view, .markdown-rendered) :is(.markdown-preview-section, .markdown-rendered) .block-language-itinerary.fc table {
+:is(.markdown-preview-view, .markdown-rendered) :is(.markdown-preview-section, .markdown-rendered) .block-language-itinerary.fc table {
     overflow: unset;
 }
 
@@ -3133,9 +3133,9 @@ pre code {
     color: var(--text-normal) !important;
 }
 
--5px 35px 33px 35px .callout-icon .svg-icon {
+/* -5px 35px 33px 35px .callout-icon .svg-icon {
     color: var(--text-normal);
-}
+} */
 
 .callout-title {
     padding: 8px;
@@ -3304,7 +3304,7 @@ pre code {
     --callout-color: white;
     margin: 0px;
     border-radius: 6px;
-    display: ;
+    display: flex;
     align-items: center;
     flex-direction: column;
     padding: 0px;
@@ -6362,6 +6362,96 @@ mjx-stretchy-h>*>mjx-c::before {
 /* End - Snippet - Kanban        */
 /*-------------------------------*/
 
+
+/* ============================================================ */
+/* FIX: VISTA DE BASES (Database Folder)                       */
+/* ============================================================ */
+
+/* Ancho completo para notas con bases de datos */
+/* Forzamos el ancho en el sizer y la sección de lectura */
+.workspace-leaf .cm-sizer:has(.dbfolder-view-container),
+.workspace-leaf .markdown-preview-section:has(.dbfolder-view-container),
+.workspace-leaf:has(.dbfolder-view-container) .is-readable-line-width .cm-sizer,
+.workspace-leaf:has(.dbfolder-view-container) .is-readable-line-width .markdown-preview-section,
+.workspace-leaf:has(.dbfolder-view-container) .is-readable-line-width .CodeMirror {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Colores de las celdas y texto general en la base */
+.dbfolder-view-container, 
+.database-plugin__table,
+.dbfolder-header-container {
+    color: var(--text-normal) !important;
+}
+
+/* Botones en la cabecera de la tabla (Sort, Filter, etc.) */
+.dbfolder-header-button,
+.dbfolder-view-header button:not(.clickable-icon),
+[class*="dbfolder"] button.MuiButton-root {
+    background-color: var(--background-primary-alt) !important;
+    color: var(--text-normal) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+}
+
+/* Botón activo o resaltado (como el de Filtrar cuando se usa) */
+.dbfolder-header-button.is-active,
+.dbfolder-view-header button.is-active,
+[class*="dbfolder"] button.MuiButton-root.mod-cta,
+[class*="dbfolder"] button.MuiButton-root:hover {
+    background-color: var(--text-accent) !important;
+    color: var(--text-antinormal) !important;
+}
+
+/* Menu de filtros y diálogos (Popups / Popovers) */
+.dbfolder-popup-menu, 
+.dbfolder-filter-container,
+.MuiPopover-paper,
+.MuiPaper-root {
+    background-color: var(--background-secondary) !important;
+    border: 1.5px solid var(--text-accent) !important;
+    color: var(--text-normal) !important;
+}
+
+/* Texto dentro de los popups "All the following are true", etc. */
+.MuiTypography-root,
+.MuiFormLabel-root,
+.MuiInputBase-input,
+.MuiListItemText-primary {
+    color: inherit !important; /* Hereda del padre .MuiPaper-root que ya tiene var(--text-normal) */
+}
+
+/* Botones y Chips dentro de los filtros (donde el fondo es naranja) */
+body .MuiPopover-paper [style*="background-color: var(--text-accent)"],
+body .MuiPopover-paper [style*="background-color:var(--text-accent)"],
+body .MuiPopover-paper .MuiButton-root,
+body .MuiPopover-paper .MuiChip-root,
+body .MuiPopover-paper .MuiSelect-select,
+body .dbfolder-popup-menu .MuiButton-root,
+body .dbfolder-filter-container .MuiButton-root {
+    color: var(--text-antinormal) !important;
+}
+
+/* Específicamente el texto de "All the following are true" si es un select/botón */
+body .MuiPopover-paper .MuiButtonBase-root,
+body .MuiPopover-paper .MuiInputBase-root {
+    color: var(--text-antinormal) !important;
+}
+
+/* Botones de acción dentro de los menús (Add filter, etc.) */
+body .MuiPopover-paper button,
+body .dbfolder-popup-menu button,
+body .bases-query-container .filter-group .filter-group-header .conjunction.dropdown {
+    background-color: var(--text-accent) !important;
+    color: var(--text-antinormal) !important;
+    font-weight: bold !important;
+}
+
+/* Enlaces en la base */
+.dbfolder-view-container a {
+    color: var(--text-normal) !important;
+    text-decoration: underline 1px solid var(--text-accent);
+}
 
 /* ============================================================
    FIN DE SNIPPETS INTEGRADOS
