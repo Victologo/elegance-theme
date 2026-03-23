@@ -276,7 +276,7 @@ settings:
     --text-antinormal: black;
     --text-muted: rgb(255, 255, 255);
     --text-muted2: rgb(255, 255, 255);
-    --text-faint: rgb(255, 62, 151);
+    --text-faint: rgb(244, 141, 255);
     --text-highlight-bg: rgba(255, 225, 0, 0.258);
     --text-error: rgba(214, 0, 46, 0.925);
     --text-error-hover: rgba(255, 0, 0, 0.466);
@@ -1418,54 +1418,6 @@ body.is-focused .workspace-tabs.mod-top {
 }
 
 
-/* @ WS B7: Transition between notes */
-
-/* Transition between notes, from the Obsidian Theme "Maple": https://github.com/subframe7536/obsidian-theme-maple */
-
-:is(body, body .print) {
-    --animation: 200ms;
-}
-
-
-/* 切换标签动画，参考 https://github.com/hydescarf/Obsidian-Theme-Mado-Miniflow */
-body .workspace-split .workspace-tabs:not(.mod-stacked) .view-content {
-    animation: slide-up var(--animation) forwards;
-}
-
-@supports selector(:has(.view-content)) {
-    .workspace-leaf-content:not(:has(.view-content)) {
-        animation: slide-up var(--animation) forwards;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-        transform: translateY(0%);
-        opacity: 0;
-    }
-
-    15% {
-        transform: translateY(0.1rem);
-        opacity: 0;
-    }
-
-    25% {
-        transform: translateY(0.15rem);
-    }
-
-    45% {
-        opacity: 0.5;
-    }
-
-    65% {
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
 
 /* ~~~~~~~~~~~~~~~~~~ WS C: Settings Menu ~~~~~~~~~~~~~~~~~~ */
 
@@ -3338,7 +3290,7 @@ pre code {
     grid-row-gap: 0.28rem;
     align-items: start;
     /* Grid por defecto - libros/series MÁS ESTRECHO */
-    grid-template-columns: repeat(auto-fit, minmax(90px, 115px));
+    grid-template-columns: repeat(auto-fit, minmax(99px, 115px));
 }
 
 /* TARJETAS BASE - MÁS ESTRECHAS */
@@ -3347,12 +3299,13 @@ pre code {
     border: 1px solid var(--background-modifier-border);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start !important; /* TODO PEGADO ARRIBA */
     margin: 0;
     padding: 0.25rem;
-    /* Menos padding para más estrecho */
     border-radius: 5px;
     overflow: hidden;
     transition: box-shadow 0.15s linear;
+    min-height: 0 !important; /* No forzar altura */
 }
 
 .cards table.dataview>tbody>tr:hover {
@@ -3386,8 +3339,7 @@ pre code {
 /* TÍTULO - Siempre primera celda ULTRA COMPACTO */
 .cards table.dataview tbody>tr>td:first-child {
     font-weight: var(--bold-weight);
-    min-height: 26px;
-    /* Más compacto */
+    min-height: unset; /* Sin altura mínima para pegar elementos */
     order: 1;
     padding: 0 1px;
     /* Mínimo padding lateral */
@@ -3401,30 +3353,58 @@ pre code {
     text-overflow: ellipsis;
     text-align: center;
     line-height: 1.0;
-    /* Muy compacto */
     font-size: 1em !important;
     width: 100%;
 }
 
-.cards table.dataview tbody>tr:has(td:nth-child(5)) td:nth-child(2),
-.cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:nth-child(2) {
-    font-size: 0.9em !important;
+/* Autor biblioteca y otros campos de texto - MÁS GRANDES */
+.cards table.dataview tbody>tr>td:not(:has(img)) {
+    font-size: 0.95em !important;
+    color: var(--text-normal); /* Cambiado de muted a normal para más visibilidad */
+    min-height: 0 !important;
+    max-height: unset !important;
+    flex-grow: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* IMÁGENES - ALTURA UNIFORME + ZOOM FUNCIONAL */
-.cards table.dataview tbody>tr>td img {
+/* IMÁGENES - DETECCIÓN AUTOMÁTICA Y LLENADO */
+.cards table.dataview tbody>tr>td:has(img):not(:has([src*="progress-bar"])) {
+    flex-grow: 1 !important; /* Solo las portadas/posters crecen */
+    padding: 0 !important;
+    margin: 2px 0 !important;
+}
+
+.cards table.dataview tbody>tr>td img:not([src*="progress-bar"]) {
     border-radius: 4px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
-    height: 140px !important;
-    /* ALTURA FIJA UNIFORME PARA TODO */
+    height: 100% !important;
+    min-height: 120px;
     object-fit: cover;
     margin: 0 !important;
     padding: 0 !important;
     display: block;
-    /* ZOOM FUNCIONAL */
     cursor: zoom-in;
     transition: 220ms ease-in-out;
+}
+
+/* EXCEPCIÓN: BARRAS DE PROGRESO - Mantener compactas */
+.cards table.dataview tbody>tr>td:has([src*="progress-bar"]) {
+    flex-grow: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 2px 0 !important;
+    margin: 0 !important;
+}
+
+.cards table.dataview tbody>tr>td img[src*="progress-bar"] {
+    width: 100%;
+    height: 14px !important; /* Altura fija para la barra, sin estirarse */
+    max-height: 16px;
+    border-radius: 8px;
+    box-shadow: none;
+    cursor: default;
 }
 
 /* ZOOM ACTIVO - Funcionalidad completa del zoom */
@@ -3464,8 +3444,7 @@ pre code {
 /* FORMATO LIBROS/SERIES - Detección específica */
 .cards table.dataview tbody>tr:has(td:nth-child(5)),
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) {
-    min-height: 270px;
-    /* Más compacto */
+    min-height: unset; 
 }
 
 /* Título biblioteca */
@@ -3483,8 +3462,7 @@ pre code {
     font-size: 0.77em;
     /* Más pequeño */
     color: var(--text-muted);
-    min-height: 18px;
-    /* Más compacto */
+    min-height: unset;
     order: 2;
     padding: 0 2px;
     /* Poco padding */
@@ -3494,18 +3472,17 @@ pre code {
 .cards table.dataview tbody>tr:has(td:nth-child(5)) td:nth-child(3),
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:nth-child(3) {
     order: 3;
-    flex-grow: 1;
+    flex-grow: 1; /* CRECER para rellenar la altura de la fila de la rejilla */
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 4px 0 !important; /* Margen vertical para separar de texto */
     overflow: hidden;
     border-radius: 4px;
 }
 
 /* Progreso biblioteca - ESPECÍFICO PARA 4 COLUMNAS CON BARRAS */
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:has([src*="progress-bar"]) {
-    height: 22px;
     order: 4;
-    margin: 2px 0;
+    margin: 0 !important;
     padding: 0 2px !important;
 }
 
@@ -3533,18 +3510,18 @@ pre code {
     color: var(--text-muted);
     font-style: italic;
     order: 5;
-    margin-top: auto;
+    margin-top: 0;
     padding: 0 2px;
 }
 
 /* VIDEOJUEGOS - 4 columnas o menos SIN barras de progreso */
 .cards table.dataview tbody>tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"])) {
-    min-height: 170px;
+    min-height: unset;
 }
 
 /* Grid específico para videojuegos - MÁS ESTRECHO */
 .cards table.dataview:has(tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"]))) tbody {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 95px));
+    grid-template-columns: repeat(auto-fit, minmax(77px, 95px));
     grid-column-gap: 0.2rem;
     grid-row-gap: 0.2rem;
 }
@@ -3559,13 +3536,13 @@ pre code {
 /* IMAGEN VIDEOJUEGOS - COMPLETAMENTE PEGADA (2da columna) */
 .cards table.dataview tbody>tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"])) td:nth-child(2) {
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 3px 0 !important;
     overflow: hidden;
     border-radius: 4px;
-    flex-grow: 1;
+    flex-grow: 1; /* CRECER para rellenar altura */
     line-height: 1;
     font-size: 13px;
-    min-height: 35px;
+    min-height: 100px;
 }
 
 /* Año videojuegos - MÁS COMPACTO */
@@ -3580,31 +3557,22 @@ pre code {
     min-height: 16px;
 }
 
-/* Rating videojuegos - si existe cuarta columna */
-.cards table.dataview tbody>tr:not(:has(td:nth-child(5))) td:nth-child(4) {
-    font-size: 0.85em;
-    /* Más compacto */
-    color: var(--text-accent);
-    font-weight: bold;
-    order: 4;
-    margin-top: auto;
-    min-height: 18px;
-}
-
-/* Si solo 3 columnas, el año va al fondo */
-.cards table.dataview tbody>tr:not(:has(td:nth-child(5))) td:nth-child(3):last-child {
-    margin-top: auto;
+/* Rating y otros campos finales */
+.cards table.dataview tbody>tr>td:last-child {
+    margin-top: 0 !important;
+    margin-bottom: 2px;
+    flex-grow: 0 !important;
 }
 
 /* RESPONSIVE - ULTRA ESTRECHO EN TODAS LAS PANTALLAS */
 @media (max-width: 768px) {
     .cards table.dataview tbody {
-        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)) !important;
     }
 
     /* Videojuegos aún más estrechos en móvil */
     .cards table.dataview:has(tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"]))) tbody {
-        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)) !important;
     }
 
 
@@ -3612,11 +3580,11 @@ pre code {
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .cards table.dataview tbody {
-        grid-template-columns: repeat(auto-fit, minmax(88px, 110px));
+        grid-template-columns: repeat(auto-fit, minmax(97px, 110px));
     }
 
     .cards table.dataview:has(tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"]))) tbody {
-        grid-template-columns: repeat(auto-fit, minmax(68px, 88px));
+        grid-template-columns: repeat(auto-fit, minmax(75px, 88px));
     }
 }
 
@@ -3624,9 +3592,33 @@ pre code {
 .cards table.dataview tbody>tr>td .el-p {
     display: block;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 1.1;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.0;
+}
+
+/* LISTAS DENTRO DE TARJETAS - RESET TOTAL PARA COMPACTAR */
+.cards table.dataview tbody>tr>td>ul {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.cards table.dataview tbody>tr>td>ul>li {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.0;
+    text-align: left;
+}
+
+/* Eliminar puntos de lista e iconos si aparecen */
+.cards table.dataview tbody>tr>td *:before,
+.cards table.dataview tbody>tr>td *:after,
+.cards table.dataview tbody>tr>td>ul>li::marker,
+.cards table.dataview tbody>tr>td>ul>li::before {
+    content: none !important;
+    display: none !important;
 }
 
 /* ANIMACIÓN PARA ZOOM */
@@ -6362,13 +6354,12 @@ mjx-stretchy-h>*>mjx-c::before {
 /* End - Snippet - Kanban        */
 /*-------------------------------*/
 
-
 /* ============================================================ */
-/* FIX: VISTA DE BASES (Database Folder)                       */
+/* FIX: VISTA DE BASES (Database Folder + Obsidian Bases)      */
 /* ============================================================ */
 
-/* Ancho completo para notas con bases de datos */
-/* Forzamos el ancho en el sizer y la sección de lectura */
+/* Ancho completo para notas con Database Folder plugin */
+/* Limitado al contenedor dbfolder, no afecta a notas normales */
 .workspace-leaf .cm-sizer:has(.dbfolder-view-container),
 .workspace-leaf .markdown-preview-section:has(.dbfolder-view-container),
 .workspace-leaf:has(.dbfolder-view-container) .is-readable-line-width .cm-sizer,
@@ -6379,9 +6370,10 @@ mjx-stretchy-h>*>mjx-c::before {
 }
 
 /* Colores de las celdas y texto general en la base */
-.dbfolder-view-container, 
+.dbfolder-view-container,
 .database-plugin__table,
-.dbfolder-header-container {
+.dbfolder-header-container,
+body .dbfolder-view-container a {
     color: var(--text-normal) !important;
 }
 
@@ -6394,7 +6386,7 @@ mjx-stretchy-h>*>mjx-c::before {
     border: 1px solid var(--background-modifier-border) !important;
 }
 
-/* Botón activo o resaltado (como el de Filtrar cuando se usa) */
+/* Boton activo o resaltado (como el de Filtrar cuando se usa) */
 .dbfolder-header-button.is-active,
 .dbfolder-view-header button.is-active,
 [class*="dbfolder"] button.MuiButton-root.mod-cta,
@@ -6403,8 +6395,8 @@ mjx-stretchy-h>*>mjx-c::before {
     color: var(--text-antinormal) !important;
 }
 
-/* Menu de filtros y diálogos (Popups / Popovers) */
-.dbfolder-popup-menu, 
+/* Menu de filtros y dialogos (Popups / Popovers) */
+.dbfolder-popup-menu,
 .dbfolder-filter-container,
 .MuiPopover-paper,
 .MuiPaper-root {
@@ -6418,7 +6410,7 @@ mjx-stretchy-h>*>mjx-c::before {
 .MuiFormLabel-root,
 .MuiInputBase-input,
 .MuiListItemText-primary {
-    color: inherit !important; /* Hereda del padre .MuiPaper-root que ya tiene var(--text-normal) */
+    color: inherit !important;
 }
 
 /* Botones y Chips dentro de los filtros (donde el fondo es naranja) */
@@ -6432,13 +6424,13 @@ body .dbfolder-filter-container .MuiButton-root {
     color: var(--text-antinormal) !important;
 }
 
-/* Específicamente el texto de "All the following are true" si es un select/botón */
+/* Especificamente el texto de "All the following are true" si es un select/boton */
 body .MuiPopover-paper .MuiButtonBase-root,
 body .MuiPopover-paper .MuiInputBase-root {
     color: var(--text-antinormal) !important;
 }
 
-/* Botones de acción dentro de los menús (Add filter, etc.) */
+/* Botones de accion dentro de los menus (Add filter, etc.) */
 body .MuiPopover-paper button,
 body .dbfolder-popup-menu button,
 body .bases-query-container .filter-group .filter-group-header .conjunction.dropdown {
@@ -6447,12 +6439,167 @@ body .bases-query-container .filter-group .filter-group-header .conjunction.drop
     font-weight: bold !important;
 }
 
-/* Enlaces en la base */
-.dbfolder-view-container a {
+/* Menu contextual: quitar el max-width de 225px que lo hacia estrecho */
+body .menu {
+    max-width: none !important;
+}
+
+/* Filtros y menus de Obsidian Bases: fondo transparente + texto normal */
+/* Sin bordes extra -- el popup ya tiene su propio borde */
+body .bases-query-container *,
+body .menu .bases-query-container *,
+body .menu .combobox-button,
+body .bases-view-container .combobox-button {
+    background-color: transparent !important;
     color: var(--text-normal) !important;
-    text-decoration: underline 1px solid var(--text-accent);
+    border: none !important;
+}
+
+/* Excepto: los controles interactivos recuperan su borde nativo sutil */
+body .bases-query-container select,
+body .bases-query-container input {
+    border-bottom: 1px solid var(--background-modifier-border) !important;
 }
 
 /* ============================================================
    FIN DE SNIPPETS INTEGRADOS
    ============================================================ */
+
+
+
+/* --- PERIODIC THEMES INTEGRATION --- */
+.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .periodic-weekly, .periodic-monthly, .periodic-quarterly, .periodic-yearly { --periodic-bg: rgba(0,0,0,0); }
+.monday { --periodic-bg: rgba(195, 255, 0, 0.1); --text-accent: #ffb86c !important; }
+.tuesday { --periodic-bg: rgba(92, 255, 51, 0.1); --text-accent: #8be9fd !important; }
+.wednesday { --periodic-bg: rgba(0, 166, 255, 0.138); --text-accent: #50fa7b !important; }
+.thursday { --periodic-bg: rgba(40, 68, 252, 0.1); --text-accent: #bd93f9 !important; }
+.friday { --periodic-bg: rgba(136, 9, 255, 0.1); --text-accent: #ff79c6 !important; }
+.saturday { --periodic-bg: rgba(255, 32, 195, 0.1); --text-accent: #bd93f9 !important; }
+.sunday { --periodic-bg: rgba(255, 215, 37, 0.1); --text-accent: #ff5555 !important; }
+.week { --periodic-bg: rgba(74, 156, 157, 0.16); --text-accent: #6272a4 !important; }
+.month { --periodic-bg: rgba(148, 148, 148, 0.21); --text-accent: #ffb86c !important; }
+.quarter { --periodic-bg: rgba(46, 46, 46, 0.17); --text-accent: #50fa7b !important; }
+.year { --periodic-bg: rgba(30, 30, 30, 0.35); --text-accent: #f8f8f2 !important; }
+.markdown-source-view.mod-cm6, .markdown-preview-view { background-image: linear-gradient(var(--periodic-bg), var(--periodic-bg)) !important; background-attachment: fixed !important; }
+
+/* 2. Layering Fix: Ensure transparency so the tinted background shows through */
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view,
+.view-content {
+    background-color: transparent !important;
+}
+
+.workspace-leaf-content {
+    background-color: var(--background-primary) !important;
+}
+
+/* --- JOURNAL CALLOUTS OPTIMIZATION (RAINBOW) --- */
+.callout[data-callout^="journal"] {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.callout[data-callout^="journal"] .callout-title {
+    text-align: center !important;
+    background-color: var(--journal-callout-bg, #494949) !important;
+    margin: 0 !important;
+    display: block !important;
+    border-radius: 4px;
+    padding: 8px !important;
+}
+
+.callout[data-callout="journal2"] { margin-bottom: 43px !important; }
+.callout[data-callout="journal3"] { margin-top: 70px !important; }
+
+.callout[data-callout^="journal"] .callout-icon { display: none !important; }
+.callout[data-callout^="journal"] .callout-title-inner { 
+    font-weight: normal !important; 
+    color: var(--text-normal) !important; 
+}
+
+/* Light Theme Variables for Correlated Colors */
+.theme-light .monday { --journal-callout-bg: color-mix(in srgb, #ff5555 20%, white) !important; }
+.theme-light .tuesday { --journal-callout-bg: color-mix(in srgb, #ffb86c 20%, white) !important; }
+.theme-light .wednesday { --journal-callout-bg: color-mix(in srgb, #f1fa8c 25%, white) !important; }
+.theme-light .thursday { --journal-callout-bg: color-mix(in srgb, #50fa7b 20%, white) !important; }
+.theme-light .friday { --journal-callout-bg: color-mix(in srgb, #8be9fd 20%, white) !important; }
+.theme-light .saturday { --journal-callout-bg: color-mix(in srgb, #bd93f9 20%, white) !important; }
+.theme-light .sunday { --journal-callout-bg: color-mix(in srgb, #ff79c6 20%, white) !important; }
+
+.theme-light .week { --journal-callout-bg: color-mix(in srgb, #6272a4 20%, white) !important; }
+.theme-light .month { --journal-callout-bg: color-mix(in srgb, #ffb86c 20%, white) !important; }
+.theme-light .quarter { --journal-callout-bg: color-mix(in srgb, #50fa7b 20%, white) !important; }
+.theme-light .year { --journal-callout-bg: color-mix(in srgb, #f8f8f2 20%, white) !important; }
+
+/* Dark Theme Variables for Correlated Colors */
+.theme-dark .monday { --journal-callout-bg: color-mix(in srgb, #fde0e0 25%, #282a36) !important; }
+.theme-dark .tuesday { --journal-callout-bg: color-mix(in srgb, #fce8d1 25%, #282a36) !important; }
+.theme-dark .wednesday { --journal-callout-bg: color-mix(in srgb, #fdffe3 25%, #282a36) !important; }
+.theme-dark .thursday { --journal-callout-bg: color-mix(in srgb, #d9fae1 25%, #282a36) !important; }
+.theme-dark .friday { --journal-callout-bg: color-mix(in srgb, #ffffff 25%, #282a36) !important; }
+.theme-dark .saturday { --journal-callout-bg: color-mix(in srgb, #f4eaff 25%, #282a36) !important; }
+.theme-dark .sunday { --journal-callout-bg: color-mix(in srgb, #f5d7e8 25%, #282a36) !important; }
+
+.theme-dark .week { --journal-callout-bg: color-mix(in srgb, #dfe6fd 25%, #282a36) !important; }
+.theme-dark .month { --journal-callout-bg: color-mix(in srgb, #ffeedc 25%, #282a36) !important; }
+.theme-dark .quarter { --journal-callout-bg: color-mix(in srgb, #ddffe6 25%, #282a36) !important; }
+.theme-dark .year { --journal-callout-bg: color-mix(in srgb, #ffffff 20%, #282a36) !important; }
+
+
+/* ============================================================ */
+/* Properties - Línea separadora inferior                       */
+/* Reading Mode & Live Preview                                  */
+/* ============================================================ */
+
+.theme-dark {
+    --properties-separator-color: rgba(255, 255, 255, 0.85);
+}
+
+.theme-light {
+    --properties-separator-color: rgba(0, 0, 0, 0.85);
+}
+
+.metadata-container {
+    border-bottom: 2px solid var(--properties-separator-color) !important;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+/* Source Mode: borde inferior del bloque YAML (---) */
+.cm-frontmatter-border {
+    border-bottom: 2px solid var(--properties-separator-color) !important;
+}
+
+/* Fix para letras descendentes cortadas en propiedades */
+.workspace .metadata-properties .multi-select-pill {
+    overflow: visible !important;
+}
+
+.workspace .metadata-properties .multi-select-pill-content {
+    overflow: visible !important;
+    line-height: normal !important;
+}
+
+/* ============================================================ */
+/* Properties - Borde naranja alrededor de la fila completa     */
+/* ============================================================ */
+
+/* 1. Quitamos los bordes individuales (nombres y celdas de valores) */
+.workspace .metadata-property-key-input:focus,
+.workspace .metadata-property-key-input:focus-within,
+.workspace .metadata-property-value-input:focus,
+.workspace .metadata-property-value-input:focus-within,
+.workspace .multi-select-input:focus-within,
+.workspace .multi-select-input:focus {
+    box-shadow: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+}
+
+/* 2. Añadimos el borde a la fila COMPLETA cuando se tiene el foco */
+.workspace .metadata-property:focus-within,
+.workspace .metadata-property.is-focused {
+    box-shadow: 0 0 0 1.5px var(--interactive-accent) !important;
+    border-radius: 4px;
+}
+
