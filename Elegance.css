@@ -6603,3 +6603,13 @@ body .bases-query-container input {
     border-radius: 4px;
 }
 
+
+
+
+
+
+/* --- Custom Fix Database Folder Pills Background --- */
+.base-toolbar-sort-item .metadata-property:not(:hover), 
+.base-toolbar-groupby-item .metadata-property:not(:hover) {
+    background-color: color-mix(in srgb, var(--text-accent) 25%, transparent) !important;
+}
