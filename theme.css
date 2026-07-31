@@ -277,7 +277,7 @@ settings:
     --text-muted: rgb(255, 255, 255);
     --text-muted2: rgb(255, 255, 255);
     --text-faint: rgb(244, 141, 255);
-    --text-highlight-bg: rgba(255, 225, 0, 0.258);
+
     --text-error: rgba(214, 0, 46, 0.925);
     --text-error-hover: rgba(255, 0, 0, 0.466);
     --text-highlight-bg: rgba(255, 255, 0, 0.699);
@@ -333,7 +333,7 @@ settings:
     --text-muted: rgb(0, 0, 0);
     --text-muted2: rgb(123, 123, 123);
     --text-faint: rgb(227, 0, 106);
-    --text-highlight-bg: rgba(255, 226, 0, 0.3);
+
     --text-error: rgb(255, 0, 55);
     --text-error-hover: rgb(232, 0, 0);
     --text-highlight-bg: rgba(117, 0, 0, 0.293);
@@ -455,9 +455,9 @@ input.prompt-input {
 }
 
 .nav-folder-title-content::before {
-    content: '📂';
-    padding: 0px 0px 0px 8px;
-    animation: cambiarOpacidad 5s infinite;
+    /*content: '📂';*/
+    /*padding: 0px 30px 0px 38px;*/
+    /*animation: cambiarOpacidad 5s infinite*/
 }
 
 @keyframes cambiarOpacidad {
@@ -535,7 +535,7 @@ input.prompt-input {
 /* File Explorer: Only affects the position of the arrows in the file explorer, not other pannels */
 
 .workspace-leaf-content[data-type="file-explorer"] .tree-item-self .tree-item-icon {
-    margin-inline-start: -9px;
+    margin-inline-start: -11px;
 }
 
 .workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root>div.nav-folder-children {
@@ -2024,7 +2024,29 @@ body.embed-smooth-scroll .internal-embed {
 
 
 
-/* @ D13: Suggestion - obsidian autocomplete for notes */
+/* @ D13: Suggestion - solo autocompletado de propiedades (excluye Quick Switcher / Prompt) */
+
+.suggestion-container:not(:has(.prompt-input)) .suggestion-item {
+    padding: 3px 8px;
+    height: auto;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.suggestion-container:not(:has(.prompt-input)) .suggestion-item:has(.suggestion-note) {
+    padding: 5px 10px;
+    min-height: 34px;
+}
+
+.suggestion-container:not(:has(.prompt-input)) .suggestion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
 
 .suggestion-item.is-selected:hover {
     cursor: pointer;
@@ -2883,7 +2905,7 @@ table {
 
 .row-lines .table-view-table>tbody>tr>td,
 .row-lines table:not(.calendar) tbody>tr>td {
-    border-bottom: 1 !important;
+    border-bottom: 1px solid !important;
 }
 
 .markdown-rendered td {
@@ -3089,12 +3111,13 @@ pre code {
     color: var(--text-normal);
 } */
 
-.callout-title {
+.callout-title,
+.callout.is-collapsible .callout-title {
     padding: 8px;
     display: flex;
     overflow: auto;
     gap: 10px;
-    background-color: rgba(var(--callout-color), 0.1);
+    background-color: color-mix(in srgb, var(--callout-color) 10%, transparent);
     text-align: justify;
     color: white;
 }
@@ -3115,13 +3138,13 @@ pre code {
     color: white;
 }
 
-.callout[data-callout="info"],
-.callout[data-callout="todo"] {
-    --callout-color: 0, 184, 212;
+.callout[data-callout="info"] {
+    --callout-color: rgb(0, 184, 212);
 }
 
-.callout {
-    background-color: rgba(var(--callout-color), 0.3);
+.callout,
+.callout.is-collapsible {
+    background-color: color-mix(in srgb, var(--callout-color) 30%, transparent);
 
     padding: 0px;
 }
@@ -3136,9 +3159,21 @@ pre code {
 /* CSS Snippet para cambiar solo el color de fondo del callout TLDR a azul */
 
 .callout[data-callout="tldr"] {
-    --callout-color: 0, 166, 30;
+    --callout-color: rgb(0, 166, 30);
     /* Azul RGB */
 }
+
+
+/* Customize callout important for light mode and dark mode */
+.theme-light .callout[data-callout="important"] {
+    --callout-color: rgb(200, 155, 30); /* Ámbar / dorado suave en modo claro */
+}
+
+.theme-dark .callout[data-callout="important"] {
+    --callout-color: rgb(249, 255, 0); /* Mantiene la estética original en modo oscuro */
+}
+
+
 
 /* ~~~~~~~~~~~~~~~~~~ AS F: Themed Loading Page  ~~~~~~~~~~~~~~~~~~ */
 
@@ -3257,9 +3292,14 @@ pre code {
     margin: 0px;
     border-radius: 6px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
     padding: 0px;
+}
+
+.callout[data-callout="imagen"] .callout-title {
+    width: 100%;
+    justify-content: center;
 }
 
 .callout[data-callout="imagen"] .callout-content {
@@ -5211,10 +5251,15 @@ mark.orange,
 }
 
 mark.grey,
+mark.gray,
 .markdown-rendered mark.grey,
+.markdown-rendered mark.gray,
 .markdown-preview-view mark.grey,
+.markdown-preview-view mark.gray,
 .cm-editor mark.grey,
-.cm-line mark.grey {
+.cm-editor mark.gray,
+.cm-line mark.grey,
+.cm-line mark.gray {
     --text-highlight-rgb: var(--zotero-gray-rgb) !important;
 }
 
@@ -5289,6 +5334,52 @@ mark.pink,
 .theme-light .markdown-rendered mark .internal-link {
     color: rgb(255, 166, 0) !important;
     font-weight: bold !important;
+}
+
+/* ============ EXPORT PDF - Print Colors ============ */
+/* background-image gradients are ignored by Chromium when printing.  */
+/* This block replaces them with solid background-color for PDF export. */
+@media print {
+    html, body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .markdown-preview-view mark,
+    .markdown-rendered mark {
+        background-image: none !important;
+        background-color: rgba(255, 212, 0, 0.5) !important;
+        text-shadow: none !important;
+    }
+    .markdown-preview-view mark.green,
+    .markdown-rendered mark.green {
+        background-image: none !important;
+        background-color: rgba(95, 178, 54, 0.45) !important;
+    }
+    .markdown-preview-view mark.red,
+    .markdown-rendered mark.red {
+        background-image: none !important;
+        background-color: rgba(255, 102, 102, 0.5) !important;
+    }
+    .markdown-preview-view mark.yellow,
+    .markdown-rendered mark.yellow {
+        background-image: none !important;
+        background-color: rgba(255, 212, 0, 0.5) !important;
+    }
+    .markdown-preview-view mark.purple,
+    .markdown-rendered mark.purple {
+        background-image: none !important;
+        background-color: rgba(162, 138, 229, 0.45) !important;
+    }
+    .markdown-preview-view mark.blue,
+    .markdown-rendered mark.blue {
+        background-image: none !important;
+        background-color: rgba(46, 168, 229, 0.45) !important;
+    }
+    .markdown-preview-view mark.orange,
+    .markdown-rendered mark.orange {
+        background-image: none !important;
+        background-color: rgba(241, 152, 55, 0.5) !important;
+    }
 }
 
 /*-------------------------*/
@@ -6253,67 +6344,6 @@ Support: https://github.com/sponsors/kepano */
 /* End - Snippet - Cards */
 /*----------------------*/
 
-
-/*====================================*/
-/* Snippet - Plugin Quiet Outline    */
-/*==================================*/
-
-button:not(.clickable-icon).n-button {
-    background-color: var(--text-antinormal);
-    box-shadow: var(--input-shadow);
-}
-
-button:not(.clickable-icon).n-button:hover {
-    background-color: var(--text-accent);
-}
-
-.quiet-outline .n-tree .n-tree-node:not(.n-tree-node--disabled).n-tree-node--selectable .n-tree-node-content::before {
-    content: "›";
-    font-size: 1.2em;
-    font-weight: 500;
-    padding-right: 3.75px;
-    color: var(--text-accent);
-}
-
-.quiet-outline {
-    padding: 1px !important;
-    margin: -10px !important;
-}
-
-.n-base-icon svg {
-    height: 1.2em;
-    width: 1.2em;
-}
-
-.n-tree-node.located p {
-    color: var(--text-accent);
-}
-
-.n-tree .n-tree-node:hover {
-    border: 1.5px solid var(--text-accent);
-}
-
-.quiet-outline .level-2 .n-tree-node-indent {
-    border-right: 2px solid gray;
-}
-
-.quiet-outline .n-tree-node-indent {
-    flex: 0 0 12px !important;
-}
-
-.n-tree .n-tree-node-content {
-    padding: 0px;
-}
-
-.quiet-outline .n-tree-node-content:hover {
-    margin: 0 -1.36px;
-}
-
-/*-------------------------------------------*/
-/* End - Snippet - Plugin Quiet Outline    */
-/*-----------------------------------------*/
-
-
 /*=======================================*/
 /* Snippet - Líneas MathJax Mejoradas   */
 /*=====================================*/
@@ -6612,4 +6642,95 @@ body .bases-query-container input {
 .base-toolbar-sort-item .metadata-property:not(:hover), 
 .base-toolbar-groupby-item .metadata-property:not(:hover) {
     background-color: color-mix(in srgb, var(--text-accent) 25%, transparent) !important;
+}
+
+/* ============================================================ */
+/* Custom Fix: Make Mermaid diagram text 2px smaller            */
+/* ============================================================ */
+:root {
+    --mermaid-font-size: calc(var(--font-text-size, var(--font-size-normal, 16px)) - 2px) !important;
+}
+
+.mermaid text,
+.mermaid .node text,
+.mermaid .label,
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .edgeLabel text,
+.mermaid .legend text,
+.mermaid span {
+    font-size: calc(var(--font-text-size, var(--font-size-normal, 16px)) - 2px) !important;
+}
+/* ============================================================ */
+/* OBSIDIAN 1.13 UI SETTINGS FIXES */
+/* ============================================================ */
+
+/* Make the left settings sidebar wider and use 100% vertical space */
+.modal.mod-settings .vertical-tab-header {
+    flex: 0 0 307px !important;
+    width: 307px !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    overflow-x: hidden !important;
+}
+.modal.mod-settings .vertical-tab-header::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Keep icon and text tightly grouped together in the center */
+.vertical-tab-nav-item,
+.vertical-tab-nav-item.is-active,
+.vertical-tab-nav-item:hover {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+.vertical-tab-nav-item .vertical-tab-nav-item-title,
+.vertical-tab-nav-item-title {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+.vertical-tab-nav-item svg,
+.vertical-tab-nav-item .svg-icon {
+    margin: 0 !important;
+    position: static !important;
+}
+
+/* Expand main settings content area to use full vertical & horizontal space */
+.modal.mod-settings .vertical-tab-content-container {
+    height: 100% !important;
+    max-height: none !important;
+    padding: 0 !important;
+}
+.vertical-tab-content {
+    height: 100% !important;
+    max-height: none !important;
+    padding-top: 20px !important;
+    padding-bottom: 25px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+/* Remove grey line/background from settings headings */
+.setting-item.setting-item-heading {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: none !important;
+}
+
+/* Increase contrast for the Log Out / Warning buttons */
+.modal.mod-settings button.mod-warning {
+    background-color: #d32f2f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+.modal.mod-settings button.mod-warning:hover {
+    background-color: #b71c1c !important;
 }
