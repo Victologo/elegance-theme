@@ -6991,3 +6991,399 @@ body .bases-query-container input {
 /* ================================================================
    END — MOBILE OPTIMIZATIONS
    ================================================================ */
+
+/* ================================================================
+   LP ↔ READING VIEW CONSISTENCY
+   Unifica el aspecto entre Live Preview (CM6) y Reading View para
+   que cambiar de modo no produzca ningún salto visual perceptible.
+   ================================================================ */
+
+/* ──────────────────────────────────────────────────────────────
+   1. CONTENEDOR PRINCIPAL — Márgenes y ancho máximo idénticos
+   ────────────────────────────────────────────────────────────── */
+
+/* Reading View: texto centrado con padding uniforme */
+.markdown-preview-section {
+    max-width: var(--file-line-width, 700px);
+    margin: 0 auto;
+    padding-left: var(--file-margins, 40px) !important;
+    padding-right: var(--file-margins, 40px) !important;
+}
+
+/* Live Preview (CM6): igualar padding al de Reading View */
+.markdown-source-view.mod-cm6 .cm-sizer {
+    padding-left: var(--file-margins, 40px) !important;
+    padding-right: var(--file-margins, 40px) !important;
+}
+
+/* Asegurar que ambos modos respetan la línea de lectura de Obsidian */
+.is-readable-line-width .markdown-preview-section,
+.is-readable-line-width .cm-sizer {
+    max-width: var(--file-line-width, 700px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2. TIPOGRAFÍA DE PÁRRAFO — Idéntica en ambos modos
+   ────────────────────────────────────────────────────────────── */
+
+/* Párrafos en Reading View */
+.markdown-preview-view p {
+    line-height: 16.5pt;        /* ← mismo valor que el global `p {}` */
+    word-spacing: 0.8pt;
+    margin-block-start: 1.15em;
+    margin-block-end: 0;
+}
+
+/* Párrafos en Live Preview: las líneas CM6 ya heredan `p {}`,
+   pero añadimos el mismo line-height explícito para seguridad */
+.markdown-source-view.mod-cm6 .cm-line {
+    line-height: 16.5pt;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. ENCABEZADOS — Espaciado superior/inferior unificado
+   Elegance ya sincroniza los gradientes vía .HyperMD-header-* y
+   .markdown-preview-section h*, pero los márgenes eran distintos.
+   ────────────────────────────────────────────────────────────── */
+
+/* H1 */
+.HyperMD-header-1,
+.markdown-preview-section h1,
+.cm-header-1 {
+    margin-top: 30px !important;
+    margin-bottom: 3px !important;
+}
+
+/* H2 */
+.HyperMD-header-2,
+.markdown-preview-section h2,
+.cm-header-2 {
+    margin-top: 10px !important;
+    margin-bottom: 3px !important;
+}
+
+/* H3–H5 */
+.HyperMD-header-3, .markdown-preview-section h3, .cm-header-3,
+.HyperMD-header-4, .markdown-preview-section h4, .cm-header-4,
+.HyperMD-header-5, .markdown-preview-section h5, .cm-header-5 {
+    margin-top: 8px !important;
+    margin-bottom: 5px !important;
+}
+
+/* H6 */
+.HyperMD-header-6,
+.markdown-preview-section h6,
+.cm-header-6 {
+    margin-top: 30px !important;
+    margin-bottom: 5px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   4. LISTAS — Espaciado en Reading View (LP no se toca para no
+   interferir con el sistema de indentación nativo de CM6)
+   ────────────────────────────────────────────────────────────── */
+
+/* DESACTIVADO: añadía más indentación en Reading View que en LP,
+   produciendo una diferencia visual notable.
+   Elegance ya tiene su propia indentación de listas; no sobreescribir.
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+    padding-inline-start: 1.8em;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+}
+*/
+
+/* NOTA: NO se aplica padding-left a .HyperMD-list-line porque
+   Elegance ya tiene su propio sistema de indentación en CM6
+   y sobreescribirlo causa desalineación visual. */
+
+/* ──────────────────────────────────────────────────────────────
+   5. INLINE TITLE — Aspecto consistente en ambos modos
+   ────────────────────────────────────────────────────────────── */
+
+/* El .inline-title aparece en Live Preview; asegurar que el
+   hueco visual que deja es el mismo que el gap del inicio de
+   la Reading View (donde el título no aparece en el contenido) */
+.inline-title {
+    margin-bottom: 40px !important;   /* ← mismo que el margin-bottom original */
+    margin-top: 20px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   6. BLOQUES DE CÓDIGO — Fuente y padding igualados
+   ────────────────────────────────────────────────────────────── */
+
+/* Reading View */
+.markdown-preview-view pre,
+.markdown-preview-view code {
+    font-family: var(--font-monospace, 'Source Code Pro', monospace);
+    font-size: var(--font-smaller, 0.875em);
+}
+
+/* Live Preview */
+.markdown-source-view.mod-cm6 .cm-inline-code,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+    font-family: var(--font-monospace, 'Source Code Pro', monospace);
+    font-size: var(--font-smaller, 0.875em);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   7. BLOCKQUOTES — Borde izquierdo idéntico en ambos modos
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view blockquote,
+.markdown-source-view.mod-cm6 .HyperMD-quote {
+    border-left: 3px solid var(--text-accent);
+    padding-left: 1em;
+    margin-left: 0;
+    color: var(--text-muted);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   8. SEPARADOR HORIZONTAL (---) — igual grosor y color
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view hr,
+.markdown-source-view.mod-cm6 .HyperMD-hr {
+    border: none;
+    border-top: 1px solid var(--background-modifier-border);
+    margin: 1.5em 0;
+}
+
+/* ================================================================
+   END — LP ↔ READING VIEW CONSISTENCY
+   ================================================================ */
+
+/* ================================================================
+   TABLAS — Scroll horizontal + Zebra striping
+   ================================================================ */
+
+/* ──────────────────────────────────────────────────────────────
+   1. CONTENEDOR CON SCROLL HORIZONTAL
+   Envuelve la tabla en un bloque desplazable; así tablas anchas
+   no rompen el layout del contenido y el texto nunca se desborda.
+   ────────────────────────────────────────────────────────────── */
+
+/* Aplica en Reading View */
+.markdown-preview-view .table-wrapper,
+.markdown-preview-section > table,
+.markdown-preview-section > * > table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;   /* scroll suave en iOS */
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/* Aplica en Live Preview */
+.markdown-source-view.mod-cm6 .cm-table-widget,
+.markdown-source-view.mod-cm6 table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+}
+
+/* También para tablas Dataview (plugin) */
+.dataview.table-view-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2. ESTRUCTURA BASE — Bordes y layout limpios
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view table,
+.dataview.table-view-table {
+    border-collapse: collapse;
+    width: max-content;       /* permite scroll si supera el contenedor */
+    min-width: 100%;          /* pero nunca queda más estrecha que el área */
+    font-size: 0.9em;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. CABECERA (THEAD) — Fija visualmente mientras haces scroll
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view thead th,
+.dataview.table-view-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 14px;
+    border-bottom: 2px solid var(--text-accent);
+    white-space: nowrap;          /* evita que la cabecera parta en varias líneas */
+    z-index: 1;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   4. CELDAS — Padding y bordes consistentes
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view td,
+.dataview.table-view-table td {
+    padding: 6px 14px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   5. ZEBRA STRIPING — Filas alternadas para lectura más fácil
+   Usa una capa semitransparente sobre el color de fondo para
+   que funcione tanto en tema claro como oscuro.
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view tbody tr:nth-child(odd),
+.dataview.table-view-table tbody tr:nth-child(odd) {
+    background-color: var(--background-primary);
+}
+
+.markdown-preview-view tbody tr:nth-child(even),
+.dataview.table-view-table tbody tr:nth-child(even) {
+    background-color: var(--background-secondary);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   6. HOVER EN FILAS — Resaltado sutil al pasar el ratón
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-view tbody tr:hover,
+.dataview.table-view-table tbody tr:hover {
+    background-color: rgba(var(--accent-rgb, 100, 140, 240), 0.1);
+    transition: background-color 120ms ease;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   7. SCROLLBAR DISCRETO para el scroll horizontal
+   ────────────────────────────────────────────────────────────── */
+
+.markdown-preview-section > table::-webkit-scrollbar,
+.dataview.table-view-table::-webkit-scrollbar {
+    height: 4px;
+}
+
+.markdown-preview-section > table::-webkit-scrollbar-track,
+.dataview.table-view-table::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.markdown-preview-section > table::-webkit-scrollbar-thumb,
+.dataview.table-view-table::-webkit-scrollbar-thumb {
+    background-color: var(--background-modifier-border);
+    border-radius: 4px;
+}
+
+/* ================================================================
+   END — TABLAS
+   ================================================================ */
+
+
+/* ================================================================
+   PREFERS-REDUCED-MOTION
+   ================================================================
+
+   QUÉ ES Y POR QUÉ IMPORTA
+   ─────────────────────────
+   Algunos usuarios configuran en su sistema operativo la opción
+   "Reducir movimiento" (Windows → Accesibilidad → Efectos visuales
+   → "Mostrar animaciones en Windows": OFF).
+
+   Esta preferencia la expone el navegador/Electron vía el media
+   query `prefers-reduced-motion: reduce`. Elegance tiene ≈20
+   animaciones activas (pulsos del título, parpadeo de línea activa,
+   flash de acento, fade de imágenes…). Cuando el sistema pide menos
+   movimiento, lo correcto es desactivarlas — sin tocar el diseño.
+
+   ESTRATEGIA APLICADA
+   ────────────────────
+   • Todas las animaciones se reducen a duración 0.01 ms (instantáneas).
+   • Todas las transiciones se reducen a 150 ms máximo (lo suficiente
+     para que los estados hover no sean abruptos, pero sin movimiento
+     perceptible).
+   • No se altera ningún color, fuente ni layout — solo el movimiento.
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* ── A. ANIMACIONES GLOBALES — apagar cualquier @keyframes ── */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        animation-delay: 0ms !important;
+    }
+
+    /* ── B. TRANSICIONES — acortar, no eliminar (UX accesible) ── */
+    *,
+    *::before,
+    *::after {
+        transition-duration: 150ms !important;
+        transition-delay: 0ms !important;
+    }
+
+    /* ── C. ANIMACIONES ESPECÍFICAS de Elegance ───────────────── */
+
+    /* Título de nota (inline-title pulsante) */
+    .inline-title {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Títulos de la barra lateral (title_dark / title_light) */
+    .view-header-title {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Texto de acento parpadeante (text_accent_flash) */
+    .nav-file-title.is-active,
+    .nav-folder-title.is-active {
+        animation: none !important;
+    }
+
+    /* Línea activa del editor (active_line_dark / active_line_light) */
+    .cm-active.cm-line {
+        animation: none !important;
+    }
+
+    /* Fade de imágenes (fadeOpacity) */
+    img {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Apertura/cierre del panel lateral */
+    .workspace-split.mod-left-split,
+    .workspace-split.mod-right-split {
+        transition: none !important;
+    }
+
+    /* Cards de Kanban/Dataview */
+    .kanban-plugin__item,
+    .cards table.dataview tbody > tr > td {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    /* Hover de filas en tablas (que acabamos de añadir) */
+    .markdown-preview-view tbody tr:hover,
+    .dataview.table-view-table tbody tr:hover {
+        transition: none !important;
+    }
+}
+
+/* ================================================================
+   END — PREFERS-REDUCED-MOTION
+   ================================================================ */
