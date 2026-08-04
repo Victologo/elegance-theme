@@ -210,6 +210,32 @@ settings:
         max: 16
         step: 1
         format: px
+    -
+        id: elegance-modals-heading
+        title: 🪟 Modales y Ventanas
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: dialog-width
+        title: Ancho de ventana de ajustes
+        description: Controla el ancho de la ventana de ajustes
+        type: variable-number-slider
+        default: 96
+        min: 50
+        max: 100
+        step: 1
+        format: vw
+    -
+        id: dialog-height
+        title: Alto de ventana de ajustes
+        description: Controla el alto de la ventana de ajustes
+        type: variable-number-slider
+        default: 94
+        min: 50
+        max: 100
+        step: 1
+        format: vh
 
 */
 
@@ -249,6 +275,8 @@ settings:
 
     /* UI - Configurable con Style Settings */
     --scrollbar-width: 8px;
+    --dialog-width: 96vw;
+    --dialog-height: 94vh;
 }
 
 
@@ -1560,19 +1588,21 @@ button.mod-cta:hover {
 .modal.mod-community-plugin,
 .modal.mod-publish,
 .modal.mod-settings,
+.modal.mod-sidebar-layout,
 .modal.mod-sync-history,
 .modal.mod-sync-log {
-    width: 90vw;
-    height: 100vh;
-    max-height: 100vh;
-    max-width: 1000px;
+    width: 1400px !important;
+    max-width: 96vw !important;
+    height: 850px !important;
+    max-height: 94vh !important;
 }
 
 .modal.mod-settings {
     padding: 0;
-    width: 90vw;
-    height: 90vh;
-    max-width: 90vw;
+    width: 1400px !important;
+    max-width: 96vw !important;
+    height: 850px !important;
+    max-height: 94vh !important;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1669,8 +1699,10 @@ button.mod-cta:hover {
 }
 
 .modal.mod-settings {
-    height: 87vh;
-    width: 85vw;
+    height: 850px !important;
+    width: 1400px !important;
+    max-height: 94vh !important;
+    max-width: 96vw !important;
 }
 
 .modal-close-button:before {
@@ -3244,40 +3276,6 @@ pre code {
 
 /* ========= PART IV. ADDITIONAL SNIPPETS ========= */
 
-
-/*=========================*/
-/* Snippet -  Zoom images */
-/*=======================*/
-
-.markdown-preview-view img {
-    cursor: zoom-in;
-    border-radius: 7px;
-    transition: 90ms !important;
-}
-
-.markdown-preview-view img:active {
-    cursor: zoom-out;
-    display: block;
-    z-index: 100;
-    position: fixed;
-    max-height: 100%;
-    max-width: 100%;
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    margin: 0 auto;
-    text-align: center;
-    padding: 24px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--background-primary);
-    transition: 30ms !important;
-}
-
-/*-------------------------------*/
-/* End - Snippet -  Zoom images */
-/*-----------------------------*/
 
 /*===========================================*/
 /* Snippet - Image caption / Figure Caption */
@@ -6734,3 +6732,262 @@ body .bases-query-container input {
 .modal.mod-settings button.mod-warning:hover {
     background-color: #b71c1c !important;
 }
+
+/* ============================================================
+   BASES PLUGIN — Hover fix para tarjetas (vista cards)
+   Elimina el fondo gris del tema en hover y añade solo borde accent.
+   Integrado en theme.css (Elegance) — no usar snippet separado.
+   ============================================================ */
+
+.bases-cards-item {
+    transition: border 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.bases-cards-item:hover,
+.bases-view-container .bases-cards-item:hover,
+[data-type="bases"] .bases-cards-item:hover {
+    background-color: transparent !important;
+    border: 1px solid var(--interactive-accent-hover) !important;
+    box-shadow: 0 0 0 1px var(--interactive-accent-hover) !important;
+    transform: none !important;
+}
+
+.bases-cards-item:hover::before,
+.bases-cards-item:hover::after {
+    background-color: transparent !important;
+}
+
+/* ============================================================
+   BASES PLUGIN — Ocultar etiquetas de propiedades en tarjetas
+   Selector confirmado por DevTools: div.bases-cards-label
+   ============================================================ */
+
+/* Oculta TODAS las etiquetas (authors, progreso, format, etc.) */
+.bases-cards-label {
+    display: none !important;
+}
+
+/* Para ocultar SOLO "authors" (y dejar ver los demás labels),
+   comenta el bloque de arriba y usa este en su lugar:
+
+.bases-cards-property[data-property="authors"] .bases-cards-label {
+    display: none !important;
+}
+*/
+
+
+/* ================================================================
+   MOBILE OPTIMIZATIONS — Elegance Theme
+   Optimizaciones para Obsidian Mobile (iOS / Android)
+   Todo el bloque usa .is-mobile → sin impacto en escritorio.
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. LAYOUT — Padding adaptativo en el área de contenido
+   Problema: padding:1.27% queda muy estrecho en pantallas pequeñas.
+   ---------------------------------------------------------------- */
+
+.is-mobile .markdown-preview-view,
+.is-mobile .mod-single-child .markdown-preview-view {
+    padding-left: clamp(12px, 4%, 32px) !important;
+    padding-right: clamp(12px, 4%, 32px) !important;
+}
+
+.is-mobile .markdown-source-view.mod-cm6 .cm-content,
+.is-mobile .cm-line {
+    padding-left: clamp(12px, 4%, 32px);
+    padding-right: clamp(12px, 4%, 32px);
+}
+
+
+/* ----------------------------------------------------------------
+   2. FILE EXPLORER — Evitar desbordamiento horizontal en el sidebar
+   Problema: width:max-content + white-space:nowrap causa overflow.
+   ---------------------------------------------------------------- */
+
+.is-mobile .nav-file-title {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.is-mobile .nav-folder-title {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.is-mobile .nav-folder-title-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+
+/* ----------------------------------------------------------------
+   3. HOVER / TÁCTIL — Eliminar efectos hover que se quedan pegados
+   Problema: transform:scale() y bordes de hover no se liberan bien.
+   ---------------------------------------------------------------- */
+
+.is-mobile .nav-file-title:hover,
+.is-mobile .nav-folder-title:hover {
+    transform: none !important;
+    border: 1px solid transparent !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+}
+
+
+/* ----------------------------------------------------------------
+   4. SCROLLBAR — Ocultar scrollbar custom en móvil
+   Problema: el scrollbar CSS interfiere con el scroll nativo de iOS.
+   ---------------------------------------------------------------- */
+
+.is-mobile ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+.is-mobile * {
+    scrollbar-width: none !important;
+}
+
+
+/* ----------------------------------------------------------------
+   5. IMÁGENES EN CARDS — Fix del zoom con position:fixed en iOS
+   Problema: position:fixed en img:active desplaza el viewport.
+   ---------------------------------------------------------------- */
+
+.is-mobile .cards table.dataview tbody > tr > td img:active {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-height: 80vh !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    z-index: 100 !important;
+}
+
+
+/* ----------------------------------------------------------------
+   6. TIPOGRAFÍA — Encabezados escalables con clamp()
+   Problema: px fijos no respetan el zoom de accesibilidad del SO.
+   ---------------------------------------------------------------- */
+
+.is-mobile .markdown-preview-view h1,
+.is-mobile .cm-header-1 {
+    font-size: clamp(1.35rem, 5vw, 1.7rem) !important;
+}
+
+.is-mobile .markdown-preview-view h2,
+.is-mobile .cm-header-2 {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
+}
+
+.is-mobile .markdown-preview-view h3,
+.is-mobile .cm-header-3 {
+    font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
+}
+
+.is-mobile .markdown-preview-view h4,
+.is-mobile .cm-header-4 {
+    font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
+}
+
+
+/* ----------------------------------------------------------------
+   7. TABLAS — Scroll horizontal en lugar de desbordamiento
+   Problema: tablas anchas desbordan el viewport en móvil.
+   ---------------------------------------------------------------- */
+
+.is-mobile .markdown-preview-view table,
+.is-mobile .dataview.table-view-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+/* ----------------------------------------------------------------
+   8. WORKSPACE — Evitar desbordamiento horizontal global
+   ---------------------------------------------------------------- */
+
+.is-mobile .workspace-leaf-content,
+.is-mobile .view-content {
+    overflow-x: hidden;
+}
+
+
+/* ----------------------------------------------------------------
+   9. CARDS — Dos columnas en pantallas muy pequeñas (<360px)
+   ---------------------------------------------------------------- */
+
+@media (max-width: 360px) {
+    .is-mobile .cards table.dataview tbody {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+
+/* ----------------------------------------------------------------
+   10. SAFE AREA — Soporte para notch y gesture bar en iPhone
+   ---------------------------------------------------------------- */
+
+.is-mobile .workspace {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+}
+
+
+/* ----------------------------------------------------------------
+   11. MODALES — Ancho máximo adaptado a pantallas pequeñas
+   Problema: modales de búsqueda/comandos exceden el ancho.
+   ---------------------------------------------------------------- */
+
+.is-mobile .prompt {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    left: 4vw !important;
+    right: 4vw !important;
+    transform: none !important;
+    border-radius: 12px;
+}
+
+.is-mobile .modal {
+    width: 92vw !important;
+    max-width: 92vw !important;
+}
+
+
+/* ----------------------------------------------------------------
+   12. CALLOUTS — Padding reducido para pantallas estrechas
+   ---------------------------------------------------------------- */
+
+.is-mobile .callout {
+    padding: 10px 14px !important;
+    margin: 8px 0 !important;
+}
+
+.is-mobile .callout-title {
+    font-size: 0.95em;
+}
+
+.is-mobile .callout-content {
+    padding: 6px 0 0 0 !important;
+}
+
+/* ================================================================
+   END — MOBILE OPTIMIZATIONS
+   ================================================================ */
