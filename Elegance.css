@@ -1218,14 +1218,119 @@ body:not(.no-svg-replace) svg.right-triangle {
     left: -25px;
 }
 
-.markdown-preview-view.show-properties .metadata-container {
+/* === METADATA / PROPERTIES — centrado en todos los modos === */
+
+/* El título "Properties" siempre centrado */
+.metadata-container .metadata-properties-heading {
+    display: flex;
+    justify-content: center;
     text-align: center;
+    width: 100%;
+}
+
+/* El botón "+ Add property" siempre centrado */
+.metadata-container .metadata-add-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Las filas de propiedades: izquierda (icon + label + value) */
+.metadata-property {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+/* Los valores de las propiedades: siempre a la izquierda */
+.metadata-property-value,
+.metadata-property-value input,
+.metadata-property-value .multi-select-container {
+    text-align: left !important;
+}
+
+/* Live Preview: mismas reglas ya cubiertas por los selectores sin prefijo */
+.markdown-source-view .metadata-property {
+    justify-content: flex-start !important;
 }
 
 /* .metadata-properties-heading:before {} */
 
 
-/* # B1.1 Note title arrows */
+/* ============================================================
+   NORMALIZACIÓN LIVE PREVIEW / SOURCE → READING MODE
+   Estas reglas extienden estilos que el tema solo aplicaba
+   al modo lectura (.markdown-preview-view) para que sean
+   idénticos en Live Preview y Source mode.
+   ============================================================ */
+
+/* --- 1. BLOCKQUOTES: hover lift + fondo redondeado --- */
+
+.markdown-source-view.mod-cm6 .HyperMD-quote,
+.cm-s-obsidian .HyperMD-quote {
+    background-color: var(--quote-bg);
+    border-radius: 8px;
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+    color: var(--text-normal);
+    border: 0px solid;
+    border-color: var(--text-muted2);
+    padding: 8px;
+}
+
+/* --- 2. SEPARADORES HR en Live Preview: solo "---" sin renderizar --- */
+
+/* Sin gradiente, sin icono. El texto "---" visible siempre. */
+.markdown-source-view.mod-cm6 .HyperMD-hr {
+    height: auto !important;
+    background-image: none !important;
+    border: none !important;
+    border-top: 1px solid var(--background-modifier-border) !important;
+    margin-block-start: 1em !important;
+    margin-block-end: 1em !important;
+    position: static !important;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-hr .cm-hr {
+    opacity: 1 !important;
+    font-size: inherit !important;
+    color: var(--text-muted);
+    user-select: text;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-hr::after {
+    content: none !important;
+}
+
+/* --- 3. EMBEDS: sin padding extra ni título de archivo --- */
+
+.markdown-source-view .markdown-embed {
+    padding: 0;
+    margin: 1em 0;
+}
+
+.markdown-source-view .markdown-embed-content > :first-child {
+    margin-top: 0;
+}
+
+.markdown-source-view .markdown-embed-content > :last-child {
+    margin-bottom: 0;
+}
+
+/* --- 4. CHECKBOXES: estilo coherente en editor --- */
+
+.markdown-source-view .task-list-item-checkbox {
+    top: 0.3em;
+    right: 0px;
+    border: 1px solid var(--text-normal);
+    position: relative;
+    margin-left: 5.5px;
+    background-color: rgb(0 0 0 / 20%);
+}
+
+/* ============================================================ */
+
+
 
 .clickable-icon[aria-disabled='true'] {
     color: var(--text-muted);
@@ -3109,6 +3214,8 @@ pre code {
     border: none;
     height: 2.4px;
     background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
+    position: relative;
+    overflow: visible; /* el icono ᛟ no se corta */
 }
 
 .markdown-preview-view hr::after {
@@ -3125,6 +3232,8 @@ pre code {
     color: var(--text-normal);
     background-color: var(--background-primary);
 }
+
+/* Reading mode: sin efectos de hover (siempre igual) */
 
 /* ~~~~~~~~~~~~~~~~~~ Callouts ~~~~~~~~~~~~~~~~~~ */
 
@@ -7144,15 +7253,10 @@ body .bases-query-container input {
 }
 
 /* ──────────────────────────────────────────────────────────────
-   8. SEPARADOR HORIZONTAL (---) — igual grosor y color
+   8. SEPARADOR HORIZONTAL (---) — tratado en sección de normalización arriba
    ────────────────────────────────────────────────────────────── */
 
-.markdown-preview-view hr,
-.markdown-source-view.mod-cm6 .HyperMD-hr {
-    border: none;
-    border-top: 1px solid var(--background-modifier-border);
-    margin: 1.5em 0;
-}
+/* Solo para reading mode: el HyperMD-hr ya está normalizado en la sección de arriba */
 
 /* ================================================================
    END — LP ↔ READING VIEW CONSISTENCY
