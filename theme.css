@@ -7490,4 +7490,13 @@ body .bases-query-container input {
 
 /* ================================================================
    END — PREFERS-REDUCED-MOTION
-   ================================================================ */
+
+/* FIX MÓVIL: Reducir márgenes laterales que comprimían el texto */
+body.is-mobile {
+    --file-margins: 15px !important;
+}
+
+/* FIX MÓVIL: Evitar solapamiento del buscador de ajustes con el título de la ventana */
+body.is-mobile .modal.mod-settings .vertical-tab-header {
+    padding-top: 50px !important;
+}
