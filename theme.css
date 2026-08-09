@@ -7284,12 +7284,17 @@ body .bases-query-container input {
 }
 
 /* Aplica en Live Preview */
-.markdown-source-view.mod-cm6 .cm-table-widget,
-.markdown-source-view.mod-cm6 table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* El .cm-table-widget ya gestiona su propio scroll horizontal;
+   solo necesitamos resetear el line-height del editor y dejar
+   que la tabla interior se adapte al ancho del widget. */
+.markdown-source-view.mod-cm6 .cm-table-widget {
+    line-height: normal;   /* cancela el interlineado del editor */
+    overflow-x: auto;      /* scroll en el contenedor del widget */
     max-width: 100%;
+}
+.markdown-source-view.mod-cm6 .cm-table-widget table {
+    /* NO ponemos display:block ni overflow aquí: generaría un 2º scrollbar */
+    min-width: max-content;
 }
 
 /* También para tablas Dataview (plugin) */
@@ -7305,6 +7310,7 @@ body .bases-query-container input {
    ────────────────────────────────────────────────────────────── */
 
 .markdown-preview-view table,
+.markdown-source-view.mod-cm6 .cm-table-widget table,
 .dataview.table-view-table {
     border-collapse: collapse;
     width: max-content;       /* permite scroll si supera el contenedor */
@@ -7317,16 +7323,20 @@ body .bases-query-container input {
    ────────────────────────────────────────────────────────────── */
 
 .markdown-preview-view thead th,
+.markdown-source-view.mod-cm6 .cm-table-widget thead th,
 .dataview.table-view-table thead th {
     position: sticky;
     top: 0;
-    background-color: var(--background-secondary);
-    color: var(--text-normal);
+    /* Override de la regla original de Elegance (background-color: black)
+       que afecta a todos los th incluyendo .markdown-source-view.
+       Usamos var(--background-secondary) para respetar claro/oscuro. */
+    background-color: var(--background-secondary) !important;
+    color: var(--text-normal) !important;  /* fuerza el color del tema: negro en claro, blanco en oscuro */
     font-weight: 700;
     text-align: left;
     padding: 8px 14px;
     border-bottom: 2px solid var(--text-accent);
-    white-space: nowrap;          /* evita que la cabecera parta en varias líneas */
+    white-space: nowrap;
     z-index: 1;
 }
 
@@ -7335,25 +7345,40 @@ body .bases-query-container input {
    ────────────────────────────────────────────────────────────── */
 
 .markdown-preview-view td,
+.markdown-source-view.mod-cm6 .cm-table-widget td,
 .dataview.table-view-table td {
-    padding: 6px 14px;
+    /* Igualamos al padding que usa Elegance en reading mode (4px 10px) */
+    padding: 4px 10px !important;
     border-bottom: 1px solid var(--background-modifier-border);
     vertical-align: top;
     line-height: 1.5;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 /* ──────────────────────────────────────────────────────────────
    5. ZEBRA STRIPING — Filas alternadas para lectura más fácil
    Usa una capa semitransparente sobre el color de fondo para
    que funcione tanto en tema claro como oscuro.
+   ─────────────────────────────────────────────────────────────
+   MODO OSCURO: --background-primary ≈ fondo base oscuro
+                --background-secondary ≈ ligeramente más claro
+   MODO CLARO:  idem, invertido: secondary es más gris/oscuro
+   Las variables de Obsidian se adaptan automáticamente al tema
+   activo (claro/oscuro), por lo que no hace falta @media.
    ────────────────────────────────────────────────────────────── */
 
+/* Filas impares (1ª, 3ª, 5ª…) — fondo base */
 .markdown-preview-view tbody tr:nth-child(odd),
+.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:nth-child(odd),
 .dataview.table-view-table tbody tr:nth-child(odd) {
     background-color: var(--background-primary);
 }
 
+/* Filas pares (2ª, 4ª, 6ª…) — fondo secundario, ligeramente diferente */
 .markdown-preview-view tbody tr:nth-child(even),
+.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:nth-child(even),
 .dataview.table-view-table tbody tr:nth-child(even) {
     background-color: var(--background-secondary);
 }
@@ -7363,6 +7388,7 @@ body .bases-query-container input {
    ────────────────────────────────────────────────────────────── */
 
 .markdown-preview-view tbody tr:hover,
+.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:hover,
 .dataview.table-view-table tbody tr:hover {
     background-color: rgba(var(--accent-rgb, 100, 140, 240), 0.1);
     transition: background-color 120ms ease;
