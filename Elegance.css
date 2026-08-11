@@ -1494,14 +1494,14 @@ body.is-focused .workspace-tabs.mod-top {
 /* width of content */
 
 .markdown-source-view.is-readable-line-width .CodeMirror {
-    max-width: 725px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 
 .markdown-preview-view.is-readable-line-width .markdown-preview-section {
-    max-width: 725px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -7088,50 +7088,23 @@ body .bases-query-container input {
     padding: 10px 14px !important;
     margin: 8px 0 !important;
 }
-
-.is-mobile .callout-title {
-    font-size: 0.95em;
+/* Obsidian define --file-line-width: 700px en body desde app.css.
+   El tema carga DESPUES de app.css, asi que body aqui sobreescribe. */
+body {
+    --file-line-width: 900px;
 }
 
-.is-mobile .callout-content {
-    padding: 6px 0 0 0 !important;
+/* CM6 Live Preview: cm-content y cm-line tambien usan la variable — forzar aqui */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+    max-width: 900px !important;
 }
-
-/* ================================================================
-   END — MOBILE OPTIMIZATIONS
-   ================================================================ */
-
-/* ================================================================
-   LP ↔ READING VIEW CONSISTENCY
-   Unifica el aspecto entre Live Preview (CM6) y Reading View para
-   que cambiar de modo no produzca ningún salto visual perceptible.
-   ================================================================ */
-
-/* ──────────────────────────────────────────────────────────────
-   1. CONTENEDOR PRINCIPAL — Márgenes y ancho máximo idénticos
-   ────────────────────────────────────────────────────────────── */
-
-/* Reading View: texto centrado con padding uniforme */
-.markdown-preview-section {
-    max-width: var(--file-line-width, 700px);
-    margin: 0 auto;
-    padding-left: var(--file-margins, 40px) !important;
-    padding-right: var(--file-margins, 40px) !important;
-}
-
-/* Live Preview (CM6): igualar padding al de Reading View */
-.markdown-source-view.mod-cm6 .cm-sizer {
-    padding-left: var(--file-margins, 40px) !important;
-    padding-right: var(--file-margins, 40px) !important;
-}
-
-/* Asegurar que ambos modos respetan la línea de lectura de Obsidian */
-.is-readable-line-width .markdown-preview-section,
 .is-readable-line-width .cm-sizer {
-    max-width: var(--file-line-width, 700px);
+    max-width: 900px !important;
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /* ──────────────────────────────────────────────────────────────
    2. TIPOGRAFÍA DE PÁRRAFO — Idéntica en ambos modos
