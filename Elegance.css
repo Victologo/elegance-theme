@@ -1566,18 +1566,8 @@ body.is-focused .workspace-tabs.mod-top {
     color: var(--text-normal);
 }
 
-.reminder-calendar.svelte-kmxndl .calendar-date.svelte-kmxndl,
 button:not(.clickable-icon) {
-    color: white;
-}
-
-.reminder-list-item.svelte-15dajvg,
-button:not(.clickable-icon) {
-    color: white;
-}
-
-button:not(.clickable-icon) {
-    color: rgb(141, 29, 29);
+    color: var(--text-normal);
 }
 
 .theme-dark button.button-default {
