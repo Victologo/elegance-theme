@@ -1,11 +1,11 @@
 /* ---------------------------------------------------------------------------
 
 Elegance theme by: 
-    - Víctor Alonso Arribas (main)
+    - VÃ­ctor Alonso Arribas (main)
         "@Victologo" in GitHub
-        "Victologo" in YouTube (https://www.youtube.com/c/Victólogo)
+        "Victologo" in YouTube (https://www.youtube.com/c/VictÃ³logo)
         "victologoyt" in Instagram (https://www.instagram.com/victologoyt/)
-    - David Catalá Merino
+    - David CatalÃ¡ Merino
         "x.akira_71.x" in instagram (https://www.instagram.com/x.akira_71.x/)
 
 Aesthetic UI replacement for Obsidian.
@@ -13,32 +13,32 @@ Aesthetic UI replacement for Obsidian.
 ENHANCED VERSION - Compatible con Style Settings plugin
 - Mejoras en notas empotradas (altura ajustable)
 - Optimizaciones de rendimiento
-- Más de 30 opciones configurables
+- MÃ¡s de 30 opciones configurables
 
 GitHub Repository:
 https://github.com/Victologo/elegance-theme
 
 -----------------------------------------------------------------------------
 
-MIT License - Copyright (c) 2023 Víctor Alonso Arribas
+MIT License - Copyright (c) 2023 VÃ­ctor Alonso Arribas
 
 -----------------------------------------------------------------------------
 
 /* @settings
 
-name: 🎨 Elegance Theme
+name: ðŸŽ¨ Elegance Theme
 id: elegance-theme
 settings:
     -
         id: elegance-typography-heading
-        title: 📝 Tipografía
+        title: ðŸ“ TipografÃ­a
         type: heading
         level: 1
         collapsed: false
     -
         id: font-size-normal
-        title: Tamaño de fuente base
-        description: Tamaño del texto principal (el zoom con Ctrl+Scroll funciona de forma nativa)
+        title: TamaÃ±o de fuente base
+        description: TamaÃ±o del texto principal (el zoom con Ctrl+Scroll funciona de forma nativa)
         type: variable-number-slider
         default: 16
         min: 12
@@ -47,7 +47,7 @@ settings:
         format: px
     -
         id: font-size-code
-        title: Tamaño de código
+        title: TamaÃ±o de cÃ³digo
         type: variable-number-slider
         default: 15
         min: 10
@@ -56,8 +56,8 @@ settings:
         format: px
     -
         id: line-height-normal
-        title: Altura de línea
-        description: Espaciado entre líneas (1.5 = 150%)
+        title: Altura de lÃ­nea
+        description: Espaciado entre lÃ­neas (1.5 = 150%)
         type: variable-number-slider
         default: 1.5
         min: 1.2
@@ -65,7 +65,7 @@ settings:
         step: 0.1
     -
         id: elegance-headers-heading
-        title: 📌 Encabezados
+        title: ðŸ“Œ Encabezados
         type: heading
         level: 2
         collapsed: true
@@ -125,15 +125,15 @@ settings:
         format: px
     -
         id: elegance-embeds-heading
-        title: 📎 Notas Empotradas
+        title: ðŸ“Ž Notas Empotradas
         type: heading
         level: 1
         collapsed: false
         description: Controla la apariencia y comportamiento de las notas empotradas
     -
         id: embed-max-height
-        title: Altura máxima
-        description: Altura máxima en píxeles (0 = sin límite)
+        title: Altura mÃ¡xima
+        description: Altura mÃ¡xima en pÃ­xeles (0 = sin lÃ­mite)
         type: variable-number-slider
         default: 500
         min: 0
@@ -170,13 +170,13 @@ settings:
         default: true
     -
         id: elegance-ui-heading
-        title: ⚙️ Interfaz
+        title: âš™ï¸ Interfaz
         type: heading
         level: 1
         collapsed: true
     -
         id: font-size-side-dock
-        title: Tamaño fuente paneles
+        title: TamaÃ±o fuente paneles
         type: variable-number-slider
         default: 15
         min: 12
@@ -185,7 +185,7 @@ settings:
         format: px
     -
         id: font-size-side-dock-title
-        title: Tamaño títulos paneles
+        title: TamaÃ±o tÃ­tulos paneles
         type: variable-number-slider
         default: 16
         min: 13
@@ -194,7 +194,7 @@ settings:
         format: px
     -
         id: font-size-status-bar
-        title: Tamaño barra de estado
+        title: TamaÃ±o barra de estado
         type: variable-number-slider
         default: 13.75
         min: 10
@@ -212,7 +212,7 @@ settings:
         format: px
     -
         id: elegance-modals-heading
-        title: 🪟 Modales y Ventanas
+        title: ðŸªŸ Modales y Ventanas
         type: heading
         level: 1
         collapsed: false
@@ -254,7 +254,7 @@ settings:
 /* @ FONTS A2: Font Assignments*/
 
 :root {
-    /* Tipografía - Configurable con Style Settings */
+    /* TipografÃ­a - Configurable con Style Settings */
     --font-size-normal: 16px;
     --font-size-code: 15px;
     --font-size-side-dock: 15px;
@@ -483,7 +483,7 @@ input.prompt-input {
 }
 
 .nav-folder-title-content::before {
-    /*content: '📂';*/
+    /*content: 'ðŸ“‚';*/
     /*padding: 0px 30px 0px 38px;*/
     /*animation: cambiarOpacidad 5s infinite*/
 }
@@ -779,7 +779,7 @@ left-split .workspace-tab-header.is-active {
 
 
 body {
-    --signature: "֎"
+    --signature: "ÖŽ"
 }
 
 .mod-root .empty-state-title::before {
@@ -965,7 +965,7 @@ body {
 /* ! A5.3.1 Gradient Symbols*/
 
 .outline .tree-item .tree-item-self .tree-item-inner::before {
-    content: "ᛜ";
+    content: "á›œ";
     font-size: 1.2em;
     font-weight: 500;
     padding: 0px 5px 0px 10px;
@@ -976,7 +976,7 @@ body {
 }
 
 .outline .tree-item>.tree-item-children .tree-item-self .tree-item-inner::before {
-    content: "ᛜ";
+    content: "á›œ";
     color: var(--text-accent);
     margin-left: 1px;
     font-size: 1.05em;
@@ -1025,7 +1025,7 @@ body {
     color: var(--text-accent);
 }
 
-/* # A6.2 Backlinks in Document 📆 */
+/* # A6.2 Backlinks in Document ðŸ“† */
 
 /* @ WS A7: Starred Pane*/
 
@@ -1038,7 +1038,7 @@ body {
 }
 
 .workspace-leaf-content[data-type="starred"] .nav-file-title::before {
-    content: "★";
+    content: "â˜…";
     margin-top: 1.5px;
     margin-left: -15px;
 }
@@ -1218,9 +1218,9 @@ body:not(.no-svg-replace) svg.right-triangle {
     left: -25px;
 }
 
-/* === METADATA / PROPERTIES — centrado en todos los modos === */
+/* === METADATA / PROPERTIES â€” centrado en todos los modos === */
 
-/* El título "Properties" siempre centrado */
+/* El tÃ­tulo "Properties" siempre centrado */
 .metadata-container .metadata-properties-heading {
     display: flex;
     justify-content: center;
@@ -1228,7 +1228,7 @@ body:not(.no-svg-replace) svg.right-triangle {
     width: 100%;
 }
 
-/* El botón "+ Add property" siempre centrado */
+/* El botÃ³n "+ Add property" siempre centrado */
 .metadata-container .metadata-add-button {
     display: flex;
     justify-content: center;
@@ -1258,10 +1258,10 @@ body:not(.no-svg-replace) svg.right-triangle {
 
 
 /* ============================================================
-   NORMALIZACIÓN LIVE PREVIEW / SOURCE → READING MODE
+   NORMALIZACIÃ“N LIVE PREVIEW / SOURCE â†’ READING MODE
    Estas reglas extienden estilos que el tema solo aplicaba
    al modo lectura (.markdown-preview-view) para que sean
-   idénticos en Live Preview y Source mode.
+   idÃ©nticos en Live Preview y Source mode.
    ============================================================ */
 
 /* --- 1. BLOCKQUOTES: hover lift + fondo redondeado --- */
@@ -1302,7 +1302,7 @@ body:not(.no-svg-replace) svg.right-triangle {
     content: none !important;
 }
 
-/* --- 3. EMBEDS: sin padding extra ni título de archivo --- */
+/* --- 3. EMBEDS: sin padding extra ni tÃ­tulo de archivo --- */
 
 .markdown-source-view .markdown-embed {
     padding: 0;
@@ -1567,11 +1567,14 @@ body.is-focused .workspace-tabs.mod-top {
 }
 
 button:not(.clickable-icon) {
-    color: var(--text-normal);
+    background-color: var(--interactive-accent);
+    color: black;
+    font-weight: bold;
 }
 
-.theme-dark button.button-default {
-    color: white;
+button:not(.clickable-icon):hover {
+    background-color: var(--text-antinormal);
+    color: var(--text-normal);
 }
 
 /* Color of the text and bin icon when deleting a note */
@@ -1867,7 +1870,8 @@ sync-history-content-container {
 
 /* # D1.1 Regular Buttons */
 
-button {
+button:not(.clickable-icon) {
+    background-color: var(--interactive-accent);
     color: black;
     font-weight: bold;
 }
@@ -2219,7 +2223,7 @@ p {
     /* para separar entre letras */
     word-spacing: 0.8pt;
     /* para separacion entre palabras */
-    line-height: 16.5pt;
+    line-height: var(--line-height);
     /* para la separacion entre lineas */
 }
 
@@ -2835,7 +2839,7 @@ ul>li.task-list-item .task-list-item-checkbox {
     margin-left: -20px;
 }
 
-/* Definir la animación */
+/* Definir la animaciÃ³n */
 @keyframes fadeOpacity {
     0% {
         opacity: 0.35;
@@ -2855,9 +2859,9 @@ ul>li.task-list-item[data-task="x"],
 ul>li.task-list-item[data-task="X"] {
     text-decoration: line-through rgba(255, 255, 255, 0.7);
     text-decoration-thickness: 3px;
-    /* Línea más gruesa */
+    /* LÃ­nea mÃ¡s gruesa */
     animation: fadeOpacity 4s ease-in-out infinite;
-    /* Animación continua */
+    /* AnimaciÃ³n continua */
 }
 
 /* Notation checkboxes */
@@ -2985,17 +2989,7 @@ ul ol::before {
     background-color: var(--background-secondary-alt);
 }
 
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table) {
-    border-collapse: collapse;
-    overflow: auto;
-    margin: 20px auto;
-}
 
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table):active,
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table):hover {
-    overflow: hidden;
-    resize: both !important;
-}
 
 body .markdown-preview-view th,
 body .markdown-source-view.mod-cm6 .dataview.table-view-table thead.table-view-thead tr th,
@@ -3027,7 +3021,7 @@ table {
 
 .markdown-rendered td,
 .markdown-rendered th {
-    /* border: 10px; — invalid property removed */
+    /* border: 10px; â€” invalid property removed */
 }
 
 .row-lines .table-view-table>tbody>tr>td,
@@ -3141,19 +3135,8 @@ body.auto-serial-number-dvtable .markdown-preview-view:not(.cards) .dataview.tab
     font-family: var(--font-family-strong);
 }
 
-/* Table resize how you want in bottom right corner*/
+/* Table resize removed (obsolete code) */
 
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table) {
-    border-collapse: collapse;
-    overflow: auto;
-    margin: 20px auto;
-}
-
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table):active,
-:is(.markdown-preview-section, .markdown-rendered) table:not(.dataview.table-view-table):hover {
-    overflow: hidden;
-    resize: both !important;
-}
 
 body .markdown-preview-view th,
 body .markdown-source-view.mod-cm6 .dataview.table-view-table thead.table-view-thead tr th,
@@ -3205,13 +3188,13 @@ pre code {
     height: 2.4px;
     background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
     position: relative;
-    overflow: visible; /* el icono ᛟ no se corta */
+    overflow: visible; /* el icono á›Ÿ no se corta */
 }
 
 .markdown-preview-view hr::after {
-    /* content: '§'; */
-    /* content: '֎'; */
-    content: 'ᛟ';
+    /* content: 'Â§'; */
+    /* content: 'ÖŽ'; */
+    content: 'á›Ÿ';
 
     display: inline-block;
     position: absolute;
@@ -3297,18 +3280,18 @@ pre code {
 
 /* Customize callout important for light mode and dark mode */
 .theme-light .callout[data-callout="important"] {
-    --callout-color: rgb(200, 155, 30); /* Ámbar / dorado suave en modo claro */
+    --callout-color: rgb(200, 155, 30); /* Ãmbar / dorado suave en modo claro */
 }
 
 .theme-dark .callout[data-callout="important"] {
-    --callout-color: rgb(249, 255, 0); /* Mantiene la estética original en modo oscuro */
+    --callout-color: rgb(249, 255, 0); /* Mantiene la estÃ©tica original en modo oscuro */
 }
 
 
 
 /* ~~~~~~~~~~~~~~~~~~ AS F: Themed Loading Page  ~~~~~~~~~~~~~~~~~~ */
 
-/* ─────────────── COMMON B6- Themed Loading Pages ────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ COMMON B6- Themed Loading Pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* https://github.com/Emrie-Candera/Bubble-Space-Theme/blob/main/Mini%20Snippet%20Store/Themed%20Loading%20Page.css */
 
@@ -3417,7 +3400,7 @@ pre code {
 /* Solo usa: cssclass: cards               */
 /*==========================================*/
 
-/* BASE: Grid responsivo SÚPER ESTRECHO */
+/* BASE: Grid responsivo SÃšPER ESTRECHO */
 .cards table.dataview tbody {
     clear: both;
     padding: 0.2rem 0;
@@ -3426,11 +3409,11 @@ pre code {
     /* Muy poco espacio entre tarjetas */
     grid-row-gap: 0.28rem;
     align-items: start;
-    /* Grid por defecto - libros/series MÁS ESTRECHO */
+    /* Grid por defecto - libros/series MÃS ESTRECHO */
     grid-template-columns: repeat(auto-fit, minmax(99px, 115px));
 }
 
-/* TARJETAS BASE - MÁS ESTRECHAS */
+/* TARJETAS BASE - MÃS ESTRECHAS */
 .cards table.dataview>tbody>tr {
     background-color: var(--background-secondary-alt);
     border: 1px solid var(--background-modifier-border);
@@ -3463,7 +3446,7 @@ pre code {
     flex-shrink: 0;
 }
 
-/* Celdas con imágenes - COMPLETAMENTE PEGADAS AL BORDE */
+/* Celdas con imÃ¡genes - COMPLETAMENTE PEGADAS AL BORDE */
 .cards table.dataview tbody>tr>td:has(img):not(:has([src*="progress-bar"])) {
     padding: 0 !important;
     /* COMPLETAMENTE PEGADO AL BORDE */
@@ -3473,13 +3456,13 @@ pre code {
     border-radius: 4px;
 }
 
-/* TÍTULO - Siempre primera celda ULTRA COMPACTO */
+/* TÃTULO - Siempre primera celda ULTRA COMPACTO */
 .cards table.dataview tbody>tr>td:first-child {
     font-weight: var(--bold-weight);
-    min-height: unset; /* Sin altura mínima para pegar elementos */
+    min-height: unset; /* Sin altura mÃ­nima para pegar elementos */
     order: 1;
     padding: 0 1px;
-    /* Mínimo padding lateral */
+    /* MÃ­nimo padding lateral */
 }
 
 .cards table.dataview tbody>tr>td:first-child a {
@@ -3494,10 +3477,10 @@ pre code {
     width: 100%;
 }
 
-/* Autor biblioteca y otros campos de texto - MÁS GRANDES */
+/* Autor biblioteca y otros campos de texto - MÃS GRANDES */
 .cards table.dataview tbody>tr>td:not(:has(img)) {
     font-size: 0.95em !important;
-    color: var(--text-normal); /* Cambiado de muted a normal para más visibilidad */
+    color: var(--text-normal); /* Cambiado de muted a normal para mÃ¡s visibilidad */
     min-height: 0 !important;
     max-height: unset !important;
     flex-grow: 0 !important;
@@ -3505,7 +3488,7 @@ pre code {
     padding: 0 !important;
 }
 
-/* IMÁGENES - DETECCIÓN AUTOMÁTICA Y LLENADO */
+/* IMÃGENES - DETECCIÃ“N AUTOMÃTICA Y LLENADO */
 .cards table.dataview tbody>tr>td:has(img):not(:has([src*="progress-bar"])) {
     flex-grow: 1 !important; /* Solo las portadas/posters crecen */
     padding: 0 !important;
@@ -3526,7 +3509,7 @@ pre code {
     transition: 220ms ease-in-out;
 }
 
-/* EXCEPCIÓN: BARRAS DE PROGRESO - Mantener compactas */
+/* EXCEPCIÃ“N: BARRAS DE PROGRESO - Mantener compactas */
 .cards table.dataview tbody>tr>td:has([src*="progress-bar"]) {
     flex-grow: 0 !important;
     height: auto !important;
@@ -3572,19 +3555,19 @@ pre code {
     /* Sin sombra en zoom */
 }
 
-/* DETECCIÓN INTELIGENTE: Bibliotecas vs Videojuegos */
+/* DETECCIÃ“N INTELIGENTE: Bibliotecas vs Videojuegos */
 /* - 5+ columnas = biblioteca siempre */
 /* - 4 columnas + barras de progreso = biblioteca */
 /* - 4 columnas sin barras = videojuegos */
 /* - 3 columnas o menos = videojuegos */
 
-/* FORMATO LIBROS/SERIES - Detección específica */
+/* FORMATO LIBROS/SERIES - DetecciÃ³n especÃ­fica */
 .cards table.dataview tbody>tr:has(td:nth-child(5)),
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) {
     min-height: unset; 
 }
 
-/* Título biblioteca */
+/* TÃ­tulo biblioteca */
 .cards table.dataview tbody>tr:has(td:nth-child(5)) td:first-child,
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:first-child {
     min-height: 26px;
@@ -3597,7 +3580,7 @@ pre code {
 .cards table.dataview tbody>tr:has(td:nth-child(5)) td:nth-child(2),
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:nth-child(2) {
     font-size: 0.77em;
-    /* Más pequeño */
+    /* MÃ¡s pequeÃ±o */
     color: var(--text-muted);
     min-height: unset;
     order: 2;
@@ -3616,7 +3599,7 @@ pre code {
     border-radius: 4px;
 }
 
-/* Progreso biblioteca - ESPECÍFICO PARA 4 COLUMNAS CON BARRAS */
+/* Progreso biblioteca - ESPECÃFICO PARA 4 COLUMNAS CON BARRAS */
 .cards table.dataview tbody>tr:has(td:nth-child(4)):has([src*="progress-bar"]) td:has([src*="progress-bar"]) {
     order: 4;
     margin: 0 !important;
@@ -3630,20 +3613,20 @@ pre code {
     /* Menos margen */
 }
 
-/* Barra de progreso - excepción especial para altura */
+/* Barra de progreso - excepciÃ³n especial para altura */
 .cards table.dataview tbody>tr td:has([src*="progress-bar"]) img {
     width: 100%;
     height: auto !important;
-    /* Excepción para barras de progreso */
+    /* ExcepciÃ³n para barras de progreso */
     max-height: 16px;
-    /* Más pequeño */
+    /* MÃ¡s pequeÃ±o */
     border-radius: 8px;
 }
 
-/* Último campo biblioteca (solo para 5 columnas) - formato/género/rating */
+/* Ãšltimo campo biblioteca (solo para 5 columnas) - formato/gÃ©nero/rating */
 .cards table.dataview tbody>tr:has(td:nth-child(5)) td:last-child {
     font-size: 0.8em;
-    /* Muy pequeño para caber */
+    /* Muy pequeÃ±o para caber */
     color: var(--text-muted);
     font-style: italic;
     order: 5;
@@ -3656,14 +3639,14 @@ pre code {
     min-height: unset;
 }
 
-/* Grid específico para videojuegos - MÁS ESTRECHO */
+/* Grid especÃ­fico para videojuegos - MÃS ESTRECHO */
 .cards table.dataview:has(tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"]))) tbody {
     grid-template-columns: repeat(auto-fit, minmax(77px, 95px));
     grid-column-gap: 0.2rem;
     grid-row-gap: 0.2rem;
 }
 
-/* Título videojuegos */
+/* TÃ­tulo videojuegos */
 .cards table.dataview tbody>tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"])) td:first-child {
     min-height: 26px;
     font-size: 0.9em;
@@ -3682,10 +3665,10 @@ pre code {
     min-height: 100px;
 }
 
-/* Año videojuegos - MÁS COMPACTO */
+/* AÃ±o videojuegos - MÃS COMPACTO */
 .cards table.dataview tbody>tr:not(:has(td:nth-child(5))) td:nth-child(3) {
     font-size: 0.8em;
-    /* Más pequeño */
+    /* MÃ¡s pequeÃ±o */
     color: var(--text-normal);
     font-weight: 500;
     order: 3;
@@ -3707,7 +3690,7 @@ pre code {
         grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)) !important;
     }
 
-    /* Videojuegos aún más estrechos en móvil */
+    /* Videojuegos aÃºn mÃ¡s estrechos en mÃ³vil */
     .cards table.dataview:has(tr:not(:has(td:nth-child(5))):not(:has([src*="progress-bar"]))) tbody {
         grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)) !important;
     }
@@ -3758,7 +3741,7 @@ pre code {
     display: none !important;
 }
 
-/* ANIMACIÓN PARA ZOOM */
+/* ANIMACIÃ“N PARA ZOOM */
 @keyframes example2 {
     100% {
         background-color: var(--background-primary);
@@ -4168,7 +4151,7 @@ mjx-math {
 /* ---------------------------- */
 
 /* ------------------------------ */
-/* MCL Multi Column CSS - Versión Global (Sin clase .mcl) */
+/* MCL Multi Column CSS - VersiÃ³n Global (Sin clase .mcl) */
 /* ---------------------------- */
 
 /* === README ===
@@ -5095,7 +5078,7 @@ body,
     box-decoration-break: clone !important;
 }
 
-/* ============ ESTILOS ESPECÍFICOS PARA COLORES HEX DE ZOTERO ============ */
+/* ============ ESTILOS ESPECÃFICOS PARA COLORES HEX DE ZOTERO ============ */
 
 /* Amarillo Zotero (#ffd400) */
 .markdown-rendered mark[style*="#ffd400"],
@@ -5193,7 +5176,7 @@ body,
     color: var(--text-normal) !important;
 }
 
-/* Púrpura Zotero (#a28ae5) */
+/* PÃºrpura Zotero (#a28ae5) */
 .markdown-rendered mark[style*="#a28ae5"],
 .markdown-preview-view mark[style*="#a28ae5"],
 .cm-editor mark[style*="#a28ae5"],
@@ -5419,7 +5402,7 @@ mark.pink,
 .theme-light .cm-editor mark.black .external-link,
 .theme-light .cm-line mark.black .external-link {
     color: #a0ffa0 !important;
-    /* Verde claro más brillante */
+    /* Verde claro mÃ¡s brillante */
     font-weight: bold;
 }
 
@@ -5483,7 +5466,7 @@ mark.pink,
 /* End - Snippet - Marks (resaltados) */
 /*-----------------------*/
 /* ------------------------------ */
-/* MCL Multi Column CSS - Versión Global (Sin clase .mcl) */
+/* MCL Multi Column CSS - VersiÃ³n Global (Sin clase .mcl) */
 /* ---------------------------- */
 
 /* =========== PART V. PLUGIN STYLING =========== */
@@ -5543,8 +5526,8 @@ mark.pink,
     border-radius: 5px !important;
 }
 
-/*表格调整*/
-/*星期*/
+/*è¡¨æ ¼è°ƒæ•´*/
+/*æ˜ŸæœŸ*/
 
 #calendar-container th {
     padding: 6px 0;
@@ -5557,7 +5540,7 @@ mark.pink,
     border-radius: 0px !important;
 }
 
-/*天*/
+/*å¤©*/
 
 #calendar-container td {
     width: 12.5%;
@@ -5602,46 +5585,46 @@ mark.pink,
     text-align: center;
 }
 
-/*悬停Today*/
+/*æ‚¬åœToday*/
 
 #calendar-container .reset-button:hover {
     color: var(--text-accent);
 }
 
-/*悬停arrow*/
+/*æ‚¬åœarrow*/
 
 #calendar-container .arrow:hover {
     color: var(--theme-color);
 }
 
-/*今日笔记时红点去除 today's dot*/
+/*ä»Šæ—¥ç¬”è®°æ—¶çº¢ç‚¹åŽ»é™¤ today's dot*/
 
 #calendar-container .dot {
     stroke: transparent;
 }
 
-/*点调整 dot*/
+/*ç‚¹è°ƒæ•´ dot*/
 
 #calendar-container .dot-container {
     margin-top: -2px;
     margin-bottom: -1px;
 }
 
-/*月份调整 month*/
+/*æœˆä»½è°ƒæ•´ month*/
 
 #calendar-container .month {
     font-size: 19px;
     line-height: 1;
 }
 
-/*年份调整 year*/
+/*å¹´ä»½è°ƒæ•´ year*/
 
 #calendar-container .year {
     font-size: 19px;
     line-height: 1;
 }
 
-/*星期数 week*/
+/*æ˜ŸæœŸæ•° week*/
 
 .theme-light #calendar-container .week-num {
     background-color: rgba(255, 184, 108, 0.4);
@@ -5653,7 +5636,7 @@ mark.pink,
     font-weight: 900;
 }
 
-/*星期数悬停 week hover*/
+/*æ˜ŸæœŸæ•°æ‚¬åœ week hover*/
 
 .theme-light #calendar-container .week-num:hover {
     background-color: rgba(255, 184, 108, 0.75);
@@ -5909,7 +5892,7 @@ Support: https://github.com/sponsors/kepano */
     flex-shrink: 0;
 }
 
-/* Título - primera celda */
+/* TÃ­tulo - primera celda */
 .cards table.dataview tbody>tr>td:first-child {
     font-weight: var(--bold-weight);
     height: 40px;
@@ -5994,7 +5977,7 @@ Support: https://github.com/sponsors/kepano */
     margin-top: auto;
 }
 
-/* Si hay más de 5 celdas, manejarlas */
+/* Si hay mÃ¡s de 5 celdas, manejarlas */
 .cards table.dataview tbody>tr>td:nth-child(n+6) {
     font-size: 0.8em;
     order: 6;
@@ -6294,7 +6277,7 @@ Support: https://github.com/sponsors/kepano */
 }
 
 /* ===============================*/
-/* TARJETAS HORIZONTALES PELÍCULAS/SERIES */
+/* TARJETAS HORIZONTALES PELÃCULAS/SERIES */
 /* ===============================*/
 
 .cards-movies table.dataview tbody {
@@ -6442,7 +6425,7 @@ Support: https://github.com/sponsors/kepano */
 /*----------------------*/
 
 /*=======================================*/
-/* Snippet - Líneas MathJax Mejoradas   */
+/* Snippet - LÃ­neas MathJax Mejoradas   */
 /*=====================================*/
 
 mjx-stretchy-h.mjx-c2192 mjx-ext mjx-c::before {
@@ -6460,7 +6443,7 @@ mjx-stretchy-h>*>mjx-c::before {
 }
 
 /*--------------------------------------*/
-/* End - Snippet - Líneas MathJax     */
+/* End - Snippet - LÃ­neas MathJax     */
 /*------------------------------------*/
 
 
@@ -6468,7 +6451,7 @@ mjx-stretchy-h>*>mjx-c::before {
 /* Snippet - Kanban Mejorado     */
 /*==============================*/
 
-/* Personalización del texto dentro de las tareas del Kanban */
+/* PersonalizaciÃ³n del texto dentro de las tareas del Kanban */
 
 .kanban-plugin__item p {
     font-size: 0.9em;
@@ -6674,7 +6657,7 @@ body .bases-query-container input {
 
 
 /* ============================================================ */
-/* Properties - Línea separadora inferior                       */
+/* Properties - LÃ­nea separadora inferior                       */
 /* Reading Mode & Live Preview                                  */
 /* ============================================================ */
 
@@ -6723,7 +6706,7 @@ body .bases-query-container input {
     outline: none !important;
 }
 
-/* 2. Añadimos el borde a la fila COMPLETA cuando se tiene el foco */
+/* 2. AÃ±adimos el borde a la fila COMPLETA cuando se tiene el foco */
 .workspace .metadata-property:focus-within,
 .workspace .metadata-property.is-focused {
     box-shadow: 0 0 0 1.5px var(--interactive-accent) !important;
@@ -6833,9 +6816,9 @@ body .bases-query-container input {
 }
 
 /* ============================================================
-   BASES PLUGIN — Hover fix para tarjetas (vista cards)
-   Elimina el fondo gris del tema en hover y añade solo borde accent.
-   Integrado en theme.css (Elegance) — no usar snippet separado.
+   BASES PLUGIN â€” Hover fix para tarjetas (vista cards)
+   Elimina el fondo gris del tema en hover y aÃ±ade solo borde accent.
+   Integrado en theme.css (Elegance) â€” no usar snippet separado.
    ============================================================ */
 
 .bases-cards-item {
@@ -6857,7 +6840,7 @@ body .bases-query-container input {
 }
 
 /* ============================================================
-   BASES PLUGIN — Ocultar etiquetas de propiedades en tarjetas
+   BASES PLUGIN â€” Ocultar etiquetas de propiedades en tarjetas
    Selector confirmado por DevTools: div.bases-cards-label
    ============================================================ */
 
@@ -6866,7 +6849,7 @@ body .bases-query-container input {
     display: none !important;
 }
 
-/* Para ocultar SOLO "authors" (y dejar ver los demás labels),
+/* Para ocultar SOLO "authors" (y dejar ver los demÃ¡s labels),
    comenta el bloque de arriba y usa este en su lugar:
 
 .bases-cards-property[data-property="authors"] .bases-cards-label {
@@ -6876,15 +6859,15 @@ body .bases-query-container input {
 
 
 /* ================================================================
-   MOBILE OPTIMIZATIONS — Elegance Theme
+   MOBILE OPTIMIZATIONS â€” Elegance Theme
    Optimizaciones para Obsidian Mobile (iOS / Android)
-   Todo el bloque usa .is-mobile → sin impacto en escritorio.
+   Todo el bloque usa .is-mobile â†’ sin impacto en escritorio.
    ================================================================ */
 
 
 /* ----------------------------------------------------------------
-   1. LAYOUT — Padding adaptativo en el área de contenido
-   Problema: padding:1.27% queda muy estrecho en pantallas pequeñas.
+   1. LAYOUT â€” Padding adaptativo en el Ã¡rea de contenido
+   Problema: padding:1.27% queda muy estrecho en pantallas pequeÃ±as.
    ---------------------------------------------------------------- */
 
 .is-mobile .markdown-preview-view,
@@ -6901,7 +6884,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   2. FILE EXPLORER — Evitar desbordamiento horizontal en el sidebar
+   2. FILE EXPLORER â€” Evitar desbordamiento horizontal en el sidebar
    Problema: width:max-content + white-space:nowrap causa overflow.
    ---------------------------------------------------------------- */
 
@@ -6929,7 +6912,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   3. HOVER / TÁCTIL — Eliminar efectos hover que se quedan pegados
+   3. HOVER / TÃCTIL â€” Eliminar efectos hover que se quedan pegados
    Problema: transform:scale() y bordes de hover no se liberan bien.
    ---------------------------------------------------------------- */
 
@@ -6943,7 +6926,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   4. SCROLLBAR — Ocultar scrollbar custom en móvil
+   4. SCROLLBAR â€” Ocultar scrollbar custom en mÃ³vil
    Problema: el scrollbar CSS interfiere con el scroll nativo de iOS.
    ---------------------------------------------------------------- */
 
@@ -6959,7 +6942,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   5. IMÁGENES EN CARDS — Fix del zoom con position:fixed en iOS
+   5. IMÃGENES EN CARDS â€” Fix del zoom con position:fixed en iOS
    Problema: position:fixed en img:active desplaza el viewport.
    ---------------------------------------------------------------- */
 
@@ -6978,7 +6961,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   6. TIPOGRAFÍA — Encabezados escalables con clamp()
+   6. TIPOGRAFÃA â€” Encabezados escalables con clamp()
    Problema: px fijos no respetan el zoom de accesibilidad del SO.
    ---------------------------------------------------------------- */
 
@@ -7004,8 +6987,8 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   7. TABLAS — Scroll horizontal en lugar de desbordamiento
-   Problema: tablas anchas desbordan el viewport en móvil.
+   7. TABLAS â€” Scroll horizontal en lugar de desbordamiento
+   Problema: tablas anchas desbordan el viewport en mÃ³vil.
    ---------------------------------------------------------------- */
 
 .is-mobile .markdown-preview-view table,
@@ -7019,7 +7002,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   8. WORKSPACE — Evitar desbordamiento horizontal global
+   8. WORKSPACE â€” Evitar desbordamiento horizontal global
    ---------------------------------------------------------------- */
 
 .is-mobile .workspace-leaf-content,
@@ -7029,7 +7012,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   9. CARDS — Dos columnas en pantallas muy pequeñas (<360px)
+   9. CARDS â€” Dos columnas en pantallas muy pequeÃ±as (<360px)
    ---------------------------------------------------------------- */
 
 @media (max-width: 360px) {
@@ -7040,7 +7023,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   10. SAFE AREA — Soporte para notch y gesture bar en iPhone
+   10. SAFE AREA â€” Soporte para notch y gesture bar en iPhone
    ---------------------------------------------------------------- */
 
 .is-mobile .workspace {
@@ -7051,8 +7034,8 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   11. MODALES — Ancho máximo adaptado a pantallas pequeñas
-   Problema: modales de búsqueda/comandos exceden el ancho.
+   11. MODALES â€” Ancho mÃ¡ximo adaptado a pantallas pequeÃ±as
+   Problema: modales de bÃºsqueda/comandos exceden el ancho.
    ---------------------------------------------------------------- */
 
 .is-mobile .prompt {
@@ -7071,7 +7054,7 @@ body .bases-query-container input {
 
 
 /* ----------------------------------------------------------------
-   12. CALLOUTS — Padding reducido para pantallas estrechas
+   12. CALLOUTS â€” Padding reducido para pantallas estrechas
    ---------------------------------------------------------------- */
 
 .is-mobile .callout {
@@ -7084,7 +7067,7 @@ body {
     --file-line-width: 900px;
 }
 
-/* CM6 Live Preview: cm-content y cm-line tambien usan la variable — forzar aqui */
+/* CM6 Live Preview: cm-content y cm-line tambien usan la variable â€” forzar aqui */
 .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
 .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
     max-width: 900px !important;
@@ -7096,29 +7079,29 @@ body {
 }
 
 
-/* ──────────────────────────────────────────────────────────────
-   2. TIPOGRAFÍA DE PÁRRAFO — Idéntica en ambos modos
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   2. TIPOGRAFÃA DE PÃRRAFO â€” IdÃ©ntica en ambos modos
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* Párrafos en Reading View */
+/* PÃ¡rrafos en Reading View */
 .markdown-preview-view p {
-    line-height: 16.5pt;        /* ← mismo valor que el global `p {}` */
+    line-height: var(--line-height);        /* â† mismo valor que el global `p {}` */
     word-spacing: 0.8pt;
     margin-block-start: 1.15em;
     margin-block-end: 0;
 }
 
-/* Párrafos en Live Preview: las líneas CM6 ya heredan `p {}`,
-   pero añadimos el mismo line-height explícito para seguridad */
-.markdown-source-view.mod-cm6 .cm-line {
-    line-height: 16.5pt;
-}
+/* PÃ¡rrafos en Live Preview: las lÃ­neas CM6 ya heredan `p {}`,
+   pero aÃ±adimos el mismo line-height explÃ­cito para seguridad */
+/* .markdown-source-view.mod-cm6 .cm-line {
+    line-height: var(--line-height);
+} */
 
-/* ──────────────────────────────────────────────────────────────
-   3. ENCABEZADOS — Espaciado superior/inferior unificado
-   Elegance ya sincroniza los gradientes vía .HyperMD-header-* y
-   .markdown-preview-section h*, pero los márgenes eran distintos.
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   3. ENCABEZADOS â€” Espaciado superior/inferior unificado
+   Elegance ya sincroniza los gradientes vÃ­a .HyperMD-header-* y
+   .markdown-preview-section h*, pero los mÃ¡rgenes eran distintos.
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* H1 */
 .HyperMD-header-1,
@@ -7136,7 +7119,7 @@ body {
     margin-bottom: 3px !important;
 }
 
-/* H3–H5 */
+/* H3â€“H5 */
 .HyperMD-header-3, .markdown-preview-section h3, .cm-header-3,
 .HyperMD-header-4, .markdown-preview-section h4, .cm-header-4,
 .HyperMD-header-5, .markdown-preview-section h5, .cm-header-5 {
@@ -7152,14 +7135,14 @@ body {
     margin-bottom: 5px !important;
 }
 
-/* ──────────────────────────────────────────────────────────────
-   4. LISTAS — Espaciado en Reading View (LP no se toca para no
-   interferir con el sistema de indentación nativo de CM6)
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   4. LISTAS â€” Espaciado en Reading View (LP no se toca para no
+   interferir con el sistema de indentaciÃ³n nativo de CM6)
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* DESACTIVADO: añadía más indentación en Reading View que en LP,
+/* DESACTIVADO: aÃ±adÃ­a mÃ¡s indentaciÃ³n en Reading View que en LP,
    produciendo una diferencia visual notable.
-   Elegance ya tiene su propia indentación de listas; no sobreescribir.
+   Elegance ya tiene su propia indentaciÃ³n de listas; no sobreescribir.
 
 .markdown-preview-view ul,
 .markdown-preview-view ol {
@@ -7170,24 +7153,24 @@ body {
 */
 
 /* NOTA: NO se aplica padding-left a .HyperMD-list-line porque
-   Elegance ya tiene su propio sistema de indentación en CM6
-   y sobreescribirlo causa desalineación visual. */
+   Elegance ya tiene su propio sistema de indentaciÃ³n en CM6
+   y sobreescribirlo causa desalineaciÃ³n visual. */
 
-/* ──────────────────────────────────────────────────────────────
-   5. INLINE TITLE — Aspecto consistente en ambos modos
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   5. INLINE TITLE â€” Aspecto consistente en ambos modos
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* El .inline-title aparece en Live Preview; asegurar que el
    hueco visual que deja es el mismo que el gap del inicio de
-   la Reading View (donde el título no aparece en el contenido) */
+   la Reading View (donde el tÃ­tulo no aparece en el contenido) */
 .inline-title {
-    margin-bottom: 40px !important;   /* ← mismo que el margin-bottom original */
+    margin-bottom: 40px !important;   /* â† mismo que el margin-bottom original */
     margin-top: 20px !important;
 }
 
-/* ──────────────────────────────────────────────────────────────
-   6. BLOQUES DE CÓDIGO — Fuente y padding igualados
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   6. BLOQUES DE CÃ“DIGO â€” Fuente y padding igualados
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Reading View */
 .markdown-preview-view pre,
@@ -7203,9 +7186,9 @@ body {
     font-size: var(--font-smaller, 0.875em);
 }
 
-/* ──────────────────────────────────────────────────────────────
-   7. BLOCKQUOTES — Borde izquierdo idéntico en ambos modos
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   7. BLOCKQUOTES â€” Borde izquierdo idÃ©ntico en ambos modos
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .markdown-preview-view blockquote,
 .markdown-source-view.mod-cm6 .HyperMD-quote {
@@ -7215,201 +7198,48 @@ body {
     color: var(--text-muted);
 }
 
-/* ──────────────────────────────────────────────────────────────
-   8. SEPARADOR HORIZONTAL (---) — tratado en sección de normalización arriba
-   ────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   8. SEPARADOR HORIZONTAL (---) â€” tratado en secciÃ³n de normalizaciÃ³n arriba
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* Solo para reading mode: el HyperMD-hr ya está normalizado en la sección de arriba */
-
-/* ================================================================
-   END — LP ↔ READING VIEW CONSISTENCY
-   ================================================================ */
+/* Solo para reading mode: el HyperMD-hr ya estÃ¡ normalizado en la secciÃ³n de arriba */
 
 /* ================================================================
-   TABLAS — Scroll horizontal + Zebra striping
+   END â€” LP â†” READING VIEW CONSISTENCY
    ================================================================ */
 
-/* ──────────────────────────────────────────────────────────────
-   1. CONTENEDOR CON SCROLL HORIZONTAL
-   Envuelve la tabla en un bloque desplazable; así tablas anchas
-   no rompen el layout del contenido y el texto nunca se desborda.
-   ────────────────────────────────────────────────────────────── */
+/* Obsolete table scroll/stretch/resize block removed */
 
-/* Aplica en Reading View */
-.markdown-preview-view .table-wrapper,
-.markdown-preview-section > table,
-.markdown-preview-section > * > table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;   /* scroll suave en iOS */
-    max-width: 100%;
-    border-radius: 6px;
-}
-
-/* Aplica en Live Preview */
-/* El .cm-table-widget ya gestiona su propio scroll horizontal;
-   solo necesitamos resetear el line-height del editor y dejar
-   que la tabla interior se adapte al ancho del widget. */
-.markdown-source-view.mod-cm6 .cm-table-widget {
-    line-height: normal;   /* cancela el interlineado del editor */
-    overflow-x: auto;      /* scroll en el contenedor del widget */
-    max-width: 100%;
-}
-.markdown-source-view.mod-cm6 .cm-table-widget table {
-    /* NO ponemos display:block ni overflow aquí: generaría un 2º scrollbar */
-    min-width: max-content;
-}
-
-/* También para tablas Dataview (plugin) */
-.dataview.table-view-table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    max-width: 100%;
-}
-
-/* ──────────────────────────────────────────────────────────────
-   2. ESTRUCTURA BASE — Bordes y layout limpios
-   ────────────────────────────────────────────────────────────── */
-
-.markdown-preview-view table,
-.markdown-source-view.mod-cm6 .cm-table-widget table,
-.dataview.table-view-table {
-    border-collapse: collapse;
-    width: max-content;       /* permite scroll si supera el contenedor */
-    min-width: 100%;          /* pero nunca queda más estrecha que el área */
-    font-size: 0.9em;
-}
-
-/* ──────────────────────────────────────────────────────────────
-   3. CABECERA (THEAD) — Fija visualmente mientras haces scroll
-   ────────────────────────────────────────────────────────────── */
-
-.markdown-preview-view thead th,
-.markdown-source-view.mod-cm6 .cm-table-widget thead th,
-.dataview.table-view-table thead th {
-    position: sticky;
-    top: 0;
-    /* Override de la regla original de Elegance (background-color: black)
-       que afecta a todos los th incluyendo .markdown-source-view.
-       Usamos var(--background-secondary) para respetar claro/oscuro. */
-    background-color: var(--background-secondary) !important;
-    color: var(--text-normal) !important;  /* fuerza el color del tema: negro en claro, blanco en oscuro */
-    font-weight: 700;
-    text-align: left;
-    padding: 8px 14px;
-    border-bottom: 2px solid var(--text-accent);
-    white-space: nowrap;
-    z-index: 1;
-}
-
-/* ──────────────────────────────────────────────────────────────
-   4. CELDAS — Padding y bordes consistentes
-   ────────────────────────────────────────────────────────────── */
-
-.markdown-preview-view td,
-.markdown-source-view.mod-cm6 .cm-table-widget td,
-.dataview.table-view-table td {
-    /* Igualamos al padding que usa Elegance en reading mode (4px 10px) */
-    padding: 4px 10px !important;
-    border-bottom: 1px solid var(--background-modifier-border);
-    vertical-align: top;
-    line-height: 1.5;
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-}
-
-/* ──────────────────────────────────────────────────────────────
-   5. ZEBRA STRIPING — Filas alternadas para lectura más fácil
-   Usa una capa semitransparente sobre el color de fondo para
-   que funcione tanto en tema claro como oscuro.
-   ─────────────────────────────────────────────────────────────
-   MODO OSCURO: --background-primary ≈ fondo base oscuro
-                --background-secondary ≈ ligeramente más claro
-   MODO CLARO:  idem, invertido: secondary es más gris/oscuro
-   Las variables de Obsidian se adaptan automáticamente al tema
-   activo (claro/oscuro), por lo que no hace falta @media.
-   ────────────────────────────────────────────────────────────── */
-
-/* Filas impares (1ª, 3ª, 5ª…) — fondo base */
-.markdown-preview-view tbody tr:nth-child(odd),
-.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:nth-child(odd),
-.dataview.table-view-table tbody tr:nth-child(odd) {
-    background-color: var(--background-primary);
-}
-
-/* Filas pares (2ª, 4ª, 6ª…) — fondo secundario, ligeramente diferente */
-.markdown-preview-view tbody tr:nth-child(even),
-.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:nth-child(even),
-.dataview.table-view-table tbody tr:nth-child(even) {
-    background-color: var(--background-secondary);
-}
-
-/* ──────────────────────────────────────────────────────────────
-   6. HOVER EN FILAS — Resaltado sutil al pasar el ratón
-   ────────────────────────────────────────────────────────────── */
-
-.markdown-preview-view tbody tr:hover,
-.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:hover,
-.dataview.table-view-table tbody tr:hover {
-    background-color: rgba(var(--accent-rgb, 100, 140, 240), 0.1);
-    transition: background-color 120ms ease;
-}
-
-/* ──────────────────────────────────────────────────────────────
-   7. SCROLLBAR DISCRETO para el scroll horizontal
-   ────────────────────────────────────────────────────────────── */
-
-.markdown-preview-section > table::-webkit-scrollbar,
-.dataview.table-view-table::-webkit-scrollbar {
-    height: 4px;
-}
-
-.markdown-preview-section > table::-webkit-scrollbar-track,
-.dataview.table-view-table::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.markdown-preview-section > table::-webkit-scrollbar-thumb,
-.dataview.table-view-table::-webkit-scrollbar-thumb {
-    background-color: var(--background-modifier-border);
-    border-radius: 4px;
-}
-
-/* ================================================================
-   END — TABLAS
-   ================================================================ */
 
 
 /* ================================================================
    PREFERS-REDUCED-MOTION
    ================================================================
 
-   QUÉ ES Y POR QUÉ IMPORTA
-   ─────────────────────────
-   Algunos usuarios configuran en su sistema operativo la opción
-   "Reducir movimiento" (Windows → Accesibilidad → Efectos visuales
-   → "Mostrar animaciones en Windows": OFF).
+   QUÃ‰ ES Y POR QUÃ‰ IMPORTA
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   Algunos usuarios configuran en su sistema operativo la opciÃ³n
+   "Reducir movimiento" (Windows â†’ Accesibilidad â†’ Efectos visuales
+   â†’ "Mostrar animaciones en Windows": OFF).
 
-   Esta preferencia la expone el navegador/Electron vía el media
-   query `prefers-reduced-motion: reduce`. Elegance tiene ≈20
-   animaciones activas (pulsos del título, parpadeo de línea activa,
-   flash de acento, fade de imágenes…). Cuando el sistema pide menos
-   movimiento, lo correcto es desactivarlas — sin tocar el diseño.
+   Esta preferencia la expone el navegador/Electron vÃ­a el media
+   query `prefers-reduced-motion: reduce`. Elegance tiene â‰ˆ20
+   animaciones activas (pulsos del tÃ­tulo, parpadeo de lÃ­nea activa,
+   flash de acento, fade de imÃ¡genesâ€¦). Cuando el sistema pide menos
+   movimiento, lo correcto es desactivarlas â€” sin tocar el diseÃ±o.
 
    ESTRATEGIA APLICADA
-   ────────────────────
-   • Todas las animaciones se reducen a duración 0.01 ms (instantáneas).
-   • Todas las transiciones se reducen a 150 ms máximo (lo suficiente
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   â€¢ Todas las animaciones se reducen a duraciÃ³n 0.01 ms (instantÃ¡neas).
+   â€¢ Todas las transiciones se reducen a 150 ms mÃ¡ximo (lo suficiente
      para que los estados hover no sean abruptos, pero sin movimiento
      perceptible).
-   • No se altera ningún color, fuente ni layout — solo el movimiento.
+   â€¢ No se altera ningÃºn color, fuente ni layout â€” solo el movimiento.
    ================================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
-    /* ── A. ANIMACIONES GLOBALES — apagar cualquier @keyframes ── */
+    /* â”€â”€ A. ANIMACIONES GLOBALES â€” apagar cualquier @keyframes â”€â”€ */
     *,
     *::before,
     *::after {
@@ -7418,7 +7248,7 @@ body {
         animation-delay: 0ms !important;
     }
 
-    /* ── B. TRANSICIONES — acortar, no eliminar (UX accesible) ── */
+    /* â”€â”€ B. TRANSICIONES â€” acortar, no eliminar (UX accesible) â”€â”€ */
     *,
     *::before,
     *::after {
@@ -7426,15 +7256,15 @@ body {
         transition-delay: 0ms !important;
     }
 
-    /* ── C. ANIMACIONES ESPECÍFICAS de Elegance ───────────────── */
+    /* â”€â”€ C. ANIMACIONES ESPECÃFICAS de Elegance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-    /* Título de nota (inline-title pulsante) */
+    /* TÃ­tulo de nota (inline-title pulsante) */
     .inline-title {
         animation: none !important;
         opacity: 1 !important;
     }
 
-    /* Títulos de la barra lateral (title_dark / title_light) */
+    /* TÃ­tulos de la barra lateral (title_dark / title_light) */
     .view-header-title {
         animation: none !important;
         opacity: 1 !important;
@@ -7446,12 +7276,12 @@ body {
         animation: none !important;
     }
 
-    /* Línea activa del editor (active_line_dark / active_line_light) */
+    /* LÃ­nea activa del editor (active_line_dark / active_line_light) */
     .cm-active.cm-line {
         animation: none !important;
     }
 
-    /* Fade de imágenes (fadeOpacity) */
+    /* Fade de imÃ¡genes (fadeOpacity) */
     img {
         animation: none !important;
         opacity: 1 !important;
@@ -7470,7 +7300,7 @@ body {
         transform: none !important;
     }
 
-    /* Hover de filas en tablas (que acabamos de añadir) */
+    /* Hover de filas en tablas (que acabamos de aÃ±adir) */
     .markdown-preview-view tbody tr:hover,
     .dataview.table-view-table tbody tr:hover {
         transition: none !important;
@@ -7478,14 +7308,503 @@ body {
 }
 
 /* ================================================================
-   END — PREFERS-REDUCED-MOTION
+   END â€” PREFERS-REDUCED-MOTION
 
-/* FIX MÓVIL: Reducir márgenes laterales que comprimían el texto */
+/* FIX MÃ“VIL: Reducir mÃ¡rgenes laterales que comprimÃ­an el texto */
 body.is-mobile {
     --file-margins: 15px !important;
 }
 
-/* FIX MÓVIL: Evitar solapamiento del buscador de ajustes con el título de la ventana */
+/* FIX MÃ“VIL: Evitar solapamiento del buscador de ajustes con el tÃ­tulo de la ventana */
 body.is-mobile .modal.mod-settings .vertical-tab-header {
     padding-top: 50px !important;
+}
+
+
+
+/* ========================================================================= */
+/* DISPOSICION DE PROPIEDADES EN 2 COLUMNAS (LIMPIO, SIN BORDES, ADAPTABLE)  */
+/* ========================================================================= */
+
+/* 1. Eliminamos cualquier borde, outline o marco de tabla en properties */
+[data-type=markdown] .metadata-container,
+.metadata-container {
+    outline: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    container-type: inline-size !important;
+}
+
+/* Encabezado limpio sin fondo de recuadro */
+[data-type=markdown] .metadata-properties-heading,
+.metadata-properties-heading {
+    position: static !important;
+    background: none !important;
+    transform: none !important;
+    padding-inline: 0 !important;
+}
+
+/* 2. Optimización de espacio: etiquetas completas, valores cercanos y fechas con icono correcto */
+.metadata-container {
+    --metadata-label-width: auto !important;
+}
+
+.metadata-property {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important; /* Acerca el nombre al valor dejando menos espacio muerto */
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+}
+
+/* El nombre de la propiedad se ajusta a su texto y tiene espacio de sobra (hasta 150px) para no cortar last_modified ni mostrar puntos suspensivos */
+.metadata-property-key {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 150px !important;
+    flex-shrink: 0 !important;
+}
+
+.metadata-property-key .metadata-property-key-input {
+    width: auto !important;
+}
+
+.metadata-property-value {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+/* Fechas y horas: solo ajustamos el final; NO tocamos el inicio para que el icono del calendario no se monte sobre los números */
+.metadata-property-value input.metadata-input-text.mod-datetime,
+.metadata-property-value input.metadata-input-text.mod-date {
+    width: auto !important;
+    min-width: 0 !important;
+    padding-inline-end: 2px !important;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 3. CASO A: Hay póster activo (Pretty Properties: .metadata-side-image)
+      >= 540px: Póster a la izquierda + propiedades en 1 columna a la derecha.
+      < 540px: Móvil/paneles ultra-estrechos -> Póster arriba, propiedades abajo. */
+@container (min-width: 540px) {
+    .metadata-container:has(.metadata-side-image:not(.top, .bottom) .pp-cover-image) {
+        --metadata-display-editing: grid !important;
+        --metadata-display-reading: grid !important;
+        display: grid !important;
+        grid-template-columns: minmax(130px, var(--cover-column-width, 190px)) 1fr !important;
+        grid-column-gap: 16px !important;
+        grid-template-rows: auto 1fr !important;
+    }
+    .metadata-container:has(.metadata-side-image) .metadata-side-image {
+        grid-row: 1 / 3 !important;
+        margin: 0 !important;
+    }
+    .metadata-container:has(.metadata-side-image) .metadata-side-image .pp-cover-image {
+        height: auto !important;
+        max-height: var(--cover-max-height, 500px) !important;
+        width: 100% !important;
+        max-width: var(--cover-column-width, 200px) !important;
+        margin: 0 !important;
+        object-fit: cover !important;
+    }
+    .metadata-container:has(.metadata-side-image) .metadata-content {
+        column-count: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+@container (max-width: 539px) {
+    .metadata-container:has(.metadata-side-image) {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .metadata-container:has(.metadata-side-image) .metadata-side-image .pp-cover-image {
+        height: 180px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 auto 12px auto !important;
+    }
+    .metadata-container:has(.metadata-side-image) .metadata-content {
+        column-count: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+/* 4. CASO B: NO hay póster
+      - Espacio reducido (< 576px, un 10% más estrecho que antes): Vuelve a 1 columna.
+      - Espacio amplio (>= 576px): 2 columnas optimizadas con 10px de separación central. */
+@container (min-width: 576px) {
+    .metadata-container:not(:has(.metadata-side-image)) .metadata-content:not(body.is-grabbing .metadata-content:hover) {
+        column-count: 2 !important;
+        column-gap: 10px !important; /* Espacio compacto entre columnas */
+        column-rule: none !important;
+        display: block !important;
+    }
+}
+
+@container (max-width: 575px) {
+    .metadata-container:not(:has(.metadata-side-image)) .metadata-content {
+        column-count: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+.metadata-add-button {
+    break-inside: avoid !important;
+}
+
+/* ========================================================================= */
+/* TABLAS: CENTRADAS, AJUSTADAS AL CONTENIDO Y SIN CÓDIGO OBSOLETO           */
+/* ========================================================================= */
+
+/* Contenedores de tabla en Live Preview y Reading View: centrados */
+.markdown-source-view.mod-cm6 .cm-embed-block:has(.table-wrapper),
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-table-widget,
+.markdown-source-view.mod-cm6 .cm-table-widget,
+.markdown-rendered .table-wrapper,
+.markdown-preview-view .table-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 1.5rem auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* La tabla abraza estrictamente el ancho real de sus columnas (fit-content) y se centra */
+.markdown-rendered table,
+.markdown-preview-view table,
+.markdown-source-view.mod-cm6 .cm-table-widget table,
+.markdown-rendered .table-wrapper > table,
+.markdown-preview-view .table-wrapper > table,
+.dataview.table-view-table {
+    display: table !important;
+    width: fit-content !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Encabezados y celdas */
+.markdown-rendered table th,
+.markdown-preview-view table th,
+.markdown-source-view.mod-cm6 .cm-table-widget th {
+    background-color: var(--background-secondary) !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-bottom: 2px solid var(--background-modifier-border-hover) !important;
+    color: var(--text-normal) !important;
+}
+
+.markdown-rendered table td,
+.markdown-preview-view table td,
+.markdown-source-view.mod-cm6 .cm-table-widget td {
+    padding: 8px 16px !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* Eliminar borde de la última fila */
+.markdown-rendered table tr:last-child td,
+.markdown-preview-view table tr:last-child td,
+.markdown-source-view.mod-cm6 .cm-table-widget tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Zebra striping (filas alternas) */
+.markdown-rendered table tr:nth-child(even) td,
+.markdown-preview-view table tr:nth-child(even) td,
+.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:nth-child(even) td {
+    background-color: var(--background-primary-alt) !important;
+}
+
+/* Hover de filas */
+.markdown-rendered table tbody tr:hover td,
+.markdown-preview-view table tbody tr:hover td,
+.markdown-source-view.mod-cm6 .cm-table-widget tbody tr:hover td {
+    background-color: var(--background-modifier-hover) !important;
+}
+
+
+/* ========================================================================= */
+/* INTEGRACIÓN DE SNIPPETS CORE (ELEGANCE THEME ENHANCEMENTS)                */
+/* ========================================================================= */
+
+/* 1. Fix de sugerencias desplegables (fix_suggestion_overlap) */
+.suggestion-container .suggestion-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 3px 8px !important;
+    min-height: 25px !important;
+    height: auto !important;
+}
+
+.suggestion-container .suggestion-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.suggestion-container .suggestion-item:has(.suggestion-note) {
+    padding: 5px 10px !important;
+    min-height: 34px !important;
+}
+
+.suggestion-container .suggestion-item:has(.suggestion-note) .suggestion-content {
+    gap: 1px !important;
+}
+
+.suggestion-container .suggestion-title {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    color: var(--text-normal) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.suggestion-container .suggestion-note {
+    font-size: 11px !important;
+    font-weight: normal !important;
+    line-height: 1.15 !important;
+    color: var(--text-muted) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-top: 1px !important;
+}
+
+.suggestion-container .suggestion-item.is-selected {
+    border-radius: 5px !important;
+}
+
+/* 2. Ajuste de iconos y flechas en el explorador de archivos (ajuste-iconos-carpeta) */
+body .nav-folder-title .iconic-sidekick,
+body .nav-file-title .iconic-sidekick {
+    margin-inline-start: 6px !important;
+    margin-inline-end: 4px !important;
+    display: flex !important;
+    align-self: center !important;
+}
+
+body .nav-folder-title-content {
+    margin-inline-start: 4px !important;
+}
+
+/* 3. Desactivar tiradores nativos de redimensión en imágenes (no_native_image_resizer) */
+.obsidian-editor .image-resizer-handle {
+    display: none !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-content img {
+    pointer-events: none !important;
+}
+
+/* 4. Estilo para tablas compactas en Dataview (compact_table_dataview) */
+.compact_table_dataview .table-view-table tr {
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+.compact_table_dataview img:not(.emoji) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 5. Barras de progreso estilizadas en Obsidian Bases (bases-progress-bar) */
+.bases-view progress.metadata-progress,
+progress.metadata-progress {
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    height: 8px !important;
+    border-radius: 4px !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    width: 100% !important;
+    display: block !important;
+    margin: 4px 0 !important;
+    overflow: hidden !important;
+}
+
+.bases-view progress.metadata-progress::-webkit-progress-bar,
+progress.metadata-progress::-webkit-progress-bar {
+    border: none !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 4px !important;
+}
+
+.bases-view progress.metadata-progress::-webkit-progress-value,
+progress.metadata-progress::-webkit-progress-value {
+    border: none !important;
+    background: var(--color-accent, #f5a15c) !important;
+    border-radius: 4px !important;
+    transition: width 0.3s ease-in-out !important;
+}
+
+.bases-view progress.metadata-progress::-moz-progress-bar,
+progress.metadata-progress::-moz-progress-bar {
+    border: none !important;
+    background: var(--color-accent, #f5a15c) !important;
+    border-radius: 4px !important;
+}
+
+
+/* FIX REMINDER PLUGIN AESTHETICS */
+.dtchooser button.calendar-date {
+    background-color: transparent !important;
+    color: var(--text-normal) !important;
+    font-weight: normal !important;
+}
+.dtchooser button.calendar-date:hover {
+    background-color: var(--background-secondary-alt) !important;
+}
+.dtchooser button.calendar-date.other-month {
+    color: var(--text-faint) !important;
+}
+.dtchooser button.calendar-date.is-selected {
+    background-color: var(--interactive-accent) !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+.dtchooser button.month-nav {
+    background-color: transparent !important;
+    color: var(--text-muted) !important;
+}
+.dtchooser th {
+    color: var(--text-muted) !important;
+    border: none !important;
+    padding: 5px !important;
+    font-size: 0.8em !important;
+}
+.dtchooser .dtchooser-mode-toggle {
+    background-color: transparent !important;
+}
+.dtchooser .dtchooser-quick-pick {
+    background-color: transparent !important;
+    font-weight: normal !important;
+}
+.dtchooser .dtchooser-quick-pick.is-selected,
+.dtchooser .dtchooser-quick-pick:hover {
+    background-color: var(--background-modifier-hover) !important;
+}
+.dtchooser select {
+    background-color: var(--background-modifier-form-field) !important;
+    color: var(--text-normal) !important;
+    font-weight: normal !important;
+}
+/* --- Barra lateral de Recordatorios (Reminder List View) --- */
+
+/* Tarjetas individuales de recordatorios */
+button.reminder-list-item,
+.reminder-list-item {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.35rem !important;
+    border-radius: 6px !important;
+    padding: 4px 8px !important;
+    margin-bottom: 4px !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    font-weight: normal !important;
+    transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+/* Modo oscuro: Fondo negro limpio y texto blanco */
+.theme-dark button.reminder-list-item,
+.theme-dark .reminder-list-item {
+    background-color: #141414 !important;
+    border: 1px solid var(--background-modifier-border, #2a2a2a) !important;
+    color: var(--text-normal, #e0e0e0) !important;
+}
+
+.theme-dark button.reminder-list-item:hover,
+.theme-dark .reminder-list-item:hover {
+    background-color: #202020 !important;
+    border-color: var(--interactive-accent, #f5a15c) !important;
+    color: var(--text-normal, #ffffff) !important;
+}
+
+/* Modo claro: Fondo suave y texto oscuro */
+.theme-light button.reminder-list-item,
+.theme-light .reminder-list-item {
+    background-color: var(--background-secondary, #f8f8f8) !important;
+    border: 1px solid var(--background-modifier-border, #e0e0e0) !important;
+    color: var(--text-normal, #222222) !important;
+}
+
+.theme-light button.reminder-list-item:hover,
+.theme-light .reminder-list-item:hover {
+    background-color: var(--background-modifier-hover, #ebebeb) !important;
+    border-color: var(--interactive-accent, #f5a15c) !important;
+}
+
+/* Título de cada recordatorio (más pequeño, elegante y sin cortes bruscos) */
+.reminder-title-container {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    gap: 0.35rem !important;
+}
+
+.reminder-title {
+    font-size: 12px !important;
+    color: var(--text-normal) !important;
+    font-weight: normal !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    flex-grow: 1 !important;
+}
+
+/* Hora del recordatorio (compacta y destacada sutilmente) */
+.reminder-time {
+    font-size: 11.5px !important;
+    font-family: var(--font-monospace) !important;
+    font-weight: 600 !important;
+    flex-shrink: 0 !important;
+}
+
+.theme-dark .reminder-time {
+    color: var(--color-accent, var(--interactive-accent, #f5a15c)) !important;
+}
+
+/* Modo claro: Naranja oscuro / terracota con alto contraste y legibilidad */
+.theme-light .reminder-time {
+    color: #b24a00 !important;
+}
+
+/* Archivo / Nota vinculada ocultada para dar todo el ancho al título del recordatorio */
+.reminder-file {
+    display: none !important;
+}
+
+/* Estado sin recordatorios */
+.no-reminders,
+button.no-reminders {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-faint) !important;
+    font-size: 12px !important;
+    font-style: italic !important;
 }
