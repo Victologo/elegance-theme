@@ -779,7 +779,7 @@ left-split .workspace-tab-header.is-active {
 
 
 body {
-    --signature: "ÖŽ"
+    --signature: "\058e";
 }
 
 .mod-root .empty-state-title::before {
@@ -965,7 +965,7 @@ body {
 /* ! A5.3.1 Gradient Symbols*/
 
 .outline .tree-item .tree-item-self .tree-item-inner::before {
-    content: "á›œ";
+    content: "\16dc";
     font-size: 1.2em;
     font-weight: 500;
     padding: 0px 5px 0px 10px;
@@ -976,7 +976,7 @@ body {
 }
 
 .outline .tree-item>.tree-item-children .tree-item-self .tree-item-inner::before {
-    content: "á›œ";
+    content: "\16dc";
     color: var(--text-accent);
     margin-left: 1px;
     font-size: 1.05em;
@@ -3177,33 +3177,51 @@ pre code {
 
 /* ~~~~~~~~~~~~~~~~~~  MARKDOWN D: Others ~~~~~~~~~~~~~~~~~~ */
 
-/* @ MARKDOWN D1: HR*/
+/* @ MARKDOWN D1: HR */
 
 /* ..... https://github.com/TriDiamond/Obsidian-Obsidianite */
 
-.markdown-preview-view hr {
+.markdown-preview-view hr,
+.markdown-rendered hr {
     margin-block-start: 3.33em;
     margin-block-end: 3.33em;
     border: none;
     height: 2.4px;
-    background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--text-accent) calc(50% - 1.2rem),
+        transparent calc(50% - 1.2rem),
+        transparent calc(50% + 1.2rem),
+        var(--text-accent) calc(50% + 1.2rem),
+        transparent 100%
+    );
     position: relative;
-    overflow: visible; /* el icono á›Ÿ no se corta */
+    overflow: visible; /* el icono central no se corta */
 }
 
-.markdown-preview-view hr::after {
-    /* content: 'Â§'; */
-    /* content: 'ÖŽ'; */
-    content: 'á›Ÿ';
+.markdown-preview-view hr::after,
+.markdown-rendered hr::after {
+    /* Icono central de los separadores horizontales (---):
+       content: '\00a7';  -> § (Símbolo de sección original de Obsidianite)
+       content: '\058e';  -> ֎ (Eternidad armenia)
+       content: '\16df';  -> ᛟ (Runa nórdica Othala / Odal elegida en Elegance)
+    */
+    content: '\16df';
 
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    left: 51%;
-    transform: translate(-100%, -50%) rotate(0deg);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
     transform-origin: 50% 50%;
-    padding: 0.4rem;
+    padding: 0;
+    line-height: 1;
+    font-size: 1.15rem;
     color: var(--text-normal);
-    background-color: var(--background-primary);
+    background-color: transparent !important;
+    background: transparent !important;
 }
 
 /* Reading mode: sin efectos de hover (siempre igual) */
@@ -7666,49 +7684,288 @@ progress.metadata-progress::-moz-progress-bar {
 }
 
 
-/* FIX REMINDER PLUGIN AESTHETICS */
-.dtchooser button.calendar-date {
+/* FIX REMINDER PLUGIN AESTHETICS - POPUP CALENDARIO Y SELECTOR DE FECHA/HORA */
+
+/* Contenedor del popup: ~70% más ancho (de ~225px a 385px) */
+.date-time-chooser-popup {
+    z-index: 2147483647 !important;
+}
+
+.dtchooser {
+    width: 385px !important;
+    min-width: 385px !important;
+    max-width: 95vw !important;
+    background-color: #161616 !important;
+    border: 1px solid var(--background-modifier-border, #333333) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5) !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+}
+
+.theme-light .dtchooser {
+    background-color: #ffffff !important;
+    border: 1px solid #d8d8d8 !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Área del calendario */
+.dtchooser-calendar-area {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.reminder-calendar {
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Cabecera mes / año y navegación */
+.reminder-calendar .year-month {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    padding: 4px 0 10px 0 !important;
+}
+
+.reminder-calendar .month {
+    color: var(--text-normal, #f0f0f0) !important;
+}
+
+.reminder-calendar .year {
+    color: var(--interactive-accent, #f5a15c) !important;
+}
+
+.dtchooser button.month-nav,
+.reminder-calendar .month-nav {
     background-color: transparent !important;
-    color: var(--text-normal) !important;
-    font-weight: normal !important;
-}
-.dtchooser button.calendar-date:hover {
-    background-color: var(--background-secondary-alt) !important;
-}
-.dtchooser button.calendar-date.other-month {
-    color: var(--text-faint) !important;
-}
-.dtchooser button.calendar-date.is-selected {
-    background-color: var(--interactive-accent) !important;
-    color: black !important;
-    font-weight: bold !important;
-}
-.dtchooser button.month-nav {
-    background-color: transparent !important;
-    color: var(--text-muted) !important;
-}
-.dtchooser th {
-    color: var(--text-muted) !important;
+    color: var(--text-muted, #888888) !important;
     border: none !important;
-    padding: 5px !important;
-    font-size: 0.8em !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    padding: 2px 8px !important;
+    font-size: 1.1rem !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
 }
+
+.dtchooser button.month-nav:hover,
+.reminder-calendar .month-nav:hover {
+    background-color: var(--background-modifier-hover, #2a2a2a) !important;
+    color: var(--text-normal, #ffffff) !important;
+}
+
+/* Tabla del calendario y días de la semana */
+.reminder-calendar table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 2px !important;
+    table-layout: fixed !important;
+}
+
+.dtchooser th,
+.reminder-calendar th {
+    color: var(--text-muted, #888888) !important;
+    border: none !important;
+    padding: 6px 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    text-align: center !important;
+}
+
+.reminder-calendar td {
+    padding: 2px !important;
+    text-align: center !important;
+}
+
+/* Botones de fechas del calendario */
+.dtchooser button.calendar-date,
+.reminder-calendar .calendar-date {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+    color: var(--text-normal, #e0e0e0) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.dtchooser button.calendar-date:hover,
+.reminder-calendar .calendar-date:hover {
+    background-color: var(--background-modifier-hover, #282828) !important;
+    color: var(--text-normal, #ffffff) !important;
+}
+
+.dtchooser button.calendar-date.other-month,
+.reminder-calendar .other-month,
+.reminder-calendar .is-past {
+    color: var(--text-faint, #555555) !important;
+    opacity: 0.55 !important;
+}
+
+.dtchooser button.calendar-date.is-selected,
+.reminder-calendar .is-selected {
+    background-color: var(--interactive-accent, #f5a15c) !important;
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+/* Separador horizontal */
+.dtchooser hr.dtchooser-divider {
+    margin: 8px 0 !important;
+    border: none !important;
+    border-top: 1px solid var(--background-modifier-border, #2e2e2e) !important;
+}
+
+/* Fila inferior: Time Picker + OK */
+.dtchooser-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 2px 2px 2px !important;
+    gap: 8px !important;
+}
+
+.dtchooser-time-picker {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.dtchooser-time-picker span {
+    color: var(--text-normal, #e0e0e0) !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+}
+
+/* Input/select cerrado de la hora */
+.dtchooser select,
+select.time-picker {
+    appearance: auto !important;
+    -webkit-appearance: menulist !important;
+    height: 32px !important;
+    min-width: 95px !important;
+    padding: 2px 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    background-color: #242424 !important;
+    color: #ffffff !important;
+    border: 1px solid var(--background-modifier-border, #444444) !important;
+}
+
+.theme-light .dtchooser select,
+.theme-light select.time-picker {
+    background-color: #f4f4f4 !important;
+    color: #111111 !important;
+    border: 1px solid #cccccc !important;
+}
+
+/* Opciones del menú desplegable de hora - ALTO CONTRASTE */
+.dtchooser select option,
+select.time-picker option {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 6px 10px !important;
+}
+
+.theme-light .dtchooser select option,
+.theme-light select.time-picker option {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+/* Botón OK de confirmación */
+.dtchooser-wrapper button.mod-cta {
+    height: 32px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    background-color: var(--interactive-accent, #f5a15c) !important;
+    color: #111111 !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+}
+
+.dtchooser-wrapper button.mod-cta:hover {
+    opacity: 0.9 !important;
+}
+
+/* Botón alternar a Quick-Picks */
 .dtchooser .dtchooser-mode-toggle {
     background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--text-muted, #888888) !important;
+    cursor: pointer !important;
 }
+
+.dtchooser .dtchooser-mode-toggle:hover {
+    color: var(--text-normal, #ffffff) !important;
+}
+
+.dtchooser .dtchooser-mode-toggle-overlay {
+    top: 10px !important;
+    right: 12px !important;
+}
+
+/* Vista alternativa de Quick-Picks adaptada al ancho */
+.dtchooser-quick-picks {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 6px 0 !important;
+}
+
+.dtchooser-quick-pick-filter {
+    width: 100% !important;
+    height: 34px !important;
+    box-sizing: border-box !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--background-modifier-border, #3a3a3a) !important;
+    background-color: var(--background-primary, #1e1e1e) !important;
+    color: var(--text-normal, #ffffff) !important;
+    padding: 0 10px !important;
+    font-size: 13px !important;
+}
+
 .dtchooser .dtchooser-quick-pick {
     background-color: transparent !important;
     font-weight: normal !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    color: var(--text-normal, #e0e0e0) !important;
 }
+
 .dtchooser .dtchooser-quick-pick.is-selected,
 .dtchooser .dtchooser-quick-pick:hover {
-    background-color: var(--background-modifier-hover) !important;
+    background-color: var(--background-modifier-hover, #282828) !important;
+    color: var(--interactive-accent, #f5a15c) !important;
 }
-.dtchooser select {
-    background-color: var(--background-modifier-form-field) !important;
-    color: var(--text-normal) !important;
-    font-weight: normal !important;
-}
+
 /* --- Barra lateral de Recordatorios (Reminder List View) --- */
 
 /* Tarjetas individuales de recordatorios */
