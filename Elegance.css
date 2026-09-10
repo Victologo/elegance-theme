@@ -267,6 +267,7 @@ settings:
     --font-size-h5: 19px;
     --font-size-h6: 18px;
     --line-height-normal: 1.5;
+    --line-height: var(--line-height-normal);
 
     /* Notas empotradas - Configurable con Style Settings */
     --embed-max-height: 500px;
@@ -1286,8 +1287,8 @@ body:not(.no-svg-replace) svg.right-triangle {
     background-image: none !important;
     border: none !important;
     border-top: 1px solid var(--background-modifier-border) !important;
-    margin-block-start: 1em !important;
-    margin-block-end: 1em !important;
+    margin-block: 0 !important;
+    padding-block: 0.8em !important;
     position: static !important;
 }
 
@@ -1375,29 +1376,18 @@ body:not(.no-svg-replace) svg.right-triangle {
 /* @ WS B3: Status Bar */
 
 .status-bar {
-    font-size: var(--font-size-status-bar);
     background-color: var(--background-secondary-alt);
     color: var(--text-faint);
-    padding: 0px 1px;
-    border: 1px solid rgba(255, 255, 255, 0.715);
+    padding: 0px 0px;
     border-radius: 7.5px;
-    right: 1px;
-    bottom: 0.3px;
-    font-weight: 600;
-}
-
-.status-bar-item-segment {
-    margin-right: 4.75px;
+    right: 10px;
 }
 
 .status-bar-item:not(:last-child),
 .titlebar-button:not(:last-child) {
-    margin-right: -4.5px;
+    margin-right: -5px;
 }
 
-.mod-windows .titlebar-button {
-    padding: 0 16px;
-}
 
 /* @ WS B4: Tabs */
 
@@ -2284,7 +2274,6 @@ h6 {
 .cm-header-1 {
     font-size: 18.5px !important;
     font-weight: 700;
-    margin: 30px 0px 3px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
     text-decoration: none;
@@ -2307,7 +2296,6 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-size: 18.25px;
-    margin: 10px 0px 3px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 0px;
@@ -2329,7 +2317,6 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-size: 17.85px;
-    margin: 8px 0px 5px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 0px;
@@ -2349,7 +2336,6 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-size: 17.5px;
-    margin: 8px 0px 5px 0px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 0px;
@@ -2368,7 +2354,6 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-size: 17px;
-    margin: 7px 0px 5px 0px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 0px;
@@ -2387,7 +2372,6 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-size: 16.6px;
-    margin: 30px 0px 5px 0px;
     padding-top: 4px;
     padding-bottom: 4px;
     border-radius: 0px;
@@ -6847,8 +6831,9 @@ body .bases-query-container input {
 .bases-view-container .bases-cards-item:hover,
 [data-type="bases"] .bases-cards-item:hover {
     background-color: transparent !important;
-    border: 1px solid var(--interactive-accent-hover) !important;
-    box-shadow: 0 0 0 1px var(--interactive-accent-hover) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
     transform: none !important;
 }
 
@@ -7121,36 +7106,84 @@ body {
    .markdown-preview-section h*, pero los mÃ¡rgenes eran distintos.
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* H1 */
-.HyperMD-header-1,
-.markdown-preview-section h1,
-.cm-header-1 {
+/* Reading View (Márgenes estándar para modo lectura) */
+.markdown-preview-section h1 {
     margin-top: 30px !important;
     margin-bottom: 3px !important;
 }
 
-/* H2 */
-.HyperMD-header-2,
-.markdown-preview-section h2,
-.cm-header-2 {
+.markdown-preview-section h2 {
     margin-top: 10px !important;
     margin-bottom: 3px !important;
 }
 
-/* H3â€“H5 */
-.HyperMD-header-3, .markdown-preview-section h3, .cm-header-3,
-.HyperMD-header-4, .markdown-preview-section h4, .cm-header-4,
-.HyperMD-header-5, .markdown-preview-section h5, .cm-header-5 {
+.markdown-preview-section h3,
+.markdown-preview-section h4,
+.markdown-preview-section h5 {
     margin-top: 8px !important;
     margin-bottom: 5px !important;
 }
 
-/* H6 */
-.HyperMD-header-6,
-.markdown-preview-section h6,
-.cm-header-6 {
+.markdown-preview-section h6 {
     margin-top: 30px !important;
     margin-bottom: 5px !important;
+}
+
+/* ==========================================================================
+   CODEMIRROR 6 (LIVE PREVIEW Y SOURCE EDITING) — CERO MARGEN VERTICAL
+   Las líneas en CM6 NO pueden tener margin-top ni margin-bottom porque
+   desincronizan el HeightMap y provocan que el clic salte a la línea inferior.
+   El espaciado vertical se logra mediante transparent borders medibles por CM6.
+   ========================================================================== */
+
+/* 1. Seguridad universal para líneas en editor: cero margen vertical */
+.markdown-source-view.mod-cm6 .cm-line {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 2. Encabezados en Live Preview y Source Mode */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header,
+.markdown-source-view.mod-cm6 .cm-line:has([class*="cm-header"]) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background-clip: padding-box !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-1) {
+    border-top: 24px solid transparent !important;
+    border-bottom: 3px solid transparent !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-2) {
+    border-top: 10px solid transparent !important;
+    border-bottom: 3px solid transparent !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-3),
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-4),
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-5) {
+    border-top: 8px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-6,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-header-6) {
+    border-top: 24px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+}
+
+/* 3. Listas en Live Preview y Source Mode: cero margen vertical y line-height uniforme */
+.markdown-source-view.mod-cm6 .HyperMD-list-line,
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-formatting-list) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: var(--line-height-normal, 1.5) !important;
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -7481,14 +7514,28 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
 /* ========================================================================= */
 
 /* Contenedores de tabla en Live Preview y Reading View: centrados */
-.markdown-source-view.mod-cm6 .cm-embed-block:has(.table-wrapper),
-.markdown-source-view.mod-cm6 .cm-embed-block.cm-table-widget,
-.markdown-source-view.mod-cm6 .cm-table-widget,
+/* Contenedores de tabla en Reading View: centrados con margen vertical */
 .markdown-rendered .table-wrapper,
 .markdown-preview-view .table-wrapper {
     display: flex !important;
     justify-content: center !important;
     margin: 1.5rem auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Contenedores de tabla en Live Preview: centrados con padding (sin margin vertical para no desalinear coordenadas CM6) */
+.markdown-source-view.mod-cm6 .cm-embed-block:has(.table-wrapper),
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-table-widget,
+.markdown-source-view.mod-cm6 .cm-table-widget {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
     width: 100% !important;
     max-width: 100% !important;
 }
