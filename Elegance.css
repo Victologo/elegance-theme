@@ -1215,18 +1215,25 @@ body:not(.no-svg-replace) svg.right-triangle {
 /* Metadata properties */
 
 .metadata-properties-heading .collapse-indicator {
-    position: absolute;
-    left: -25px;
+    position: relative;
+    left: auto;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-/* === METADATA / PROPERTIES â€” centrado en todos los modos === */
+/* === METADATA / PROPERTIES — centrado en todos los modos === */
 
-/* El tÃ­tulo "Properties" siempre centrado */
+/* El título "Properties" siempre centrado y con flecha integrada */
 .metadata-container .metadata-properties-heading {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    gap: 6px;
     width: 100%;
+    cursor: pointer;
 }
 
 /* El botÃ³n "+ Add property" siempre centrado */
@@ -1383,8 +1390,7 @@ body:not(.no-svg-replace) svg.right-triangle {
     right: 10px;
 }
 
-.status-bar-item:not(:last-child),
-.titlebar-button:not(:last-child) {
+.status-bar-item:not(:last-child) {
     margin-right: -5px;
 }
 
@@ -1469,7 +1475,7 @@ body.is-focused .workspace-tabs.mod-top {
     background-color: var(--background-secondary-alt);
 }
 
-/* Different color of title bar contair (minimize, fullscreen and close Obsidian) */
+/* Different color of title bar container (minimize, fullscreen and close Obsidian) */
 
 .is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
     background-color: var(--background-secondary-alt);
@@ -1477,6 +1483,61 @@ body.is-focused .workspace-tabs.mod-top {
 
 .is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
     background-color: var(--background-primary);
+}
+
+/* ============================================================ */
+/* BOTONES DE VENTANA Y PESTAÑAS COMPACTAS (SIN SOLAPAMIENTO)  */
+/* ============================================================ */
+
+/* 1. Ocultar el logo de Obsidian duplicado en la esquina superior izquierda */
+.titlebar-button.mod-logo,
+.titlebar-button-container.mod-left {
+    display: none !important;
+}
+
+/* 2. Botones de ventana (minimizar, maximizar, cerrar) más estrechos y limpios */
+.titlebar-button-container.mod-right .titlebar-button {
+    padding: 0 10px !important; /* Puedes cambiar 10px por 8px o 12px para calibrar */
+    min-width: 32px !important;
+    height: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.titlebar-button-container.mod-right .titlebar-button .svg-icon {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* 3. Botón de alternar barra lateral derecha compacto */
+.sidebar-toggle-button.mod-right {
+    padding: 0 6px !important;
+}
+
+/* 4. Espacio reservado SOLO para el bloque de pestañas superior derecho */
+.workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 38px !important;
+}
+
+/* 5. Elementos de la barra de pestañas que no deben encogerse ni deformarse */
+.workspace-tab-header-tab-list,
+.workspace-tab-header-new-tab {
+    flex-shrink: 0 !important;
+}
+
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-new-tab .clickable-icon {
+    padding: 2px 4px !important;
+}
+
+/* 6. Títulos de pestañas centrados */
+.workspace .mod-root .workspace-tab-header-inner-title {
+    text-align: center !important;
+}
+
+.workspace .mod-root .workspace-tab-header-inner {
+    justify-content: center;
 }
 
 /* @ WS B5: Rendered notes */
@@ -7359,16 +7420,52 @@ body {
 }
 
 /* ================================================================
-   END â€” PREFERS-REDUCED-MOTION
+   END — PREFERS-REDUCED-MOTION
+   ================================================================ */
 
-/* FIX MÃ“VIL: Reducir mÃ¡rgenes laterales que comprimÃ­an el texto */
+/* FIX MÓVIL: Reducir márgenes laterales que comprimían el texto */
 body.is-mobile {
     --file-margins: 15px !important;
 }
 
-/* FIX MÃ“VIL: Evitar solapamiento del buscador de ajustes con el tÃ­tulo de la ventana */
-body.is-mobile .modal.mod-settings .vertical-tab-header {
-    padding-top: 50px !important;
+/* FIX MÓVIL: Ajustes / Settings — Ocultar título redundante 'Settings' para evitar solapamientos al hacer scroll */
+body.is-mobile .modal.mod-settings .modal-title,
+body.is-phone .modal.mod-settings .modal-title,
+.is-mobile .modal.mod-settings .modal-title,
+.is-phone .modal.mod-settings .modal-title {
+    display: none !important;
+}
+
+body.is-mobile .modal.mod-settings .modal-header,
+body.is-phone .modal.mod-settings .modal-header,
+.is-mobile .modal.mod-settings .modal-header,
+.is-phone .modal.mod-settings .modal-header {
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+body.is-mobile .modal.mod-settings .modal-close-button,
+body.is-phone .modal.mod-settings .modal-close-button,
+.is-mobile .modal.mod-settings .modal-close-button,
+.is-phone .modal.mod-settings .modal-close-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    z-index: 100 !important;
+}
+
+body.is-mobile .modal.mod-settings .vertical-tab-header,
+body.is-phone .modal.mod-settings .vertical-tab-header,
+.is-mobile .modal.mod-settings .vertical-tab-header,
+.is-phone .modal.mod-settings .vertical-tab-header {
+    padding-top: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 auto !important;
 }
 
 
@@ -7388,13 +7485,53 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
     container-type: inline-size !important;
 }
 
-/* Encabezado limpio sin fondo de recuadro */
+/* Encabezado limpio sin fondo de recuadro, centrado y con flecha integrada */
 [data-type=markdown] .metadata-properties-heading,
 .metadata-properties-heading {
-    position: static !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
     background: none !important;
     transform: none !important;
     padding-inline: 0 !important;
+}
+
+.metadata-properties-heading .collapse-indicator {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    opacity: 0.75 !important;
+    transition: transform 150ms ease, opacity 150ms ease !important;
+}
+
+.metadata-properties-heading:hover .collapse-indicator {
+    opacity: 1 !important;
+}
+
+/* ESTADO COLAPSADO: oculta absolutamente todo el contenido y propiedades */
+.metadata-container.is-collapsed > .metadata-content,
+.metadata-container.is-collapsed .metadata-content,
+.metadata-container.is-collapsed .metadata-properties,
+.metadata-container.is-collapsed .metadata-property,
+.metadata-container.is-collapsed .metadata-add-button,
+.metadata-container.is-collapsed:not(:has(.metadata-side-image)) .metadata-content,
+.metadata-container.is-collapsed:not(:has(.metadata-side-image)) .metadata-properties,
+.metadata-container.is-collapsed:not(:has(.metadata-side-image)) .metadata-property {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
 }
 
 /* 2. Optimización de espacio: etiquetas completas, valores cercanos y fechas con icono correcto */
@@ -7402,10 +7539,12 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
     --metadata-label-width: auto !important;
 }
 
-.metadata-property {
+.metadata-container:not(.is-collapsed) .metadata-property,
+.metadata-property:not(.is-collapsed .metadata-property) {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important; /* Acerca el nombre al valor dejando menos espacio muerto */
+    min-width: 0 !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
 }
@@ -7440,7 +7579,7 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
       >= 540px: Póster a la izquierda + propiedades en 1 columna a la derecha.
       < 540px: Móvil/paneles ultra-estrechos -> Póster arriba, propiedades abajo. */
 @container (min-width: 540px) {
-    .metadata-container:has(.metadata-side-image:not(.top, .bottom) .pp-cover-image) {
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image:not(.top, .bottom) .pp-cover-image) {
         --metadata-display-editing: grid !important;
         --metadata-display-reading: grid !important;
         display: grid !important;
@@ -7448,11 +7587,11 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
         grid-column-gap: 16px !important;
         grid-template-rows: auto 1fr !important;
     }
-    .metadata-container:has(.metadata-side-image) .metadata-side-image {
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-side-image {
         grid-row: 1 / 3 !important;
         margin: 0 !important;
     }
-    .metadata-container:has(.metadata-side-image) .metadata-side-image .pp-cover-image {
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-side-image .pp-cover-image {
         height: auto !important;
         max-height: var(--cover-max-height, 500px) !important;
         width: 100% !important;
@@ -7460,53 +7599,99 @@ body.is-mobile .modal.mod-settings .vertical-tab-header {
         margin: 0 !important;
         object-fit: cover !important;
     }
-    .metadata-container:has(.metadata-side-image) .metadata-content {
-        column-count: 1 !important;
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-content,
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-properties {
         display: flex !important;
         flex-direction: column !important;
     }
 }
 
 @container (max-width: 539px) {
-    .metadata-container:has(.metadata-side-image) {
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) {
         display: flex !important;
         flex-direction: column !important;
     }
-    .metadata-container:has(.metadata-side-image) .metadata-side-image .pp-cover-image {
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-side-image .pp-cover-image {
         height: 180px !important;
         width: auto !important;
         max-width: 100% !important;
         margin: 0 auto 12px auto !important;
     }
-    .metadata-container:has(.metadata-side-image) .metadata-content {
-        column-count: 1 !important;
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-content,
+    .metadata-container:not(.is-collapsed):has(.metadata-side-image) .metadata-properties {
         display: flex !important;
         flex-direction: column !important;
     }
 }
 
 /* 4. CASO B: NO hay póster
-      - Espacio reducido (< 576px, un 10% más estrecho que antes): Vuelve a 1 columna.
-      - Espacio amplio (>= 576px): 2 columnas optimizadas con 10px de separación central. */
+      - Espacio reducido (< 576px): Vuelve a 1 columna.
+      - Espacio amplio (>= 576px): 2 columnas con CSS Grid (elimina el bug de hit-test y clics dislocados de column-count). */
 @container (min-width: 576px) {
-    .metadata-container:not(:has(.metadata-side-image)) .metadata-content:not(body.is-grabbing .metadata-content:hover) {
-        column-count: 2 !important;
-        column-gap: 10px !important; /* Espacio compacto entre columnas */
-        column-rule: none !important;
-        display: block !important;
+    .metadata-container:not(.is-collapsed):not(:has(.metadata-side-image)) .metadata-properties:not(body.is-grabbing .metadata-properties) {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        column-gap: 16px !important;
+        row-gap: 2px !important;
     }
-}
-
-@container (max-width: 575px) {
-    .metadata-container:not(:has(.metadata-side-image)) .metadata-content {
-        column-count: 1 !important;
+    .metadata-container:not(.is-collapsed):not(:has(.metadata-side-image)) .metadata-content {
         display: flex !important;
         flex-direction: column !important;
     }
 }
 
-.metadata-add-button {
+@container (max-width: 575px) {
+    .metadata-container:not(.is-collapsed):not(:has(.metadata-side-image)) .metadata-properties {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .metadata-container:not(.is-collapsed):not(:has(.metadata-side-image)) .metadata-content {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+/* Durante el arrastre de propiedades, mantiene una lista lineal limpia */
+body.is-grabbing .metadata-properties {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Botón "+ Add property": siempre centrado, interactivo y sin descolocarse */
+.metadata-container:not(.is-collapsed) .metadata-add-button,
+.metadata-add-button:not(.is-collapsed .metadata-add-button) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
     break-inside: avoid !important;
+}
+
+/* ========================================================================= */
+/* 5. MODO FUENTE (SOURCE MODE) & PROPIEDADES OCULTAS                        */
+/* En Modo Fuente solo se debe ver el texto YAML plano (--- ... ---),        */
+/* ocultando el widget visual de metadata-container y portadas laterales.    */
+/* ========================================================================= */
+.markdown-source-view:not(.is-live-preview) .metadata-container,
+.markdown-source-view.is-source-mode .metadata-container,
+.cm-s-obsidian:not(.is-live-preview) .metadata-container,
+.show-properties-source .metadata-container,
+.show-properties-hidden .metadata-container,
+body.show-properties-source .metadata-container,
+body.show-properties-hidden .metadata-container,
+[data-type=markdown] .markdown-source-view:not(.is-live-preview) .metadata-container {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 /* ========================================================================= */
