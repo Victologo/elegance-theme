@@ -6923,62 +6923,203 @@ body .bases-query-container input {
 
 
 /* ================================================================
-   MOBILE OPTIMIZATIONS â€” Elegance Theme
+   MOBILE OPTIMIZATIONS — Elegance Theme (Modernized v1.7 - v1.12+)
    Optimizaciones para Obsidian Mobile (iOS / Android)
-   Todo el bloque usa .is-mobile â†’ sin impacto en escritorio.
+   Todo el bloque usa .is-mobile / .is-phone → sin impacto en escritorio.
    ================================================================ */
 
-
 /* ----------------------------------------------------------------
-   1. LAYOUT â€” Padding adaptativo en el Ã¡rea de contenido
-   Problema: padding:1.27% queda muy estrecho en pantallas pequeÃ±as.
+   1. SAFE AREA INSETS (Dynamic Island, Notch, Gesture Bar)
    ---------------------------------------------------------------- */
-
-.is-mobile .markdown-preview-view,
-.is-mobile .mod-single-child .markdown-preview-view {
-    padding-left: clamp(12px, 4%, 32px) !important;
-    padding-right: clamp(12px, 4%, 32px) !important;
+.is-mobile .workspace {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: 0;
 }
 
-.is-mobile .markdown-source-view.mod-cm6 .cm-content,
-.is-mobile .cm-line {
-    padding-left: clamp(12px, 4%, 32px);
-    padding-right: clamp(12px, 4%, 32px);
+.is-mobile .app-container {
+    padding-top: env(safe-area-inset-top, 0px);
 }
 
+/* Notificaciones / Toasts en móvil respetando safe areas */
+.is-mobile .notice-container {
+    top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+    left: 12px !important;
+    right: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* ----------------------------------------------------------------
-   2. FILE EXPLORER â€” Evitar desbordamiento horizontal en el sidebar
-   Problema: width:max-content + white-space:nowrap causa overflow.
-   ---------------------------------------------------------------- */
-
-.is-mobile .nav-file-title {
+.is-mobile .notice {
     width: 100% !important;
-    min-width: unset !important;
-    max-width: 100% !important;
+    max-width: 440px !important;
+    border-radius: var(--radius-m, 8px) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ----------------------------------------------------------------
+   2. VIEW HEADER (Barra Superior de Notas en Móvil)
+   Corrige colapso de altura y solapamiento con Dynamic Island/Notch
+   ---------------------------------------------------------------- */
+.is-mobile .view-header {
+    padding-top: max(4px, env(safe-area-inset-top, 0px)) !important;
+    padding-left: max(8px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(8px, env(safe-area-inset-right, 0px)) !important;
+    min-height: calc(46px + env(safe-area-inset-top, 0px)) !important;
+    border-bottom: 1px solid var(--background-modifier-border);
+    background-color: var(--background-primary);
+}
+
+.is-mobile .view-header-title-container {
+    padding: 0 4px;
+}
+
+.is-mobile .view-header-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
+.is-mobile .view-action,
+.is-mobile .view-header-icon {
+    min-width: 38px !important;
+    min-height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: var(--radius-s, 6px);
+}
+
+/* ----------------------------------------------------------------
+   3. MOBILE NAVBAR (Barra de Navegación Inferior Obsidian v1.11+)
+   Soporte completo para nueva barra inferior, botones y estado activo
+   ---------------------------------------------------------------- */
+.is-mobile .mobile-navbar-container,
+.is-mobile .mobile-navbar {
+    background-color: var(--background-secondary) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--background-modifier-border) !important;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 0px)) !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.is-mobile .mobile-navbar-action {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border-radius: var(--radius-m, 8px);
+    color: var(--text-muted);
+    transition: all 0.15s ease-in-out;
+}
+
+.is-mobile .mobile-navbar-action:active,
+.is-mobile .mobile-navbar-action.is-active {
+    color: var(--interactive-accent) !important;
+    background-color: var(--background-modifier-hover) !important;
+}
+
+/* ----------------------------------------------------------------
+   4. SCROLL PADDING (Evitar que la barra inferior corte el texto)
+   Añade margen inferior en el editor y vista lectura
+   ---------------------------------------------------------------- */
+.is-phone .cm-scroller,
+.is-phone .markdown-preview-view,
+.is-phone .workspace-leaf-content {
+    padding-bottom: calc(var(--mobile-navbar-height, 50px) + env(safe-area-inset-bottom, 16px) + 32px) !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ----------------------------------------------------------------
+   5. MOBILE TOOLBAR (Barra de Herramientas Sobre el Teclado)
+   ---------------------------------------------------------------- */
+.is-mobile .mobile-toolbar {
+    background-color: var(--background-secondary) !important;
+    border-top: 1px solid var(--background-modifier-border) !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+    padding: 2px 4px;
+    height: 42px;
+}
+
+.is-mobile .mobile-toolbar-options-container {
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 4px;
+}
+
+.is-mobile .mobile-toolbar-options-container::-webkit-scrollbar {
+    display: none !important;
+}
+
+.is-mobile .mobile-toolbar-option {
+    min-width: 38px !important;
+    height: 36px !important;
+    border-radius: var(--radius-s, 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------
+   6. WORKSPACE DRAWERS (Menús Laterales Deslizantes v1.7+)
+   ---------------------------------------------------------------- */
+.is-mobile .workspace-drawer {
+    padding-top: max(8px, env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
+    background-color: var(--background-secondary) !important;
+}
+
+.is-mobile .workspace-drawer.mod-left {
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+.is-mobile .workspace-drawer.mod-right {
+    border-left: 1px solid var(--background-modifier-border);
+}
+
+.is-mobile .workspace-drawer-header {
+    min-height: 44px;
+    padding: 0 12px;
+}
+
+/* Explorador de archivos táctil */
+.is-mobile .nav-file-title,
 .is-mobile .nav-folder-title {
     width: 100% !important;
     min-width: unset !important;
     max-width: 100% !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    min-height: 38px !important;
+    line-height: 1.35 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 6px 8px !important;
+    border-radius: var(--radius-s, 6px);
 }
 
-.is-mobile .nav-folder-title-content {
+.is-mobile .nav-folder-title-content,
+.is-mobile .nav-file-title-content {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
     max-width: 100%;
 }
 
-
-/* ----------------------------------------------------------------
-   3. HOVER / TÃCTIL â€” Eliminar efectos hover que se quedan pegados
-   Problema: transform:scale() y bordes de hover no se liberan bien.
-   ---------------------------------------------------------------- */
+/* Flecha de colapso con área táctil ampliada */
+.is-mobile .nav-folder-collapse-indicator {
+    min-width: 30px !important;
+    min-height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 2px;
+}
 
 .is-mobile .nav-file-title:hover,
 .is-mobile .nav-folder-title:hover {
@@ -6988,27 +7129,179 @@ body .bases-query-container input {
     min-width: unset !important;
 }
 
-
 /* ----------------------------------------------------------------
-   4. SCROLLBAR â€” Ocultar scrollbar custom en mÃ³vil
-   Problema: el scrollbar CSS interfiere con el scroll nativo de iOS.
+   7. MOBILE TAB SWITCHER (Selector de Pestañas Tipo Tarjeta v1.7+)
    ---------------------------------------------------------------- */
-
-.is-mobile ::-webkit-scrollbar {
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
+.is-mobile .mobile-tab-switcher {
+    padding: 12px !important;
+    padding-top: max(16px, env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 0px)) !important;
+    background-color: var(--background-primary) !important;
 }
 
-.is-mobile * {
-    scrollbar-width: none !important;
+.is-mobile .mobile-tab-card {
+    border-radius: var(--radius-m, 10px) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    background-color: var(--background-secondary) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
+.is-mobile .mobile-tab-card.is-active {
+    border-color: var(--interactive-accent) !important;
+    box-shadow: 0 0 0 1.5px var(--interactive-accent), 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.is-mobile .mobile-tab-card-close-btn {
+    min-width: 34px !important;
+    min-height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
 
 /* ----------------------------------------------------------------
-   5. IMÃGENES EN CARDS â€” Fix del zoom con position:fixed en iOS
-   Problema: position:fixed en img:active desplaza el viewport.
+   8. MODALES Y QUICK SWITCHER (Prompts Responsivos Táctiles)
+   Corrige posicionamiento forzado de left: 4vw que rompía switchers
    ---------------------------------------------------------------- */
+.is-mobile .prompt {
+    width: calc(100vw - 20px) !important;
+    max-width: 580px !important;
+    max-height: 85vh !important;
+    border-radius: var(--radius-l, 14px) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+    margin: auto !important;
+}
+
+.is-mobile .prompt-input {
+    font-size: 1rem !important;
+    padding: 10px 14px !important;
+}
+
+.is-mobile .prompt-results {
+    -webkit-overflow-scrolling: touch;
+    max-height: 60vh;
+}
+
+.is-mobile .suggestion-item {
+    min-height: 42px !important;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-s, 6px);
+}
+
+.is-mobile .modal {
+    width: calc(100vw - 20px) !important;
+    max-width: 580px !important;
+    border-radius: var(--radius-l, 14px) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+}
+
+/* ----------------------------------------------------------------
+   9. PROPERTIES / FRONTMATTER (Metadatos en Móvil)
+   Evita desbordamientos y asegura edición cómoda
+   ---------------------------------------------------------------- */
+.is-mobile .metadata-container {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.is-mobile .metadata-properties {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.is-mobile .metadata-property {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 6px;
+    border-radius: var(--radius-s, 6px);
+}
+
+.is-mobile .metadata-property-key {
+    min-width: 110px;
+    font-size: 0.85rem;
+}
+
+.is-mobile .metadata-property-value {
+    flex: 1 1 160px;
+}
+
+/* ----------------------------------------------------------------
+   10. LAYOUT Y PADDING DE CONTENIDO
+   ---------------------------------------------------------------- */
+.is-mobile .markdown-preview-view,
+.is-mobile .mod-single-child .markdown-preview-view {
+    padding-left: clamp(14px, 4.5vw, 32px) !important;
+    padding-right: clamp(14px, 4.5vw, 32px) !important;
+}
+
+.is-mobile .markdown-source-view.mod-cm6 .cm-content,
+.is-mobile .cm-line {
+    padding-left: clamp(14px, 4.5vw, 32px);
+    padding-right: clamp(14px, 4.5vw, 32px);
+}
+
+.is-mobile .workspace-leaf-content,
+.is-mobile .view-content {
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------------
+   11. TIPOGRAFÍA Y ENCABEZADOS RESPONSIVOS
+   ---------------------------------------------------------------- */
+.is-mobile .markdown-preview-view h1,
+.is-mobile .cm-header-1 {
+    font-size: clamp(1.4rem, 5.2vw, 1.75rem) !important;
+    line-height: 1.25 !important;
+}
+
+.is-mobile .markdown-preview-view h2,
+.is-mobile .cm-header-2 {
+    font-size: clamp(1.22rem, 4.6vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+}
+
+.is-mobile .markdown-preview-view h3,
+.is-mobile .cm-header-3 {
+    font-size: clamp(1.1rem, 4.1vw, 1.35rem) !important;
+    line-height: 1.35 !important;
+}
+
+.is-mobile .markdown-preview-view h4,
+.is-mobile .cm-header-4 {
+    font-size: clamp(1rem, 3.6vw, 1.2rem) !important;
+}
+
+/* ----------------------------------------------------------------
+   12. TABLAS Y DATAVIEW (Scroll Táctil y Tarjetas)
+   ---------------------------------------------------------------- */
+.is-mobile .markdown-preview-view table,
+.is-mobile .dataview.table-view-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    width: 100%;
+}
+
+.is-mobile .table-view-table th,
+.is-mobile .table-view-table td {
+    padding: 8px 10px !important;
+}
+
+@media (max-width: 380px) {
+    .is-mobile .cards table.dataview tbody {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (min-width: 381px) and (max-width: 600px) {
+    .is-mobile .cards table.dataview tbody {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
 
 .is-mobile .cards table.dataview tbody > tr > td img:active {
     position: absolute !important;
@@ -7023,108 +7316,50 @@ body .bases-query-container input {
     z-index: 100 !important;
 }
 
-
 /* ----------------------------------------------------------------
-   6. TIPOGRAFÃA â€” Encabezados escalables con clamp()
-   Problema: px fijos no respetan el zoom de accesibilidad del SO.
+   13. ELEMENTOS INTERACTIVOS (Checkboxes, Callouts, Código)
    ---------------------------------------------------------------- */
-
-.is-mobile .markdown-preview-view h1,
-.is-mobile .cm-header-1 {
-    font-size: clamp(1.35rem, 5vw, 1.7rem) !important;
+/* Checkboxes más grandes para pulsar cómodamente */
+.is-mobile input[type="checkbox"].task-list-item-checkbox {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    transform: scale(1.15);
+    margin-right: 6px !important;
+    cursor: pointer;
 }
 
-.is-mobile .markdown-preview-view h2,
-.is-mobile .cm-header-2 {
-    font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
-}
-
-.is-mobile .markdown-preview-view h3,
-.is-mobile .cm-header-3 {
-    font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
-}
-
-.is-mobile .markdown-preview-view h4,
-.is-mobile .cm-header-4 {
-    font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
-}
-
-
-/* ----------------------------------------------------------------
-   7. TABLAS â€” Scroll horizontal en lugar de desbordamiento
-   Problema: tablas anchas desbordan el viewport en mÃ³vil.
-   ---------------------------------------------------------------- */
-
-.is-mobile .markdown-preview-view table,
-.is-mobile .dataview.table-view-table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    max-width: 100%;
-    width: 100%;
-}
-
-
-/* ----------------------------------------------------------------
-   8. WORKSPACE â€” Evitar desbordamiento horizontal global
-   ---------------------------------------------------------------- */
-
-.is-mobile .workspace-leaf-content,
-.is-mobile .view-content {
-    overflow-x: hidden;
-}
-
-
-/* ----------------------------------------------------------------
-   9. CARDS â€” Dos columnas en pantallas muy pequeÃ±as (<360px)
-   ---------------------------------------------------------------- */
-
-@media (max-width: 360px) {
-    .is-mobile .cards table.dataview tbody {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-
-/* ----------------------------------------------------------------
-   10. SAFE AREA â€” Soporte para notch y gesture bar en iPhone
-   ---------------------------------------------------------------- */
-
-.is-mobile .workspace {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    padding-left: env(safe-area-inset-left, 0px);
-    padding-right: env(safe-area-inset-right, 0px);
-}
-
-
-/* ----------------------------------------------------------------
-   11. MODALES â€” Ancho mÃ¡ximo adaptado a pantallas pequeÃ±as
-   Problema: modales de bÃºsqueda/comandos exceden el ancho.
-   ---------------------------------------------------------------- */
-
-.is-mobile .prompt {
-    width: 92vw !important;
-    max-width: 92vw !important;
-    left: 4vw !important;
-    right: 4vw !important;
-    transform: none !important;
-    border-radius: 12px;
-}
-
-.is-mobile .modal {
-    width: 92vw !important;
-    max-width: 92vw !important;
-}
-
-
-/* ----------------------------------------------------------------
-   12. CALLOUTS â€” Padding reducido para pantallas estrechas
-   ---------------------------------------------------------------- */
-
+/* Callouts con márgenes y relleno optimizados */
 .is-mobile .callout {
     padding: 10px 14px !important;
     margin: 8px 0 !important;
+    border-radius: var(--radius-m, 8px) !important;
 }
+
+/* Bloques de código con scroll suave */
+.is-mobile .markdown-rendered pre,
+.is-mobile .cm-s-obsidian pre.HyperMD-codeblock {
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-m, 8px);
+}
+
+/* Enlaces con zona táctil mínima */
+.is-mobile a.internal-link,
+.is-mobile a.external-link {
+    padding: 1px 2px;
+}
+
+/* Ocultar barras de scroll visuales en favor del desplazamiento nativo */
+.is-mobile ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+.is-mobile * {
+    scrollbar-width: none !important;
+}
+
 /* Obsidian define --file-line-width: 700px en body desde app.css.
    El tema carga DESPUES de app.css, asi que body aqui sobreescribe. */
 body {
@@ -8256,7 +8491,8 @@ button.reminder-list-item,
     gap: 0.35rem !important;
 }
 
-.reminder-title {
+.reminder-list-item .reminder-title,
+.reminder-title-container .reminder-title {
     font-size: 12px !important;
     color: var(--text-normal) !important;
     font-weight: normal !important;
@@ -8264,6 +8500,25 @@ button.reminder-list-item,
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     flex-grow: 1 !important;
+}
+
+main.toast .reminder-title {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.35 !important;
+    font-size: 0.81rem !important;
+    font-weight: 500 !important;
+}
+
+main.toast .reminder-title p,
+main.toast .reminder-title span,
+main.toast .reminder-title a {
+    font-size: 0.81rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
 }
 
 /* Hora del recordatorio (compacta y destacada sutilmente) */
